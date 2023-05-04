@@ -1,5 +1,8 @@
 import javax.swing.table.AbstractTableModel;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Classe TableModel che estende la classe AbstractTableModel per adattarla alle esigenze del progetto.
@@ -10,11 +13,19 @@ public class InvoicesTableModel extends AbstractTableModel {
     /**
      * ArrayList di generics di tipo invoice
      */
-    private ArrayList<Invoice> invoiceSet;
+    private ArrayList<Invoice> invoiceSet=new ArrayList<>();
+    String[] columnNames = {"Date", "Amount", "Description"};
 
-    public InvoicesTableModel(ArrayList<Invoice> invoiceSet) {
-        this.invoiceSet = invoiceSet;
+    public InvoicesTableModel() {
+        super();
+        invoiceSet=new ArrayList<>();
     }
+    /** metodo per aggiungere elementi alla tabella, viene notificato il cambiamento a tutti i listener */
+    public void addInvoice(String desc, BigDecimal amount, LocalDateTime date) {
+        invoiceSet.add(new Invoice(desc,amount,date));
+        fireTableDataChanged();
+    }
+
 
     @Override
     public int getRowCount() {
@@ -29,6 +40,11 @@ public class InvoicesTableModel extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
+        switch(columnIndex){
+            case 0: return invoiceSet.get(rowIndex).getDate();
+            case 1: return invoiceSet.get(rowIndex).getAmount();
+            case 2: return invoiceSet.get(rowIndex).getDesc();
+        }
         return null;
     }
 }
