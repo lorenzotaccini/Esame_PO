@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 // Press ⇧ twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
@@ -18,7 +17,10 @@ public class Main {
         mainframe.setVisible(true);
         mainframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //TODO implementare salvataggio alla chiusura con conferma
         //new mainFrame();
-        mainModel.addInvoice("ciao",new BigDecimal("20.3"), LocalDateTime.now());
-
+        Invoice t= new Invoice("ciaone",new BigDecimal("45.6"),LocalDateTime.now());
+        mainModel.addInvoice(t);
+        mainModel.addInvoice("spesa",new BigDecimal("2"), LocalDateTime.now());
+        mainModel.addInvoice("succo",new BigDecimal("0.59"), LocalDateTime.now());
+        mainModel.deleteInvoice(t);
     }
 }
