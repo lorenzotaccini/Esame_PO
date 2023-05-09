@@ -1,4 +1,6 @@
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,6 +17,7 @@ public class InvoicesTableFrame extends JFrame {
         mainModel=new InvoicesTableModel();
         mainTable = new JTable(mainModel);
         final TableRowSorter<InvoicesTableModel> sorter = new TableRowSorter<>(mainModel);
+
         mainTable.setRowSorter(sorter);
         add(new JScrollPane(mainTable), BorderLayout.CENTER);
         JPanel panel = new JPanel(new BorderLayout());
@@ -23,9 +26,9 @@ public class InvoicesTableFrame extends JFrame {
         final JTextField filterText = new JTextField("");
         panel.add(filterText, BorderLayout.CENTER);
         add(panel, BorderLayout.NORTH);
-        JButton button = new JButton("Filter");
-        button.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+        DocumentListener regexfilter = new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
                 String text = filterText.getText();
                 if(text.length() == 0) {
                     sorter.setRowFilter(null);
@@ -37,8 +40,19 @@ public class InvoicesTableFrame extends JFrame {
                     }
                 }
             }
-        });
-        add(button, BorderLayout.SOUTH);
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                insertUpdate(e);
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                insertUpdate(e);
+            }
+        };
+
+        filterText.getDocument().addDocumentListener(regexfilter);
+
         setSize(400, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
