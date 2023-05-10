@@ -60,6 +60,19 @@ public class InvoicesTableFrame extends JFrame {
                 insertUpdate(e);
             }
         };
+        /**
+         * il listener per l'eliminazione è istanziato separatamente per essere utilizzato da più elementi.
+         *
+         */
+        ActionListener deleteListener= new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int [] vSel= mainTable.getSelectedRows();
+                for (int actualIndex:vSel) {
+                    mainModel.deleteInvoice(mainModel.getInvoiceAtRow(actualIndex));
+                }
+            }
+        };
 
         addButton.addActionListener(new ActionListener() {
             @Override
@@ -68,12 +81,7 @@ public class InvoicesTableFrame extends JFrame {
             }
         });
 
-        deleteButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
+        deleteButton.addActionListener(deleteListener);
 
         filterText.getDocument().addDocumentListener(regexfilter);
 

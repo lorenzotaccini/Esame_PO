@@ -76,6 +76,10 @@ public class InvoicesTableModel extends AbstractTableModel {
             case 2 -> invoiceSet.get(rowIndex).setDesc(((String) aValue));
         }
     }
+
+    public Invoice getInvoiceAtRow(int index){
+        return invoiceSet.get(index);
+    }
     @Override
     public boolean isCellEditable(int rowIndex, int columnIndex)
     {
@@ -89,4 +93,5 @@ public class InvoicesTableModel extends AbstractTableModel {
         //si guarda alla prima riga
         return getValueAt(0, columnIndex).getClass();
     }
+
 }

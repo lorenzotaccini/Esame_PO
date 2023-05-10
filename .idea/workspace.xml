@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="aggiunto metodo addInvoice nella classe tablemodel">
+    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="le celle desc e amount sono ora editabili.&#10;Cambiato tipo di dato di amount da BigDecimal a doubel">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Invoice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InvoicesTableFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InvoicesTableFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InvoicesTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InvoicesTableModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683221110009</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="le celle desc e amount sono ora editabili.&#10;Cambiato tipo di dato di amount da BigDecimal a doubel">
+      <created>1683713750230</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1683713750230</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -119,6 +124,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="create le classi invoice e invoicetablemodel" />
     <MESSAGE value="aggiunto metodo addInvoice nella classe tablemodel" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggiunto metodo addInvoice nella classe tablemodel" />
+    <MESSAGE value="le celle desc e amount sono ora editabili.&#10;Cambiato tipo di dato di amount da BigDecimal a doubel" />
+    <option name="LAST_COMMIT_MESSAGE" value="le celle desc e amount sono ora editabili.&#10;Cambiato tipo di dato di amount da BigDecimal a doubel" />
   </component>
 </project>
