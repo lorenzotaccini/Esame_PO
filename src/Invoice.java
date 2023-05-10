@@ -5,11 +5,11 @@ import java.time.format.DateTimeFormatter;
 public class Invoice {
     private String desc;
     /** il tipo di dato BigDecimal è adatto all'utilizzo in ambito monetario*/
-    private BigDecimal amount;
+    private double amount;
     private LocalDateTime date;
     private DateTimeFormatter formattedDate;
 
-    public Invoice(String desc, BigDecimal amount, LocalDateTime date) {
+    public Invoice(String desc, double amount, LocalDateTime date) {
         this.desc = desc;
         this.amount = amount;
         this.date = date;
@@ -19,12 +19,24 @@ public class Invoice {
         return desc;
     }
 
-    public BigDecimal getAmount() {
+    public double getAmount() {
         return amount;
     }
 
     public LocalDateTime getDate() {
         return date;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    public void setDate(LocalDateTime date) {
+        this.date = date;
     }
 
     public DateTimeFormatter getFormattedDate() {

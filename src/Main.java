@@ -11,9 +11,9 @@ public class Main {
     public static void main(String[] args) {
 
         InvoicesTableFrame frame=new InvoicesTableFrame();
-        frame.mainModel.addInvoice(new Invoice("miao",new BigDecimal("10"),LocalDateTime.now()));
-        frame.mainModel.addInvoice(new Invoice("bau",new BigDecimal("13"),LocalDateTime.now()));
-        frame.mainModel.addInvoice(new Invoice("prova",new BigDecimal("10.89"),LocalDateTime.now()));
+        frame.mainModel.addInvoice(new Invoice("miao",10,LocalDateTime.now()));
+        frame.mainModel.addInvoice(new Invoice("bau",13,LocalDateTime.now()));
+        frame.mainModel.addInvoice(new Invoice("prova",10.67,LocalDateTime.now()));
 
     }
 }

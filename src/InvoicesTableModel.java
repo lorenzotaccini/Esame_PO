@@ -1,5 +1,4 @@
 import javax.swing.table.AbstractTableModel;
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -27,7 +26,7 @@ public class InvoicesTableModel extends AbstractTableModel {
     }
 
     /** metodo per aggiungere elementi alla tabella, viene notificato il cambiamento a tutti i listener */
-    public void addInvoice(String desc, BigDecimal amount, LocalDateTime date) {
+    public void addInvoice(String desc, double amount, LocalDateTime date) {
         invoiceSet.add(new Invoice(desc,amount,date));
         fireTableDataChanged();
     }
@@ -50,9 +49,6 @@ public class InvoicesTableModel extends AbstractTableModel {
 
     }
 
-    // TODO public Invoice searchInvoice()
-
-
     @Override
     public int getRowCount() {
         return this.invoiceSet.size();
@@ -72,6 +68,21 @@ public class InvoicesTableModel extends AbstractTableModel {
             default -> null;
         };
     }
+    @Override
+    public void setValueAt(Object aValue, int rowIndex, int columnIndex)
+    {
+        switch (columnIndex){
+            case 1 -> invoiceSet.get(rowIndex).setAmount((Double) aValue);
+            case 2 -> invoiceSet.get(rowIndex).setDesc(((String) aValue));
+        }
+    }
+    @Override
+    public boolean isCellEditable(int rowIndex, int columnIndex)
+    {
+        return columnIndex > 0;
+    }
+
+
     /** Metodo che restituisce la classe del dato contenuto in una certa colonna */
     @Override
     public Class<?> getColumnClass(int columnIndex) {
