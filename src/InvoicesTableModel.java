@@ -42,7 +42,6 @@ public class InvoicesTableModel extends AbstractTableModel {
             if(delItem.equals(actual)){
                 itr.remove(); //rimozione dell'elemento tramite iteratore
                 fireTableDataChanged();
-
                 return;
             }
         }

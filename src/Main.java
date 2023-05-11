@@ -14,6 +14,15 @@ public class Main {
         frame.mainModel.addInvoice(new Invoice("miao",10,LocalDateTime.now()));
         frame.mainModel.addInvoice(new Invoice("bau",13,LocalDateTime.now()));
         frame.mainModel.addInvoice(new Invoice("prova",10.67,LocalDateTime.now()));
+        frame.mainModel.addInvoice(new Invoice("miao",10,LocalDateTime.now()));
+        frame.mainModel.addInvoice(new Invoice("bau",13,LocalDateTime.now()));
+        frame.mainModel.addInvoice(new Invoice("prova",10.67,LocalDateTime.now()));
+        frame.mainModel.addInvoice(new Invoice("miao",10,LocalDateTime.now()));
+        frame.mainModel.addInvoice(new Invoice("bau",13,LocalDateTime.now()));
+        frame.mainModel.addInvoice(new Invoice("prova",10.67,LocalDateTime.now()));
+        frame.mainModel.addInvoice(new Invoice("miao",10,LocalDateTime.now()));
+        frame.mainModel.addInvoice(new Invoice("bau",13,LocalDateTime.now()));
+        frame.mainModel.addInvoice(new Invoice("prova",10.67,LocalDateTime.now()));
 
     }
 }

@@ -5,10 +5,13 @@ import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.net.BindException;
 import java.util.regex.PatternSyntaxException;
 
 public class InvoicesTableFrame extends JFrame {
-    public JTable mainTable;
+    private JTable mainTable;
     public InvoicesTableModel mainModel;
 
     public InvoicesTableFrame() {
@@ -17,22 +20,13 @@ public class InvoicesTableFrame extends JFrame {
         mainModel=new InvoicesTableModel();
         mainTable = new JTable(mainModel);
         final TableRowSorter<InvoicesTableModel> sorter = new TableRowSorter<>(mainModel);
-
-        mainTable.setRowSorter(sorter);
-        add(new JScrollPane(mainTable), BorderLayout.CENTER);
-        JPanel panel = new JPanel(new BorderLayout());
-        JLabel label = new JLabel("Filter");
-        panel.add(label, BorderLayout.WEST);
-
+        JPopupMenu mainPopupMenu = new JPopupMenu();
         final JTextField filterText = new JTextField("");
         final JButton addButton = new JButton("ADD");
         final JButton deleteButton = new JButton("DELETE");
 
-        panel.add(filterText, BorderLayout.CENTER);
-        //panel.add(addButton,BorderLayout.SOUTH);
-        //panel.add(deleteButton);
-        add(panel, BorderLayout.NORTH);
-        DocumentListener regexfilter = new DocumentListener() {
+
+        DocumentListener regexFilter = new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
                 String text = filterText.getText();
@@ -60,6 +54,20 @@ public class InvoicesTableFrame extends JFrame {
                 insertUpdate(e);
             }
         };
+
+        mainTable.setRowSorter(sorter);
+        //mainPopupMenu.add();
+        popupMenu.setupPopupMenu(mainTable, mainPopupMenu);
+        add(new JScrollPane(mainTable), BorderLayout.CENTER);
+        JPanel panel = new JPanel(new BorderLayout());
+        JLabel label = new JLabel("Filter");
+        panel.add(label, BorderLayout.WEST);
+
+
+        panel.add(filterText, BorderLayout.CENTER);
+        //panel.add(addButton,BorderLayout.SOUTH);
+        panel.add(deleteButton,BorderLayout.EAST);
+        add(panel, BorderLayout.NORTH);
         /**
          * il listener per l'eliminazione è istanziato separatamente per essere utilizzato da più elementi.
          *
@@ -68,11 +76,22 @@ public class InvoicesTableFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int [] vSel= mainTable.getSelectedRows();
-                for (int actualIndex:vSel) {
-                    mainModel.deleteInvoice(mainModel.getInvoiceAtRow(actualIndex));
+                System.out.println(vSel.length);
+
+                //scorro gli elementi dall'ultimo per evitare il cambio di indice nel tablemodel
+                for(int actualIndex = vSel.length-1; actualIndex>=0; actualIndex--){
+                    try {
+                        mainModel.deleteInvoice(mainModel.getInvoiceAtRow(vSel[actualIndex]));
+                    }
+                    //Indexoutofboundexception quando cancello l'ultimo elemento presente nell'arraylist (unsolved)
+                    catch (IndexOutOfBoundsException iob){
+                        System.out.println("\nTable is now empty\n");
+                    }
                 }
             }
         };
+
+
 
         addButton.addActionListener(new ActionListener() {
             @Override
@@ -83,11 +102,12 @@ public class InvoicesTableFrame extends JFrame {
 
         deleteButton.addActionListener(deleteListener);
 
-        filterText.getDocument().addDocumentListener(regexfilter);
+        filterText.getDocument().addDocumentListener(regexFilter);
 
         setSize(400, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
+
     }
 }
