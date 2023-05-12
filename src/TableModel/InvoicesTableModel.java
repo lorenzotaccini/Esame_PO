@@ -1,3 +1,7 @@
+package TableModel;
+
+import TableModel.Invoice;
+
 import javax.swing.table.AbstractTableModel;
 import java.time.LocalDateTime;
 import java.util.ArrayList;

@@ -1,5 +1,6 @@
-import javax.swing.*;
-import java.math.BigDecimal;
+import Frames.InvoicesTableFrame;
+import TableModel.Invoice;
+
 import java.time.LocalDateTime;
 
 // Press ⇧ twice to open the Search Everywhere dialog and type `show whitespaces`,

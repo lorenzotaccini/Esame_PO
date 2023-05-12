@@ -1,3 +1,6 @@
+package Frames;
+import TableModel.InvoicesTableModel;
+
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -20,10 +23,14 @@ public class InvoicesTableFrame extends JFrame {
         mainModel=new InvoicesTableModel();
         mainTable = new JTable(mainModel);
         final TableRowSorter<InvoicesTableModel> sorter = new TableRowSorter<>(mainModel);
+        mainTable.setRowSorter(sorter);
+
         JPopupMenu mainPopupMenu = new JPopupMenu();
         final JTextField filterText = new JTextField("");
         final JButton addButton = new JButton("ADD");
         final JButton deleteButton = new JButton("DELETE");
+        final JMenuItem popupDelete = new JMenuItem("Delete");
+        final JMenuBar mainMenuBar = new JMenuBar();
 
 
         DocumentListener regexFilter = new DocumentListener() {
@@ -55,9 +62,11 @@ public class InvoicesTableFrame extends JFrame {
             }
         };
 
-        mainTable.setRowSorter(sorter);
-        //mainPopupMenu.add();
+        mainPopupMenu.add(popupDelete);
+        //aggiungo tramite la classe Frames.popupMenu la selezione automatica dell'elemento della tabella quando è premuto il tasto destro
         popupMenu.setupPopupMenu(mainTable, mainPopupMenu);
+
+        //
         add(new JScrollPane(mainTable), BorderLayout.CENTER);
         JPanel panel = new JPanel(new BorderLayout());
         JLabel label = new JLabel("Filter");
@@ -68,9 +77,9 @@ public class InvoicesTableFrame extends JFrame {
         //panel.add(addButton,BorderLayout.SOUTH);
         panel.add(deleteButton,BorderLayout.EAST);
         add(panel, BorderLayout.NORTH);
+        //add(mainMenuBar);
         /**
          * il listener per l'eliminazione è istanziato separatamente per essere utilizzato da più elementi.
-         *
          */
         ActionListener deleteListener= new ActionListener() {
             @Override
@@ -91,16 +100,17 @@ public class InvoicesTableFrame extends JFrame {
             }
         };
 
-
-
-        addButton.addActionListener(new ActionListener() {
+        ActionListener addListener= new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
             }
-        });
+        };
+
+        //addButton.addActionListener();
 
         deleteButton.addActionListener(deleteListener);
+        popupDelete.addActionListener(deleteListener);
 
         filterText.getDocument().addDocumentListener(regexFilter);
 
