@@ -1,4 +1,7 @@
+
+
 package Frames;
+
 import TableModel.InvoicesTableModel;
 
 import javax.swing.*;
@@ -8,10 +11,8 @@ import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.net.BindException;
 import java.util.regex.PatternSyntaxException;
+
 
 public class InvoicesTableFrame extends JFrame {
     private JTable mainTable;
@@ -78,6 +79,7 @@ public class InvoicesTableFrame extends JFrame {
         panel.add(deleteButton,BorderLayout.EAST);
         add(panel, BorderLayout.NORTH);
         //add(mainMenuBar);
+
         /**
          * il listener per l'eliminazione è istanziato separatamente per essere utilizzato da più elementi.
          */
@@ -108,7 +110,7 @@ public class InvoicesTableFrame extends JFrame {
         };
 
         //addButton.addActionListener();
-
+        addFrame addframe= new addFrame(mainModel);
         deleteButton.addActionListener(deleteListener);
         popupDelete.addActionListener(deleteListener);
 
