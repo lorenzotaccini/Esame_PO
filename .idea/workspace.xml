@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="aggiunto metodo addInvoice nella classe tablemodel">
-      <change afterPath="$PROJECT_DIR$/src/Frames/addPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jdatepicker_1_3_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Frames/DateLabelFormatter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Esame_PO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Esame_PO.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Frames/addFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frames/addFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Frames/addPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frames/addPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,11 +45,12 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/lollo/IdeaProjects/Esame_PO/src",
+    "last_opened_file_path": "C:/Users/lollo/Downloads/jdatepicker-1.3.4.jar",
     "onboarding.tips.debug.path": "/Users/lorenzo/IdeaProjects/Esame_PO/src/Main.java",
-    "project.structure.last.edited": "SDKs",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.keymap"

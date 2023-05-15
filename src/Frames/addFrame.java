@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class addFrame extends JFrame {
     public addFrame(InvoicesTableModel model) {
-        addPanel panel= new addPanel();
+        addPanel panel= new addPanel(model);
         add(panel);
 
         setSize(400, 300);

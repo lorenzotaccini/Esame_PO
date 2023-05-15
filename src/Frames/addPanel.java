@@ -3,6 +3,14 @@ package Frames;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.util.Properties;
+
+import TableModel.InvoicesTableModel;
+import org.jdatepicker.*;
+import org.jdatepicker.impl.JDatePanelImpl;
+import org.jdatepicker.impl.JDatePickerImpl;
+import org.jdatepicker.impl.UtilDateModel;
+
 
 public class addPanel extends JPanel {
 
@@ -10,7 +18,8 @@ public class addPanel extends JPanel {
     private JTextField amountTextField;
     private JTextField descriptionTextField;
 
-    public addPanel(){
+
+    public addPanel(InvoicesTableModel invModel){
         JLabel dateLabel= new JLabel("Date:");
         JLabel amountLabel= new JLabel("Amount:");
         JLabel descLabel= new JLabel("Description:");
@@ -25,7 +34,16 @@ public class addPanel extends JPanel {
         add(amountTextField,BorderLayout.CENTER);
         add(descLabel,BorderLayout.SOUTH);
         add(descTextField,BorderLayout.SOUTH);
-        add(addButton);
+        //add(addButton);
+
+        UtilDateModel model = new UtilDateModel();
+        Properties p = new Properties();
+        p.put("text.today", "Today");
+        p.put("text.month", "Month");
+        p.put("text.year", "Year");
+        JDatePanelImpl datePanel = new JDatePanelImpl(model,p);
+        JDatePickerImpl datePicker = new JDatePickerImpl(datePanel,new DateLabelFormatter());
+        add(datePicker);
     }
 
 }
