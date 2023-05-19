@@ -2,6 +2,7 @@
 
 package Frames;
 
+import DatePickerGUI.MyDatePicker;
 import TableModel.InvoicesTableModel;
 
 import javax.swing.*;
@@ -20,6 +21,14 @@ public class InvoicesTableFrame extends JFrame {
 
     public InvoicesTableFrame() {
         setTitle("Gestione Bilancio Taccini");
+
+
+        JPanel mainPanel=new JPanel(new BorderLayout(10,10));
+        JPanel topPanel=new JPanel(new BorderLayout(10,10));
+        JPanel tablePanel=new JPanel(new BorderLayout(10,10));
+        JPanel bottomPanel=new JPanel(new BorderLayout(10,10));
+        JPanel filterPanel=new JPanel(new BorderLayout(10,10));
+
 
         mainModel=new InvoicesTableModel();
         mainTable = new JTable(mainModel);
@@ -67,17 +76,18 @@ public class InvoicesTableFrame extends JFrame {
         //aggiungo tramite la classe Frames.popupMenu la selezione automatica dell'elemento della tabella quando è premuto il tasto destro
         popupMenu.setupPopupMenu(mainTable, mainPopupMenu);
 
-        //
-        add(new JScrollPane(mainTable), BorderLayout.CENTER);
-        JPanel panel = new JPanel(new BorderLayout());
-        JLabel label = new JLabel("Filter");
-        panel.add(label, BorderLayout.WEST);
 
+        tablePanel.add(new JScrollPane(mainTable));
+        JLabel filterLabel = new JLabel(" Filter:");
+        filterPanel.add(filterLabel, BorderLayout.WEST);
+        filterPanel.add(filterText, BorderLayout.CENTER);
+        bottomPanel.add(addButton,BorderLayout.WEST);
+        bottomPanel.add(deleteButton,BorderLayout.EAST);
 
-        panel.add(filterText, BorderLayout.CENTER);
-        //panel.add(addButton,BorderLayout.SOUTH);
-        panel.add(deleteButton,BorderLayout.EAST);
-        add(panel, BorderLayout.NORTH);
+        mainPanel.add(filterPanel, BorderLayout.NORTH);
+        mainPanel.add(tablePanel,BorderLayout.CENTER);
+        mainPanel.add(bottomPanel,BorderLayout.SOUTH);
+        add(mainPanel);
         //add(mainMenuBar);
 
         /**
@@ -105,12 +115,30 @@ public class InvoicesTableFrame extends JFrame {
         ActionListener addListener= new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                MyDatePicker addDatePicker= new MyDatePicker();
+                JTextField lastName = new JTextField();
+                JTextArea descriptionField= new JTextArea();
+                final JComponent[] inputsComponent = new JComponent[] {
+                        new JLabel("Date:"),
+                        addDatePicker,
+                        new JLabel("Amount"),
+                        lastName,
+                        new JLabel("Brief description:"),
+                        descriptionField
+                };
+                int addPanelExitStatus = JOptionPane.showConfirmDialog(tablePanel, inputsComponent, "Add an invoice", JOptionPane.OK_CANCEL_OPTION);
+                if (addPanelExitStatus == JOptionPane.OK_OPTION) {
+                    System.out.println("You entered " +
+                            addDatePicker.getDate().toString() + ", " +
+                            lastName.getText() + ", " +
+                            descriptionField.getText());
+                } else {
+                    System.out.println("User canceled/closed the dialog, exit status = " + addPanelExitStatus);
+                }
             }
         };
 
-        //addButton.addActionListener();
-        addFrame addframe= new addFrame(mainModel);
+        addButton.addActionListener(addListener);
         deleteButton.addActionListener(deleteListener);
         popupDelete.addActionListener(deleteListener);
 

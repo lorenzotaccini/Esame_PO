@@ -1,6 +1,5 @@
 import Frames.InvoicesTableFrame;
 import TableModel.Invoice;
-import Frames.addFrame;
 
 import java.time.LocalDateTime;
 
