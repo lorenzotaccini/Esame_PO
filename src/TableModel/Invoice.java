@@ -1,6 +1,7 @@
 package TableModel;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -8,10 +9,10 @@ public class Invoice {
     private String desc;
     /** il tipo di dato BigDecimal è adatto all'utilizzo in ambito monetario*/
     private double amount;
-    private LocalDateTime date;
+    private LocalDate date;
     private DateTimeFormatter formattedDate;
 
-    public Invoice(String desc, double amount, LocalDateTime date) {
+    public Invoice(String desc, double amount, LocalDate date) {
         this.desc = desc;
         this.amount = amount;
         this.date = date;
@@ -25,7 +26,7 @@ public class Invoice {
         return amount;
     }
 
-    public LocalDateTime getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
@@ -37,7 +38,7 @@ public class Invoice {
         this.amount = amount;
     }
 
-    public void setDate(LocalDateTime date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

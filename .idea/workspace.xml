@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="implementata con successo la libreria esterna JDatePicker :)">
-      <change afterPath="$PROJECT_DIR$/src/DatePickerGUI/MyDatePicker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_05_2023_11_23__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_05_2023_11_23__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_05_2023_14_14__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_05_2023_14_14__Changes_.xml" afterDir="false" />
+    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="prima implementazione della finestra di dialogo per l'aggiunta di invoices (work in progress)">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/flatlaf_3_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/flatlaf-3.1.1.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Esame_PO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Esame_PO.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/jdatepicker-1.3.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatePickerGUI/MyDatePicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatePickerGUI/MyDatePicker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Frames/addFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Frames/addPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frames/addPane.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TableModel/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TableModel/Invoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TableModel/InvoicesTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TableModel/InvoicesTableModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,27 +40,30 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2OjQqKgtr3wdp04uJZ4WQy4yrgc" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/lollo/IdeaProjects/Esame_PO/lib/LGoodDatePicker-11.2.1.jar&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/lorenzo/IdeaProjects/Esame_PO/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/lollo/IdeaProjects/Esame_PO/lib/flatlaf-3.1.1.jar",
+    "onboarding.tips.debug.path": "/Users/lorenzo/IdeaProjects/Esame_PO/src/Main.java",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\lollo\IdeaProjects\Esame_PO\src" />
@@ -130,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684154177858</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="prima implementazione della finestra di dialogo per l'aggiunta di invoices (work in progress)">
+      <created>1684511193334</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1684511193334</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -157,13 +169,15 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="create le classi invoice e invoicetablemodel" />
     <MESSAGE value="aggiunto metodo addInvoice nella classe tablemodel" />
     <MESSAGE value="le celle desc e amount sono ora editabili.&#10;Cambiato tipo di dato di amount da BigDecimal a doubel" />
     <MESSAGE value="aggiunto deleteListener (untested)" />
     <MESSAGE value="ora è possibile eliminare le righe selezionate tramite mouse (tested)" />
     <MESSAGE value="implementata con successo la libreria esterna JDatePicker :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementata con successo la libreria esterna JDatePicker :)" />
+    <MESSAGE value="prima implementazione della finestra di dialogo per l'aggiunta di invoices (work in progress)" />
+    <option name="LAST_COMMIT_MESSAGE" value="prima implementazione della finestra di dialogo per l'aggiunta di invoices (work in progress)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
