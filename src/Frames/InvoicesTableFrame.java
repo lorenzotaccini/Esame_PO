@@ -3,6 +3,7 @@
 package Frames;
 
 import DatePickerGUI.MyDatePicker;
+import TableModel.Invoice;
 import TableModel.InvoicesTableModel;
 
 import javax.swing.*;
@@ -16,7 +17,7 @@ import java.util.regex.PatternSyntaxException;
 
 
 public class InvoicesTableFrame extends JFrame {
-    private JTable mainTable;
+    private final JTable mainTable;
     public InvoicesTableModel mainModel;
 
     public InvoicesTableFrame() {
@@ -51,9 +52,9 @@ public class InvoicesTableFrame extends JFrame {
                     sorter.setRowFilter(null);
                 } else {
                     try {
-                        /**
-                         * il RowFilter può essere impostato per controllare le regex solo su specifici campi del
-                         * table model, è sufficiente passargli gli indici delle colonne su cui deve operare.
+                        /*
+                          il RowFilter può essere impostato per controllare le regex solo su specifici campi del
+                          table model, è sufficiente passargli gli indici delle colonne su cui deve operare.
                          */
                         sorter.setRowFilter(RowFilter.regexFilter(text));
                     } catch(PatternSyntaxException pse) {
@@ -90,9 +91,8 @@ public class InvoicesTableFrame extends JFrame {
         add(mainPanel);
         //add(mainMenuBar);
 
-        /**
-         * il listener per l'eliminazione è istanziato separatamente per essere utilizzato da più elementi.
-         */
+
+        //il listener per l'eliminazione è istanziato separatamente per essere utilizzato da più elementi.
         ActionListener deleteListener= new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -116,22 +116,22 @@ public class InvoicesTableFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 MyDatePicker addDatePicker= new MyDatePicker();
-                JTextField lastName = new JTextField();
-                JTextArea descriptionField= new JTextArea();
+                JTextField amountField = new JTextField();
+                JTextArea descriptionField= new JTextArea(5,20);
+                descriptionField.setFont(new Font("corsivo",Font.ITALIC,descriptionField.getFont().getSize()));
+
                 final JComponent[] inputsComponent = new JComponent[] {
                         new JLabel("Date:"),
                         addDatePicker,
                         new JLabel("Amount"),
-                        lastName,
+                        amountField,
                         new JLabel("Brief description:"),
                         descriptionField
                 };
-                int addPanelExitStatus = JOptionPane.showConfirmDialog(tablePanel, inputsComponent, "Add an invoice", JOptionPane.OK_CANCEL_OPTION);
+                int addPanelExitStatus = JOptionPane.showConfirmDialog(tablePanel, inputsComponent, "Add an invoice", JOptionPane.DEFAULT_OPTION);
+
                 if (addPanelExitStatus == JOptionPane.OK_OPTION) {
-                    System.out.println("You entered " +
-                            addDatePicker.getDate().toString() + ", " +
-                            lastName.getText() + ", " +
-                            descriptionField.getText());
+                    mainModel.addInvoice(new Invoice(descriptionField.getText(),Float.parseFloat(amountField.getText()), addDatePicker.getDate()));
                 } else {
                     System.out.println("User canceled/closed the dialog, exit status = " + addPanelExitStatus);
                 }

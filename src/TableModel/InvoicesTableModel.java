@@ -3,6 +3,7 @@ package TableModel;
 import TableModel.Invoice;
 
 import javax.swing.table.AbstractTableModel;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -30,7 +31,7 @@ public class InvoicesTableModel extends AbstractTableModel {
     }
 
     /** metodo per aggiungere elementi alla tabella, viene notificato il cambiamento a tutti i listener */
-    public void addInvoice(String desc, double amount, LocalDateTime date) {
+    public void addInvoice(String desc, double amount, LocalDate date) {
         invoiceSet.add(new Invoice(desc,amount,date));
         fireTableDataChanged();
     }
@@ -38,6 +39,7 @@ public class InvoicesTableModel extends AbstractTableModel {
         invoiceSet.add(t);
         fireTableDataChanged();
     }
+
     /** Si utilizza un oggetto di classe Iterator per scorrere il vettore arrayList e rimuovere l'oggetto*/
     public void deleteInvoice(Invoice delItem){
         Iterator<Invoice> itr = invoiceSet.iterator();
