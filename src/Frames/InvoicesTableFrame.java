@@ -97,7 +97,6 @@ public class InvoicesTableFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int [] vSel= mainTable.getSelectedRows();
-                System.out.println(vSel.length);
 
                 //scorro gli elementi dall'ultimo per evitare il cambio di indice nel tablemodel
                 for(int actualIndex = vSel.length-1; actualIndex>=0; actualIndex--){

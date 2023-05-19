@@ -1,12 +1,10 @@
 package Frames;
 
 import TableModel.InvoicesTableModel;
-import com.github.lgooddatepicker.components.*;
-//import org.jdatepicker.*;
-//import org.jdatepicker.impl.JDatePanelImpl;
-//import org.jdatepicker.impl.JDatePickerImpl;
-//import org.jdatepicker.impl.UtilDateModel;
-
+import com.github.lgooddatepicker.components.DatePicker;
+import com.github.lgooddatepicker.components.DatePickerSettings;
+import com.github.lgooddatepicker.components.TimePicker;
+import com.github.lgooddatepicker.components.TimePickerSettings;
 
 import javax.swing.*;
 import java.awt.*;

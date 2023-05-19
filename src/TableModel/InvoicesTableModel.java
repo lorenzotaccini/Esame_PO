@@ -1,17 +1,14 @@
 package TableModel;
 
-import TableModel.Invoice;
-
 import javax.swing.table.AbstractTableModel;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
  * Classe TableModel che estende la classe AbstractTableModel per adattarla alle esigenze del progetto.
  * Si utilizza una ArrayList come struttura dati per il salvataggio e la gestione delle voci di bilancio.
- *
+ * (Oggetto Vector ormai deprecato)
  */
 public class InvoicesTableModel extends AbstractTableModel {
     /**
@@ -35,6 +32,7 @@ public class InvoicesTableModel extends AbstractTableModel {
         invoiceSet.add(new Invoice(desc,amount,date));
         fireTableDataChanged();
     }
+    /** metodo per aggiungere elementi alla tabella, viene notificato il cambiamento a tutti i listener */
     public void addInvoice(Invoice t) {
         invoiceSet.add(t);
         fireTableDataChanged();
@@ -85,6 +83,10 @@ public class InvoicesTableModel extends AbstractTableModel {
     public Invoice getInvoiceAtRow(int index){
         return invoiceSet.get(index);
     }
+
+    /**
+     * @return 1 se la cella è editabile, 0 altrimenti
+     */
     @Override
     public boolean isCellEditable(int rowIndex, int columnIndex)
     {
@@ -92,7 +94,8 @@ public class InvoicesTableModel extends AbstractTableModel {
     }
 
 
-    /** Metodo che restituisce la classe del dato contenuto in una certa colonna */
+    /** Metodo che restituisce la classe del dato contenuto in una certa colonna
+     * @return Classe del dato in colonna columnIndex */
     @Override
     public Class<?> getColumnClass(int columnIndex) {
         //si guarda alla prima riga

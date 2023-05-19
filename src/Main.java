@@ -1,30 +1,30 @@
 import Frames.InvoicesTableFrame;
 import TableModel.Invoice;
-
-import javax.swing.*;
-import java.awt.*;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-
-import com.formdev.flatlaf.*;
-import com.formdev.flatlaf.themes.FlatMacDarkLaf;
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
 
-// Press ⇧ twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import javax.swing.*;
+import javax.swing.plaf.ColorUIResource;
+import java.awt.*;
+import java.time.LocalDate;
+
+
 public class Main {
     public static void initUI(){
         try {
 
-            UIManager.setLookAndFeel( new FlatDarculaLaf() );
+            //FlatLaf.setGlobalExtraDefaults(Collections.singletonMap("@accentColor", "#521fa3"));
+            UIManager.setLookAndFeel( new FlatMacLightLaf() );
             UIManager.put("Table.showVerticalLines",true);
             UIManager.put("Table.showHorizontalLines",true);
-            UIManager.put( "Button.arc", 30 );
-            UIManager.put( "Component.arc", 30 );
-            UIManager.put( "ProgressBar.arc", 30 );
-            UIManager.put( "TextComponent.arc", 30 );
+            UIManager.put( "Button.arc", 10 );
+            UIManager.put( "Component.arc", 10 );
+            UIManager.put( "ProgressBar.arc", 10 );
+            UIManager.put( "TextComponent.arc", 10 );
             UIManager.put( "ScrollBar.thumbArc", 999 );
             UIManager.put( "ScrollBar.thumbInsets", new Insets( 2, 2, 2, 2 ) );
+            UIManager.put( "Table.intercellSpacing", new Dimension( 0, 1 ) );
+            UIManager.put( "Table.selectionBackground", new ColorUIResource(216, 223, 255));
+            UIManager.put( "Table.selectionForeground", new ColorUIResource(0, 0, 0));
         } catch( Exception ex ) {
             System.err.println( "Failed to initialize LaF" );
         }
@@ -37,16 +37,18 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        //applicazione di look and feel personalizzati
+        //applicazione di look and feel personalizzati basati su FlatLaF
         initUI();
 
         //generazione frame principale
         InvoicesTableFrame frame=new InvoicesTableFrame();
+
+        //aggiunta dati di test
         frame.mainModel.addInvoice(new Invoice("miao",10, LocalDate.now()));
         frame.mainModel.addInvoice(new Invoice("bau",13,LocalDate.now()));
         frame.mainModel.addInvoice(new Invoice("prova",10.67,LocalDate.now()));
         frame.mainModel.addInvoice(new Invoice("miao",10,LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("bau",13,LocalDate.now()));
+        frame.mainModel.addInvoice(new Invoice("bau",13,LocalDate.ofYearDay(2001,256)));
         frame.mainModel.addInvoice(new Invoice("prova",10.67,LocalDate.now()));
         frame.mainModel.addInvoice(new Invoice("miao",10,LocalDate.now()));
         frame.mainModel.addInvoice(new Invoice("bau",13,LocalDate.now()));

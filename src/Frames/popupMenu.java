@@ -10,7 +10,9 @@ public class popupMenu {
 
             @Override
             public void mouseReleased(MouseEvent e) {
+                //viene premuto il tasto destro su un elemento della tabella
                 if (e.getButton() == MouseEvent.BUTTON3) {
+                    //ottengo la riga della tabella presente sotto al puntatore del mouse
                     int r = table.rowAtPoint(e.getPoint());
                     if (r >= 0 && r < table.getRowCount()) {
                         table.setRowSelectionInterval(r, r);
