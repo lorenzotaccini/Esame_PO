@@ -3,6 +3,7 @@ package Frames;
 import DatePickerGUI.MyDatePicker;
 import Listeners.addListener;
 import Listeners.deleteListener;
+import Listeners.editListener;
 import TableModel.Invoice;
 import TableModel.InvoicesTableModel;
 
@@ -45,6 +46,7 @@ public class InvoicesTableFrame extends JFrame {
         final JButton addButton = new JButton("ADD");
         final JButton deleteButton = new JButton("DELETE");
         final JMenuItem popupDelete = new JMenuItem("Delete");
+        final JMenuItem popupEdit = new JMenuItem("Edit Row");
         final JMenuBar mainMenuBar = new JMenuBar();
 
         //necessaria la creazione di un rowfilter solo per le date (searchbox vuota)
@@ -116,6 +118,7 @@ public class InvoicesTableFrame extends JFrame {
 //            }
 
         mainPopupMenu.add(popupDelete);
+        mainPopupMenu.add(popupEdit);
         //aggiungo tramite la classe Frames.popupMenu la selezione automatica dell'elemento della tabella quando è premuto il tasto destro
         popupMenuSettings.setupPopupMenu(mainTable, mainPopupMenu);
 
@@ -183,6 +186,7 @@ public class InvoicesTableFrame extends JFrame {
         addButton.addActionListener(new addListener(mainModel,tablePanel));
         deleteButton.addActionListener(new deleteListener(mainModel,mainTable));
         popupDelete.addActionListener(new deleteListener(mainModel,mainTable));
+        popupEdit.addActionListener(new editListener(mainModel,mainTable));
         filterText.getDocument().addDocumentListener(regexFilter);
 
         setSize(600, 500);

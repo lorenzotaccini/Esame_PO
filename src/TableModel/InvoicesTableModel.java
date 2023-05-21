@@ -78,6 +78,7 @@ public class InvoicesTableModel extends AbstractTableModel {
     public void setValueAt(Object aValue, int rowIndex, int columnIndex)
     {
         switch (columnIndex){
+            case 0 -> invoiceSet.get(rowIndex).setDate((LocalDate) aValue);
             case 1 -> invoiceSet.get(rowIndex).setAmount((Double) aValue);
             case 2 -> invoiceSet.get(rowIndex).setDesc(((String) aValue));
         }
