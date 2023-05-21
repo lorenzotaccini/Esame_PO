@@ -4,7 +4,10 @@ import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class popupMenu {
+/**
+ * la classe aggiunge il pop
+ */
+public class popupMenuSettings {
     public static void setupPopupMenu(JTable table,final JPopupMenu popupMenu) {
         table.addMouseListener(new MouseAdapter() {
 

@@ -1,5 +1,8 @@
 package TableModel;
 
+import DatePickerGUI.MyDatePicker;
+
+import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -90,7 +93,7 @@ public class InvoicesTableModel extends AbstractTableModel {
     @Override
     public boolean isCellEditable(int rowIndex, int columnIndex)
     {
-        return columnIndex > 0;
+        return true;
     }
 
 
