@@ -4,6 +4,7 @@ import DatePickerGUI.MyDatePicker;
 import TableModel.InvoicesTableModel;
 
 import javax.swing.*;
+import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,14 +13,25 @@ import java.time.LocalDate;
 public class editListener implements ActionListener {
     private InvoicesTableModel model;
     private JTable table;
-    public editListener(InvoicesTableModel model, JTable table) {
+    private final TableRowSorter<InvoicesTableModel> parentSorter;
+    public editListener(TableRowSorter<InvoicesTableModel> parentSorter,InvoicesTableModel model, JTable table) {
         this.model=model;
         this.table=table;
+        this.parentSorter=parentSorter;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        int index=table.getSelectedRow();
+        int index, mappedindex;
+        if(parentSorter.getRowFilter() == null) {
+            index = table.getSelectedRow();
+        }
+        else{
+            index=table.getSelectedRow();
+            mappedindex= parentSorter.convertRowIndexToModel(index);
+            index=mappedindex;
+        }
+
         MyDatePicker addDatePicker= new MyDatePicker();
         addDatePicker.setDate((LocalDate) model.getValueAt(index,0));
         JTextField amountField = new JTextField();

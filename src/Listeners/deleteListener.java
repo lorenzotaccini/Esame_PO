@@ -20,7 +20,7 @@ public class deleteListener implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) { //TODO mappa elementi in caso di sorter attivo
+    public void actionPerformed(ActionEvent e) {
 
         int[] vSel = new int[mainTable.getSelectedRows().length];
         int[] mappedVector = new int[parentSorter.getViewRowCount()];

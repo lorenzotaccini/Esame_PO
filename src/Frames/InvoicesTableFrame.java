@@ -164,7 +164,7 @@ public class InvoicesTableFrame extends JFrame {
         addButton.addActionListener(new addListener(mainModel,tablePanel));
         deleteButton.addActionListener(new deleteListener(sorter,mainModel,mainTable));
         popupDelete.addActionListener(new deleteListener(sorter,mainModel,mainTable));
-        popupEdit.addActionListener(new editListener(mainModel,mainTable));
+        popupEdit.addActionListener(new editListener(sorter,mainModel,mainTable));
         filterText.getDocument().addDocumentListener(regexFilter);
 
         setSize(600, 500);
