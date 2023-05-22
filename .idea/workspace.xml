@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="modifica di parametri FlatLaF, aggiunta di commenti JavaDoc, ottimizzazione imports">
-      <change afterPath="$PROJECT_DIR$/src/Listeners/editListener.java" afterDir="false" />
+    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="Listeners spostati in classi dedicate.&#10;Creazione del package &quot;Listeners&quot;.">
+      <change afterPath="$PROJECT_DIR$/src/Frames/statusPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Listeners/totalListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatePickerGUI/MyDatePicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatePickerGUI/MyDatePicker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Frames/popupMenuSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frames/popupMenuSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Listeners/addListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/addListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Listeners/deleteListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/deleteListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Listeners/editListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/editListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TableModel/InvoicesTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TableModel/InvoicesTableModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

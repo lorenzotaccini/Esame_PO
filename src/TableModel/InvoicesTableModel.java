@@ -1,6 +1,7 @@
 package TableModel;
 
 import DatePickerGUI.MyDatePicker;
+import Listeners.totalListener;
 
 import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
@@ -18,11 +19,20 @@ public class InvoicesTableModel extends AbstractTableModel {
      * ArrayList di generics di tipo invoice
      */
     private final ArrayList<Invoice> invoiceSet;
+    private double total=0;
     String[] columnNames = {"Date", "Amount", "Description"};
 
     public InvoicesTableModel() {
         super();
         invoiceSet=new ArrayList<>();
+    }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
     }
 
     @Override
@@ -35,9 +45,11 @@ public class InvoicesTableModel extends AbstractTableModel {
         invoiceSet.add(new Invoice(desc,amount,date));
         fireTableDataChanged();
     }
+
     /** metodo per aggiungere elementi alla tabella, viene notificato il cambiamento a tutti i listener */
     public void addInvoice(Invoice t) {
         invoiceSet.add(t);
+        total=total+t.getAmount();
         fireTableDataChanged();
     }
 
@@ -47,6 +59,7 @@ public class InvoicesTableModel extends AbstractTableModel {
         while(itr.hasNext()){
             Invoice actual= itr.next();
             if(delItem.equals(actual)){
+                total=total-actual.getAmount();
                 itr.remove(); //rimozione dell'elemento tramite iteratore
                 fireTableDataChanged();
                 return;

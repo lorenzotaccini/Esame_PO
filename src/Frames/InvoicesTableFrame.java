@@ -1,10 +1,9 @@
 package Frames;
 
-import DatePickerGUI.MyDatePicker;
 import Listeners.addListener;
 import Listeners.deleteListener;
 import Listeners.editListener;
-import TableModel.Invoice;
+import Listeners.totalListener;
 import TableModel.InvoicesTableModel;
 
 import javax.swing.*;
@@ -12,17 +11,13 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.PatternSyntaxException;
 
 
 public class InvoicesTableFrame extends JFrame {
     private final JTable mainTable;
     public InvoicesTableModel mainModel; //TODO metodo private quando togli dati di esempio dal main
-    private String searchedText;
+
 
     public InvoicesTableFrame() {
         setTitle("Gestione Bilancio Taccini");
@@ -48,6 +43,7 @@ public class InvoicesTableFrame extends JFrame {
         final JMenuItem popupDelete = new JMenuItem("Delete");
         final JMenuItem popupEdit = new JMenuItem("Edit Row");
         final JMenuBar mainMenuBar = new JMenuBar();
+        final JLabel totalLabel = new JLabel();
 
         //necessaria la creazione di un rowfilter solo per le date (searchbox vuota)
         //e di un rowfilter in and tra data e regex (filtro date attivato, searchbox non vuota)
@@ -98,25 +94,6 @@ public class InvoicesTableFrame extends JFrame {
             }
         };
 
-        //        DocumentListener regexFilter = new DocumentListener() {
-//            @Override
-//            public void insertUpdate(DocumentEvent e) {
-//                String text = filterText.getText();
-//                if(text.length() == 0) {
-//                    sorter.setRowFilter(null);
-//                } else {
-//                    try {
-//                        /*
-//                          il RowFilter può essere impostato per controllare le regex solo su specifici campi del
-//                          table model, è sufficiente passargli gli indici delle colonne su cui deve operare.
-//                         */
-//                        sorter.setRowFilter(RowFilter.regexFilter(text));
-//                    } catch(PatternSyntaxException pse) {
-//                        System.out.println("Bad regex pattern");
-//                    }
-//                }
-//            }
-
         mainPopupMenu.add(popupDelete);
         mainPopupMenu.add(popupEdit);
         //aggiungo tramite la classe Frames.popupMenu la selezione automatica dell'elemento della tabella quando è premuto il tasto destro
@@ -129,6 +106,7 @@ public class InvoicesTableFrame extends JFrame {
         filterPanel.add(filterText, BorderLayout.CENTER);
         bottomPanel.add(addButton,BorderLayout.WEST);
         bottomPanel.add(deleteButton,BorderLayout.EAST);
+        bottomPanel.add(new statusPanel(this).add(totalLabel),BorderLayout.SOUTH);
 
         mainPanel.add(filterPanel, BorderLayout.NORTH);
         mainPanel.add(tablePanel,BorderLayout.CENTER);
@@ -182,10 +160,10 @@ public class InvoicesTableFrame extends JFrame {
 //                }
 //            }
 //        };
-
+        mainModel.addTableModelListener(new totalListener(totalLabel,mainModel));
         addButton.addActionListener(new addListener(mainModel,tablePanel));
-        deleteButton.addActionListener(new deleteListener(mainModel,mainTable));
-        popupDelete.addActionListener(new deleteListener(mainModel,mainTable));
+        deleteButton.addActionListener(new deleteListener(sorter,mainModel,mainTable));
+        popupDelete.addActionListener(new deleteListener(sorter,mainModel,mainTable));
         popupEdit.addActionListener(new editListener(mainModel,mainTable));
         filterText.getDocument().addDocumentListener(regexFilter);
 

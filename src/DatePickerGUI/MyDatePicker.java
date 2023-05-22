@@ -1,9 +1,10 @@
 package DatePickerGUI;
 
-import com.github.lgooddatepicker.components.*;
+import com.github.lgooddatepicker.components.DatePicker;
+import com.github.lgooddatepicker.components.DatePickerSettings;
+
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 
 

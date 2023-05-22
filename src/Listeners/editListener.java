@@ -1,7 +1,6 @@
 package Listeners;
 
 import DatePickerGUI.MyDatePicker;
-import TableModel.Invoice;
 import TableModel.InvoicesTableModel;
 
 import javax.swing.*;
@@ -36,11 +35,15 @@ public class editListener implements ActionListener {
                 new JLabel("Brief description:"),
                 descriptionField
         };
-        int editPanelExitStatus = JOptionPane.showConfirmDialog(table, inputsComponent, "Edit the invoice", JOptionPane.DEFAULT_OPTION);
+        int editPanelExitStatus = JOptionPane.showConfirmDialog(table, inputsComponent, "Edit selected invoice", JOptionPane.DEFAULT_OPTION,JOptionPane.PLAIN_MESSAGE);
         if (editPanelExitStatus == JOptionPane.OK_OPTION) {
-            model.setValueAt(addDatePicker.getDate(),index,0);
-            model.setValueAt(Double.parseDouble((amountField.getText())),index,1);
-            model.setValueAt(descriptionField.getText(),index,2);
+            try {
+                model.setValueAt(addDatePicker.getDate(), index, 0);
+                model.setValueAt(Double.parseDouble((amountField.getText())), index, 1);
+                model.setValueAt(descriptionField.getText(), index, 2);
+            }catch(Exception p){
+                JOptionPane.showMessageDialog(table,"Wrong input format in one of the input fields. No modifications applied.");
+            }
 
         } else {
             System.out.println("User canceled/closed the dialog, exit status = " + editPanelExitStatus);
