@@ -26,7 +26,7 @@ public class Main {
             UIManager.put( "Table.selectionBackground", new ColorUIResource(216, 223, 255));
             UIManager.put( "Table.selectionForeground", new ColorUIResource(0, 0, 0));
         } catch( Exception ex ) {
-            System.err.println( "Failed to initialize LaF" );
+            System.err.println( "Failed to initialize FlatLaF" );
         }
     }
 

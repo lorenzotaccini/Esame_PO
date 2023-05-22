@@ -37,7 +37,6 @@ public class addListener implements ActionListener {
         int addPanelExitStatus = JOptionPane.showConfirmDialog(tablePanel, inputsComponent, "Add an invoice", JOptionPane.DEFAULT_OPTION);
         if (addPanelExitStatus == JOptionPane.OK_OPTION) {
             model.addInvoice(new Invoice(descriptionField.getText(),Double.parseDouble(amountField.getText()), addDatePicker.getDate()));
-
         } else {
             System.out.println("User canceled/closed the dialog, exit status = " + addPanelExitStatus);
         }

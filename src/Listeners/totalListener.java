@@ -17,6 +17,6 @@ public class totalListener implements TableModelListener {
     }
     @Override
     public void tableChanged(TableModelEvent e) {
-        totalLabel.setText("Total income:"+model.getTotal());
-    }
+        totalLabel.setText("Total income: "+model.getTotal());
+    } //TODO totale in base al filter
 }

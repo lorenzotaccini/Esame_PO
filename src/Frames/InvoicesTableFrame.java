@@ -1,9 +1,6 @@
 package Frames;
 
-import Listeners.addListener;
-import Listeners.deleteListener;
-import Listeners.editListener;
-import Listeners.totalListener;
+import Listeners.*;
 import TableModel.InvoicesTableModel;
 
 import javax.swing.*;
@@ -15,7 +12,6 @@ import java.util.regex.PatternSyntaxException;
 
 
 public class InvoicesTableFrame extends JFrame {
-    private final JTable mainTable;
     public InvoicesTableModel mainModel; //TODO metodo private quando togli dati di esempio dal main
 
 
@@ -28,10 +24,11 @@ public class InvoicesTableFrame extends JFrame {
         JPanel tablePanel=new JPanel(new BorderLayout(10,10));
         JPanel bottomPanel=new JPanel(new BorderLayout(10,10));
         JPanel filterPanel=new JPanel(new BorderLayout(10,10));
+        JPanel filterTypeSelectionPanel= new JPanel(new BorderLayout(10,10));
 
 
         mainModel=new InvoicesTableModel();
-        mainTable = new JTable(mainModel);
+        JTable mainTable = new JTable(mainModel);
 
         final TableRowSorter<InvoicesTableModel> sorter = new TableRowSorter<>(mainModel);
         mainTable.setRowSorter(sorter);
@@ -44,9 +41,11 @@ public class InvoicesTableFrame extends JFrame {
         final JMenuItem popupEdit = new JMenuItem("Edit Row");
         final JMenuBar mainMenuBar = new JMenuBar();
         final JLabel totalLabel = new JLabel();
+        final JLabel partialLabel = new JLabel();
+        final JLabel filterTypeSelectionLabel= new JLabel("Filter by: ");
 
-        //necessaria la creazione di un rowfilter solo per le date (searchbox vuota)
-        //e di un rowfilter in and tra data e regex (filtro date attivato, searchbox non vuota)
+        //necessaria la creazione di un rowfilter solo per le date
+
 
 //        //filtro sole date
 //        List<RowFilter<Object,Object>> dateFilterIntervalArray = new ArrayList<RowFilter<Object,Object>>(2);
@@ -54,12 +53,7 @@ public class InvoicesTableFrame extends JFrame {
 //        dateFilterIntervalArray.add( RowFilter.dateFilter(RowFilter.ComparisonType.BEFORE, endDate) );
 //        RowFilter<Object, Object> dateIntervalRowFilter = RowFilter.andFilter(dateFilterIntervalArray); //andfilter tra data inizio e data fine
 //
-//        //filtro in and tra date e regex
-//        searchedText = null;
-//        List<RowFilter<Object,Object>> filtersArray = new ArrayList<>(2);
-//        filtersArray.add(RowFilter.regexFilter(searchedText));
-//        filtersArray.add(dateIntervalRowFilter);
-//        RowFilter<Object, Object> dateAndRegexRowFilter = RowFilter.andFilter(filtersArray); //andfilter tra data inizio e data fine
+
 
 
         DocumentListener regexFilter = new DocumentListener() {
@@ -94,6 +88,23 @@ public class InvoicesTableFrame extends JFrame {
             }
         };
 
+        DocumentListener dateFilter= new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+
+            }
+        };
+
         mainPopupMenu.add(popupDelete);
         mainPopupMenu.add(popupEdit);
         //aggiungo tramite la classe Frames.popupMenu la selezione automatica dell'elemento della tabella quando è premuto il tasto destro
@@ -115,56 +126,12 @@ public class InvoicesTableFrame extends JFrame {
         //add(mainMenuBar);
 
 
-
-//        //il listener per l'eliminazione è istanziato separatamente per essere utilizzato da più elementi.
-//        ActionListener deleteListener= new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                int [] vSel= mainTable.getSelectedRows();
-//
-//                //scorro gli elementi dall'ultimo per evitare il cambio di indice nel tablemodel
-//                for(int actualIndex = vSel.length-1; actualIndex>=0; actualIndex--){
-//                    try {
-//                        mainModel.deleteInvoice(mainModel.getInvoiceAtRow(vSel[actualIndex]));
-//                    }
-//                    //Indexoutofboundexception quando cancello l'ultimo elemento presente nell'arraylist (unsolved)
-//                    catch (IndexOutOfBoundsException iob){
-//                        System.out.println("\nTable is now empty\n");
-//                    }
-//                }
-//            }
-//        };
-
-//        ActionListener addListener= new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                MyDatePicker addDatePicker= new MyDatePicker();
-//                JTextField amountField = new JTextField();
-//                JTextArea descriptionField= new JTextArea(5,20);
-//                descriptionField.setFont(new Font("corsivo",Font.ITALIC,descriptionField.getFont().getSize()));
-//
-//                final JComponent[] inputsComponent = new JComponent[] {
-//                        new JLabel("Date:"),
-//                        addDatePicker,
-//                        new JLabel("Amount"),
-//                        amountField,
-//                        new JLabel("Brief description:"),
-//                        descriptionField
-//                };
-//                int addPanelExitStatus = JOptionPane.showConfirmDialog(tablePanel, inputsComponent, "Add an invoice", JOptionPane.DEFAULT_OPTION);
-//
-//                if (addPanelExitStatus == JOptionPane.OK_OPTION) {
-//                    mainModel.addInvoice(new Invoice(descriptionField.getText(),Float.parseFloat(amountField.getText()), addDatePicker.getDate()));
-//                } else {
-//                    System.out.println("User canceled/closed the dialog, exit status = " + addPanelExitStatus);
-//                }
-//            }
-//        };
+        sorter.addRowSorterListener(new sorterListener(partialLabel));
         mainModel.addTableModelListener(new totalListener(totalLabel,mainModel));
         addButton.addActionListener(new addListener(mainModel,tablePanel));
-        deleteButton.addActionListener(new deleteListener(sorter,mainModel,mainTable));
-        popupDelete.addActionListener(new deleteListener(sorter,mainModel,mainTable));
-        popupEdit.addActionListener(new editListener(sorter,mainModel,mainTable));
+        deleteButton.addActionListener(new deleteListener(sorter,mainModel, mainTable));
+        popupDelete.addActionListener(new deleteListener(sorter,mainModel, mainTable));
+        popupEdit.addActionListener(new editListener(sorter,mainModel, mainTable));
         filterText.getDocument().addDocumentListener(regexFilter);
 
         setSize(600, 500);
