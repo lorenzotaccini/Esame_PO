@@ -57,6 +57,7 @@ public class editListener implements ActionListener {
                 model.setValueAt(addDatePicker.getDate(), index, 0);
                 model.setValueAt(Double.parseDouble((amountField.getText())), index, 1);
                 model.setValueAt(descriptionField.getText(), index, 2);
+                model.fireTableDataChanged();
             } catch (NumberFormatException exception){
                 JOptionPane.showMessageDialog(table,"wrong number format, \"ADD\" operation canceled");
             }

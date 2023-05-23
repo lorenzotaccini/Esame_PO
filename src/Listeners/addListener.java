@@ -42,6 +42,7 @@ public class addListener implements ActionListener {
                     throw (new DateTimeException("wrong date"));
                 }
                 model.addInvoice(new Invoice(descriptionField.getText(), Double.parseDouble(amountField.getText()), addDatePicker.getDate()));
+                model.fireTableDataChanged();
             } catch (NumberFormatException exception){
                 JOptionPane.showMessageDialog(tablePanel,"wrong number format, \"ADD\" operation canceled");
             }

@@ -92,9 +92,14 @@ public class InvoicesTableModel extends AbstractTableModel {
     {
         switch (columnIndex){
             case 0 -> invoiceSet.get(rowIndex).setDate((LocalDate) aValue);
-            case 1 -> invoiceSet.get(rowIndex).setAmount((Double) aValue);
+            case 1 -> {
+                total -= invoiceSet.get(rowIndex).getAmount();
+                invoiceSet.get(rowIndex).setAmount((Double) aValue);
+                total+= invoiceSet.get(rowIndex).getAmount();
+            }
             case 2 -> invoiceSet.get(rowIndex).setDesc(((String) aValue));
         }
+        fireTableDataChanged();
     }
 
     public Invoice getInvoiceAtRow(int index){
@@ -107,7 +112,7 @@ public class InvoicesTableModel extends AbstractTableModel {
     @Override
     public boolean isCellEditable(int rowIndex, int columnIndex)
     {
-        return true;
+        return false;
     }
 
 

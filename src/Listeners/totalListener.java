@@ -9,7 +9,7 @@ import javax.swing.event.TableModelListener;
 public class totalListener implements TableModelListener {
 
     private JLabel totalLabel;
-    private final InvoicesTableModel model;
+    private InvoicesTableModel model;
 
     public totalListener(JLabel totalLabel, InvoicesTableModel model) {
         this.totalLabel = totalLabel;
@@ -17,6 +17,7 @@ public class totalListener implements TableModelListener {
     }
     @Override
     public void tableChanged(TableModelEvent e) {
-        totalLabel.setText("Total income: "+model.getTotal());
-    } //TODO totale in base al filter
+        totalLabel.setText(" Total income: "+model.getTotal());
+        System.out.println("aoaoaoo");
+    }
 }

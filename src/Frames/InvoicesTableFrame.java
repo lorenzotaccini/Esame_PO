@@ -32,6 +32,7 @@ public class InvoicesTableFrame extends JFrame {
         mainModel=new InvoicesTableModel();
         JTable mainTable = new JTable(mainModel);
 
+
         final TableRowSorter<InvoicesTableModel> sorter = new TableRowSorter<>(mainModel);
         mainTable.setRowSorter(sorter);
 
@@ -46,6 +47,8 @@ public class InvoicesTableFrame extends JFrame {
         final JLabel partialLabel = new JLabel();
         final JLabel filterTypeSelectionLabel= new JLabel("Filter by: ");
         final JButton restoreFiltersBtn = new JButton("RESTORE");
+
+
 
 
         //JRadioButton
@@ -97,8 +100,7 @@ public class InvoicesTableFrame extends JFrame {
         ActionListener dateRangeListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                switch(e.getActionCommand()){
-                }
+
             }
         };
 
@@ -110,8 +112,8 @@ public class InvoicesTableFrame extends JFrame {
         popupMenuSettings.setupPopupMenu(mainTable, mainPopupMenu);
 
 
-        tablePanel.add(new JScrollPane(mainTable),BorderLayout.NORTH);
-        //tablePanel.add(restoreFiltersBtn,BorderLayout.PAGE_END);
+        tablePanel.add(new JScrollPane(mainTable));
+        tablePanel.add(restoreFiltersBtn,BorderLayout.PAGE_END);
         JLabel filterLabel = new JLabel(" Filter:");
         filterPanel.add(filterLabel, BorderLayout.WEST);
         filterPanel.add(filterText, BorderLayout.CENTER);
@@ -126,7 +128,7 @@ public class InvoicesTableFrame extends JFrame {
         //add(mainMenuBar);
 
 
-        sorter.addRowSorterListener(new sorterListener(partialLabel));
+        sorter.addRowSorterListener(new sorterListener(totalLabel));
         mainModel.addTableModelListener(new totalListener(totalLabel,mainModel));
         addButton.addActionListener(new addListener(mainModel,tablePanel));
         deleteButton.addActionListener(new deleteListener(sorter,mainModel, mainTable));
@@ -134,7 +136,7 @@ public class InvoicesTableFrame extends JFrame {
         popupEdit.addActionListener(new editListener(sorter,mainModel, mainTable));
         filterText.getDocument().addDocumentListener(regexFilter);
 
-        //pack();
+        pack();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
