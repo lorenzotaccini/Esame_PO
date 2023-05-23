@@ -8,6 +8,8 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.regex.PatternSyntaxException;
 
 
@@ -43,6 +45,10 @@ public class InvoicesTableFrame extends JFrame {
         final JLabel totalLabel = new JLabel();
         final JLabel partialLabel = new JLabel();
         final JLabel filterTypeSelectionLabel= new JLabel("Filter by: ");
+        final JButton restoreFiltersBtn = new JButton("RESTORE");
+
+
+        //JRadioButton
 
         //necessaria la creazione di un rowfilter solo per le date
 
@@ -88,22 +94,15 @@ public class InvoicesTableFrame extends JFrame {
             }
         };
 
-        DocumentListener dateFilter= new DocumentListener() {
+        ActionListener dateRangeListener = new ActionListener() {
             @Override
-            public void insertUpdate(DocumentEvent e) {
-
-            }
-
-            @Override
-            public void removeUpdate(DocumentEvent e) {
-
-            }
-
-            @Override
-            public void changedUpdate(DocumentEvent e) {
-
+            public void actionPerformed(ActionEvent e) {
+                switch(e.getActionCommand()){
+                }
             }
         };
+
+
 
         mainPopupMenu.add(popupDelete);
         mainPopupMenu.add(popupEdit);
@@ -111,7 +110,8 @@ public class InvoicesTableFrame extends JFrame {
         popupMenuSettings.setupPopupMenu(mainTable, mainPopupMenu);
 
 
-        tablePanel.add(new JScrollPane(mainTable));
+        tablePanel.add(new JScrollPane(mainTable),BorderLayout.NORTH);
+        //tablePanel.add(restoreFiltersBtn,BorderLayout.PAGE_END);
         JLabel filterLabel = new JLabel(" Filter:");
         filterPanel.add(filterLabel, BorderLayout.WEST);
         filterPanel.add(filterText, BorderLayout.CENTER);
@@ -134,7 +134,7 @@ public class InvoicesTableFrame extends JFrame {
         popupEdit.addActionListener(new editListener(sorter,mainModel, mainTable));
         filterText.getDocument().addDocumentListener(regexFilter);
 
-        setSize(600, 500);
+        //pack();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);

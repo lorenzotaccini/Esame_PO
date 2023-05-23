@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="Risolto problema per cui la modifica di elementi durante il filtraggio per parola chiave cancellava gli elementi sbagliati">
-      <change afterPath="$PROJECT_DIR$/src/Listeners/radioBtnGroupListener.java" afterDir="false" />
+    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="inizio implementazione listener del totale quando un filtro è attivo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatePickerGUI/MyDatePicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatePickerGUI/MyDatePicker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Listeners/addListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/addListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Listeners/totalListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/totalListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Listeners/editListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/editListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Listeners/radioBtnGroupListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/dateListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +65,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\lollo\IdeaProjects\Esame_PO\src" />
       <recent name="C:\Users\lollo\IdeaProjects\Esame_PO\src\JDatePicker" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Frames" />
     </key>
   </component>
   <component name="RunManager">
@@ -181,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684748858227</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="inizio implementazione listener del totale quando un filtro è attivo">
+      <created>1684751503177</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1684751503177</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -221,7 +231,8 @@
     <MESSAGE value="modifica di parametri FlatLaF, aggiunta di commenti JavaDoc, ottimizzazione imports" />
     <MESSAGE value="Risolto problema per cui l'eliminazione di elementi durante il filtraggio per parola chiave cancellava gli elementi sbagliati" />
     <MESSAGE value="Risolto problema per cui la modifica di elementi durante il filtraggio per parola chiave cancellava gli elementi sbagliati" />
-    <option name="LAST_COMMIT_MESSAGE" value="Risolto problema per cui la modifica di elementi durante il filtraggio per parola chiave cancellava gli elementi sbagliati" />
+    <MESSAGE value="inizio implementazione listener del totale quando un filtro è attivo" />
+    <option name="LAST_COMMIT_MESSAGE" value="inizio implementazione listener del totale quando un filtro è attivo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

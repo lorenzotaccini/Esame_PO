@@ -8,11 +8,12 @@ import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.DateTimeException;
 import java.time.LocalDate;
 
 public class editListener implements ActionListener {
-    private InvoicesTableModel model;
-    private JTable table;
+    private final InvoicesTableModel model;
+    private final JTable table;
     private final TableRowSorter<InvoicesTableModel> parentSorter;
     public editListener(TableRowSorter<InvoicesTableModel> parentSorter,InvoicesTableModel model, JTable table) {
         this.model=model;
@@ -50,11 +51,17 @@ public class editListener implements ActionListener {
         int editPanelExitStatus = JOptionPane.showConfirmDialog(table, inputsComponent, "Edit selected invoice", JOptionPane.DEFAULT_OPTION,JOptionPane.PLAIN_MESSAGE);
         if (editPanelExitStatus == JOptionPane.OK_OPTION) {
             try {
+                if(!addDatePicker.isTextFieldValid() || addDatePicker.getDate()==null){
+                    throw (new DateTimeException("wrong date"));
+                }
                 model.setValueAt(addDatePicker.getDate(), index, 0);
                 model.setValueAt(Double.parseDouble((amountField.getText())), index, 1);
                 model.setValueAt(descriptionField.getText(), index, 2);
-            }catch(Exception p){
-                JOptionPane.showMessageDialog(table,"Wrong input format in one of the input fields. No modifications applied.");
+            } catch (NumberFormatException exception){
+                JOptionPane.showMessageDialog(table,"wrong number format, \"ADD\" operation canceled");
+            }
+            catch (DateTimeException dateEx){
+                JOptionPane.showMessageDialog(table,"empty or wrong date field, \"ADD\" operation canceled");
             }
 
         } else {

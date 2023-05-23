@@ -8,6 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.DateTimeException;
 
 public class addListener implements ActionListener {
     private final InvoicesTableModel model;
@@ -36,7 +37,17 @@ public class addListener implements ActionListener {
         };
         int addPanelExitStatus = JOptionPane.showConfirmDialog(tablePanel, inputsComponent, "Add an invoice", JOptionPane.DEFAULT_OPTION);
         if (addPanelExitStatus == JOptionPane.OK_OPTION) {
-            model.addInvoice(new Invoice(descriptionField.getText(),Double.parseDouble(amountField.getText()), addDatePicker.getDate()));
+            try {
+                if(!addDatePicker.isTextFieldValid() || addDatePicker.getDate()==null){
+                    throw (new DateTimeException("wrong date"));
+                }
+                model.addInvoice(new Invoice(descriptionField.getText(), Double.parseDouble(amountField.getText()), addDatePicker.getDate()));
+            } catch (NumberFormatException exception){
+                JOptionPane.showMessageDialog(tablePanel,"wrong number format, \"ADD\" operation canceled");
+            }
+            catch (DateTimeException dateEx){
+                JOptionPane.showMessageDialog(tablePanel,"empty or wrong date field, \"ADD\" operation canceled");
+            }
         } else {
             System.out.println("User canceled/closed the dialog, exit status = " + addPanelExitStatus);
         }
