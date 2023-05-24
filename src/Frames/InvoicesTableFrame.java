@@ -10,8 +10,6 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.regex.PatternSyntaxException;
 
 
@@ -109,32 +107,19 @@ public class InvoicesTableFrame extends JFrame {
             }
         };
 
-        ActionListener dateRangeListener = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        };
-
         restoreFiltersBtn.addActionListener(e -> {
             sorter.setRowFilter(null);
             filterText.setText(null);
         });
 
-        filterByRegexBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                datePanel.setVisible(false);
-                filterPanel.setVisible(true);
-            }
+        filterByRegexBtn.addActionListener(e -> {
+            datePanel.setVisible(false);
+            filterPanel.setVisible(true);
         });
 
-        filterByDateBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                filterPanel.setVisible(false);
-                datePanel.setVisible(true);
-            }
+        filterByDateBtn.addActionListener(e -> {
+            filterPanel.setVisible(false);
+            datePanel.setVisible(true);
         });
 
 

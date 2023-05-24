@@ -5,7 +5,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 /**
- * la classe aggiunge il popupmenu
+ * La classe aggiunge il popupmenu alla tabella quando è premuto il tasto destro su un elemento.
+ * Viene selezionata la riga su cui è stato effettuato il click
  */
 public class popupMenuSettings {
     public static void setupPopupMenu(JTable table,final JPopupMenu popupMenu) {

@@ -8,8 +8,8 @@ import javax.swing.event.TableModelListener;
 
 public class totalListener implements TableModelListener {
 
-    private JLabel totalLabel;
-    private InvoicesTableModel model;
+    private final JLabel totalLabel;
+    private final InvoicesTableModel model;
 
     public totalListener(JLabel totalLabel, InvoicesTableModel model) {
         this.totalLabel = totalLabel;

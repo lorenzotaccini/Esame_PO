@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="aggiunta classe datePanel, settata dimensione minima dell'applicazione">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="modifiche alla classe datePAnel, prova di tabbedPane(disabled), il radiobutton ora permette di scegliere tra casella di ricerca e data">
       <change beforePath="$PROJECT_DIR$/src/Panels/datePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/datePanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -203,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684948025257</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="modifiche alla classe datePAnel, prova di tabbedPane(disabled), il radiobutton ora permette di scegliere tra casella di ricerca e data">
+      <created>1684951943189</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1684951943189</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -246,7 +250,8 @@
     <MESSAGE value="inizio implementazione listener del totale quando un filtro è attivo" />
     <MESSAGE value="modifiche al datepicker, others" />
     <MESSAGE value="aggiunta classe datePanel, settata dimensione minima dell'applicazione" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggiunta classe datePanel, settata dimensione minima dell'applicazione" />
+    <MESSAGE value="modifiche alla classe datePAnel, prova di tabbedPane(disabled), il radiobutton ora permette di scegliere tra casella di ricerca e data" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifiche alla classe datePAnel, prova di tabbedPane(disabled), il radiobutton ora permette di scegliere tra casella di ricerca e data" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

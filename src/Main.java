@@ -1,6 +1,5 @@
 import Frames.InvoicesTableFrame;
 import TableModel.Invoice;
-import com.formdev.flatlaf.themes.FlatMacDarkLaf;
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
 
 import javax.swing.*;

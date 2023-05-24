@@ -1,9 +1,5 @@
 package TableModel;
 
-import DatePickerGUI.MyDatePicker;
-import Listeners.totalListener;
-
-import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -38,12 +34,6 @@ public class InvoicesTableModel extends AbstractTableModel {
     @Override
     public String getColumnName(int column) {
         return columnNames[column];
-    }
-
-    /** metodo per aggiungere elementi alla tabella, viene notificato il cambiamento a tutti i listener */
-    public void addInvoice(String desc, double amount, LocalDate date) {
-        invoiceSet.add(new Invoice(desc,amount,date));
-        fireTableDataChanged();
     }
 
     /** metodo per aggiungere elementi alla tabella, viene notificato il cambiamento a tutti i listener */

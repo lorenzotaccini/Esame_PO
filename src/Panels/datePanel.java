@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class datePanel extends JPanel implements ActionListener {
-    private JComboBox <String> periodComboBox;
+    private final JComboBox <String> periodComboBox;
     public datePanel() {
         super();
         MyDatePicker customStartDate = new MyDatePicker();
