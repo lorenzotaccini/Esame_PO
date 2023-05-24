@@ -14,7 +14,7 @@ public class Main {
         try {
 
             //FlatLaf.setGlobalExtraDefaults(Collections.singletonMap("@accentColor", "#521fa3"));
-            UIManager.setLookAndFeel( new FlatMacDarkLaf() );
+            UIManager.setLookAndFeel( new FlatMacLightLaf() );
             UIManager.put("Table.showVerticalLines",true);
             UIManager.put("Table.showHorizontalLines",true);
             UIManager.put( "Button.arc", 10 );

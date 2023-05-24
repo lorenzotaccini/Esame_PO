@@ -1,6 +1,7 @@
 package Frames;
 
 import Listeners.*;
+import Panels.datePanel;
 import Panels.statusPanel;
 import TableModel.InvoicesTableModel;
 
@@ -26,13 +27,15 @@ public class InvoicesTableFrame extends JFrame {
         JPanel topPanel=new JPanel(new BorderLayout(10,10));
         JPanel tablePanel=new JPanel(new BorderLayout(10,10));
         JPanel bottomPanel=new JPanel();
-        JPanel datePanel=new JPanel(new BorderLayout(10,10));
+        datePanel datePanel=new datePanel();
         JPanel filterPanel=new JPanel(new BorderLayout(10,10));
         JPanel filterTypeSelectionPanel= new JPanel();
         filterTypeSelectionPanel.setLayout(new BoxLayout(filterTypeSelectionPanel,BoxLayout.X_AXIS));
+        JTabbedPane tabbedPane = new JTabbedPane();
         topPanel.setBorder(BorderFactory.createEmptyBorder(15,10, 5, 10));
-        filterPanel.setVisible(false);
-        datePanel.setVisible(false);
+
+        tabbedPane.addTab("Regex Filter",filterPanel);
+        tabbedPane.addTab("Date Filter",datePanel);
 
 
         mainModel=new InvoicesTableModel();
@@ -149,10 +152,15 @@ public class InvoicesTableFrame extends JFrame {
 
         topPanel.add(filterTypeSelectionPanel,BorderLayout.NORTH);
         topPanel.add(filterPanel,BorderLayout.SOUTH);
+        topPanel.add(datePanel);
+//        topPanel.add(tabbedPane);
 
         bottomPanel.add(addButton,BorderLayout.NORTH);
         bottomPanel.add(deleteButton,BorderLayout.CENTER);
         bottomPanel.add(new statusPanel(this).add(totalLabel),BorderLayout.SOUTH);
+
+        filterPanel.setVisible(false);
+        datePanel.setVisible(false);
 
         mainPanel.add(topPanel,BorderLayout.NORTH);
         mainPanel.add(tablePanel,BorderLayout.CENTER);
