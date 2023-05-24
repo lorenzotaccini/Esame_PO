@@ -1,6 +1,7 @@
 package Frames;
 
 import Listeners.*;
+import Panels.statusPanel;
 import TableModel.InvoicesTableModel;
 
 import javax.swing.*;
@@ -10,7 +11,6 @@ import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.time.LocalDate;
 import java.util.regex.PatternSyntaxException;
 
 
@@ -23,11 +23,16 @@ public class InvoicesTableFrame extends JFrame {
 
 
         JPanel mainPanel=new JPanel(new BorderLayout(10,10));
-        JPanel topPanel=new JPanel(new GridLayout(1,0));
+        JPanel topPanel=new JPanel(new BorderLayout(10,10));
         JPanel tablePanel=new JPanel(new BorderLayout(10,10));
-        JPanel bottomPanel=new JPanel(new BorderLayout(10,10));
+        JPanel bottomPanel=new JPanel();
+        JPanel datePanel=new JPanel(new BorderLayout(10,10));
         JPanel filterPanel=new JPanel(new BorderLayout(10,10));
-        JPanel filterTypeSelectionPanel= new JPanel(new BorderLayout(10,10));
+        JPanel filterTypeSelectionPanel= new JPanel();
+        filterTypeSelectionPanel.setLayout(new BoxLayout(filterTypeSelectionPanel,BoxLayout.X_AXIS));
+        topPanel.setBorder(BorderFactory.createEmptyBorder(15,10, 5, 10));
+        filterPanel.setVisible(false);
+        datePanel.setVisible(false);
 
 
         mainModel=new InvoicesTableModel();
@@ -38,25 +43,27 @@ public class InvoicesTableFrame extends JFrame {
         mainTable.setRowSorter(sorter);
 
         JPopupMenu mainPopupMenu = new JPopupMenu();
+
         final JTextField filterText = new JTextField("");
         final JButton addButton = new JButton("ADD");
         final JButton deleteButton = new JButton("DELETE");
         final JMenuItem popupDelete = new JMenuItem("Delete");
         final JMenuItem popupEdit = new JMenuItem("Edit Row");
-        final JMenuBar mainMenuBar = new JMenuBar();
+
         final JLabel totalLabel = new JLabel();
-        final JLabel filterTypeSelectionLabel= new JLabel("Filter by: ");
+        final JLabel filterTypeSelectionLabel= new JLabel("Filter by:");
         final JButton restoreFiltersBtn = new JButton("RESTORE");
         final ButtonGroup filterTypeSelectionGroup= new ButtonGroup();
         final JRadioButton filterByRegexBtn = new JRadioButton("Text Search");
         final JRadioButton filterByDateBtn = new JRadioButton("Date");
+        filterByDateBtn.setBorder(BorderFactory.createEmptyBorder(0,10, 0, 10));
+        filterByRegexBtn.setBorder(BorderFactory.createEmptyBorder(0,20, 0, 10));
+
         filterTypeSelectionGroup.add(filterByRegexBtn);
         filterTypeSelectionGroup.add(filterByDateBtn);
-        topPanel.setBorder(BorderFactory.createEmptyBorder(0,20, 0, 20));
-        topPanel.add(filterTypeSelectionLabel);
+        filterTypeSelectionPanel.add(filterTypeSelectionLabel);
         filterTypeSelectionPanel.add(filterByRegexBtn);
         filterTypeSelectionPanel.add(filterByDateBtn);
-        topPanel.add(filterTypeSelectionPanel);
 
 
 //        //filtro sole date
@@ -106,6 +113,26 @@ public class InvoicesTableFrame extends JFrame {
             }
         };
 
+        restoreFiltersBtn.addActionListener(e -> {
+            sorter.setRowFilter(null);
+            filterText.setText(null);
+        });
+
+        filterByRegexBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                datePanel.setVisible(false);
+                filterPanel.setVisible(true);
+            }
+        });
+
+        filterByDateBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                filterPanel.setVisible(false);
+                datePanel.setVisible(true);
+            }
+        });
 
 
         mainPopupMenu.add(popupDelete);
@@ -115,24 +142,23 @@ public class InvoicesTableFrame extends JFrame {
 
         tablePanel.add(new JScrollPane(mainTable));
         tablePanel.add(restoreFiltersBtn,BorderLayout.PAGE_END);
+
         JLabel filterLabel = new JLabel(" Filter:");
         filterPanel.add(filterLabel, BorderLayout.WEST);
         filterPanel.add(filterText, BorderLayout.CENTER);
+
+        topPanel.add(filterTypeSelectionPanel,BorderLayout.NORTH);
+        topPanel.add(filterPanel,BorderLayout.SOUTH);
+
         bottomPanel.add(addButton,BorderLayout.NORTH);
         bottomPanel.add(deleteButton,BorderLayout.CENTER);
         bottomPanel.add(new statusPanel(this).add(totalLabel),BorderLayout.SOUTH);
-        mainPanel.add(topPanel,BorderLayout.NORTH);
 
+        mainPanel.add(topPanel,BorderLayout.NORTH);
         mainPanel.add(tablePanel,BorderLayout.CENTER);
         mainPanel.add(bottomPanel,BorderLayout.SOUTH);
         add(mainPanel);
 
-
-
-        restoreFiltersBtn.addActionListener(e -> {
-            sorter.setRowFilter(null);
-            filterText.setText(null);
-        });
 
         sorter.addRowSorterListener(new sorterListener(totalLabel));
         mainModel.addTableModelListener(new totalListener(totalLabel,mainModel));
@@ -143,6 +169,7 @@ public class InvoicesTableFrame extends JFrame {
         filterText.getDocument().addDocumentListener(regexFilter);
 
         pack();
+        setMinimumSize(this.getSize());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);

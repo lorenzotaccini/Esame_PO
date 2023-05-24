@@ -1,4 +1,4 @@
-package Frames;
+package Panels;
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
