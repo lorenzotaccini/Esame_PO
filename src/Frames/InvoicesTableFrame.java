@@ -10,6 +10,7 @@ import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
 import java.util.regex.PatternSyntaxException;
 
 
@@ -22,7 +23,7 @@ public class InvoicesTableFrame extends JFrame {
 
 
         JPanel mainPanel=new JPanel(new BorderLayout(10,10));
-        JPanel topPanel=new JPanel(new BorderLayout(10,10));
+        JPanel topPanel=new JPanel(new GridLayout(1,0));
         JPanel tablePanel=new JPanel(new BorderLayout(10,10));
         JPanel bottomPanel=new JPanel(new BorderLayout(10,10));
         JPanel filterPanel=new JPanel(new BorderLayout(10,10));
@@ -44,16 +45,18 @@ public class InvoicesTableFrame extends JFrame {
         final JMenuItem popupEdit = new JMenuItem("Edit Row");
         final JMenuBar mainMenuBar = new JMenuBar();
         final JLabel totalLabel = new JLabel();
-        final JLabel partialLabel = new JLabel();
         final JLabel filterTypeSelectionLabel= new JLabel("Filter by: ");
         final JButton restoreFiltersBtn = new JButton("RESTORE");
-
-
-
-
-        //JRadioButton
-
-        //necessaria la creazione di un rowfilter solo per le date
+        final ButtonGroup filterTypeSelectionGroup= new ButtonGroup();
+        final JRadioButton filterByRegexBtn = new JRadioButton("Text Search");
+        final JRadioButton filterByDateBtn = new JRadioButton("Date");
+        filterTypeSelectionGroup.add(filterByRegexBtn);
+        filterTypeSelectionGroup.add(filterByDateBtn);
+        topPanel.setBorder(BorderFactory.createEmptyBorder(0,20, 0, 20));
+        topPanel.add(filterTypeSelectionLabel);
+        filterTypeSelectionPanel.add(filterByRegexBtn);
+        filterTypeSelectionPanel.add(filterByDateBtn);
+        topPanel.add(filterTypeSelectionPanel);
 
 
 //        //filtro sole date
@@ -62,7 +65,6 @@ public class InvoicesTableFrame extends JFrame {
 //        dateFilterIntervalArray.add( RowFilter.dateFilter(RowFilter.ComparisonType.BEFORE, endDate) );
 //        RowFilter<Object, Object> dateIntervalRowFilter = RowFilter.andFilter(dateFilterIntervalArray); //andfilter tra data inizio e data fine
 //
-
 
 
         DocumentListener regexFilter = new DocumentListener() {
@@ -111,22 +113,26 @@ public class InvoicesTableFrame extends JFrame {
         //aggiungo tramite la classe Frames.popupMenu la selezione automatica dell'elemento della tabella quando è premuto il tasto destro
         popupMenuSettings.setupPopupMenu(mainTable, mainPopupMenu);
 
-
         tablePanel.add(new JScrollPane(mainTable));
         tablePanel.add(restoreFiltersBtn,BorderLayout.PAGE_END);
         JLabel filterLabel = new JLabel(" Filter:");
         filterPanel.add(filterLabel, BorderLayout.WEST);
         filterPanel.add(filterText, BorderLayout.CENTER);
-        bottomPanel.add(addButton,BorderLayout.WEST);
-        bottomPanel.add(deleteButton,BorderLayout.EAST);
+        bottomPanel.add(addButton,BorderLayout.NORTH);
+        bottomPanel.add(deleteButton,BorderLayout.CENTER);
         bottomPanel.add(new statusPanel(this).add(totalLabel),BorderLayout.SOUTH);
+        mainPanel.add(topPanel,BorderLayout.NORTH);
 
-        mainPanel.add(filterPanel, BorderLayout.NORTH);
         mainPanel.add(tablePanel,BorderLayout.CENTER);
         mainPanel.add(bottomPanel,BorderLayout.SOUTH);
         add(mainPanel);
-        //add(mainMenuBar);
 
+
+
+        restoreFiltersBtn.addActionListener(e -> {
+            sorter.setRowFilter(null);
+            filterText.setText(null);
+        });
 
         sorter.addRowSorterListener(new sorterListener(totalLabel));
         mainModel.addTableModelListener(new totalListener(totalLabel,mainModel));

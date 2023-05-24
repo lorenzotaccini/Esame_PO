@@ -9,6 +9,7 @@ import java.awt.*;
  */
 public class statusPanel extends JPanel {
     public statusPanel(JFrame parentFrame) {
+        super();
         setBorder(new BevelBorder(BevelBorder.LOWERED));
         setPreferredSize(new Dimension(parentFrame.getWidth(),20));
         setLayout(new BorderLayout(20,20));

@@ -18,6 +18,5 @@ public class totalListener implements TableModelListener {
     @Override
     public void tableChanged(TableModelEvent e) {
         totalLabel.setText(" Total income: "+model.getTotal());
-        System.out.println("aoaoaoo");
     }
 }

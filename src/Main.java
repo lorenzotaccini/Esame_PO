@@ -1,5 +1,6 @@
 import Frames.InvoicesTableFrame;
 import TableModel.Invoice;
+import com.formdev.flatlaf.themes.FlatMacDarkLaf;
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
 
 import javax.swing.*;
@@ -13,7 +14,7 @@ public class Main {
         try {
 
             //FlatLaf.setGlobalExtraDefaults(Collections.singletonMap("@accentColor", "#521fa3"));
-            UIManager.setLookAndFeel( new FlatMacLightLaf() );
+            UIManager.setLookAndFeel( new FlatMacDarkLaf() );
             UIManager.put("Table.showVerticalLines",true);
             UIManager.put("Table.showHorizontalLines",true);
             UIManager.put( "Button.arc", 10 );

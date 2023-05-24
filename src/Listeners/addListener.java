@@ -35,7 +35,7 @@ public class addListener implements ActionListener {
                 new JLabel("Brief description:"),
                 descriptionField
         };
-        int addPanelExitStatus = JOptionPane.showConfirmDialog(tablePanel, inputsComponent, "Add an invoice", JOptionPane.DEFAULT_OPTION);
+        int addPanelExitStatus = JOptionPane.showConfirmDialog(tablePanel, inputsComponent, "Add an invoice", JOptionPane.DEFAULT_OPTION,JOptionPane.PLAIN_MESSAGE);
         if (addPanelExitStatus == JOptionPane.OK_OPTION) {
             try {
                 if(!addDatePicker.isTextFieldValid() || addDatePicker.getDate()==null){
