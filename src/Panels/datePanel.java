@@ -3,6 +3,7 @@ package Panels;
 import DatePickerGUI.MyDatePicker;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -12,13 +13,22 @@ public class datePanel extends JPanel implements ActionListener {
     private final MyDatePicker customEndDate;
     public datePanel() {
         super();
+        setLayout(new BorderLayout());
+        JButton backBtn =new JButton(" ◀ ");
+        JButton forwardBtn = new JButton(" ▶ ");
+        JPanel arrowsPanel= new JPanel();
+        JPanel selectionPanel = new JPanel();
+        arrowsPanel.add(backBtn);
+        arrowsPanel.add(forwardBtn);
         customStartDate = new MyDatePicker();
         customEndDate = new MyDatePicker();
         periodComboBox= new JComboBox<>(new  String[] {"Day", "Week", "Month", "Year", "Custom..."});
         periodComboBox.addActionListener(this);
-        add(periodComboBox);
-        add(customStartDate);
-        add(customEndDate);
+        selectionPanel.add(periodComboBox);
+        selectionPanel.add(customStartDate);
+        selectionPanel.add(customEndDate);
+        add(selectionPanel, BorderLayout.NORTH);
+        add(arrowsPanel, BorderLayout.SOUTH);
         customEndDate.setEnabled(false);
 
     }

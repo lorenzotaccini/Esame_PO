@@ -1,4 +1,4 @@
-package Frames;
+package DatePickerGUI;
 
 import javax.swing.*;
 import java.text.ParseException;

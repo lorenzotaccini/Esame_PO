@@ -15,10 +15,11 @@ public class editListener implements ActionListener {
     private final InvoicesTableModel model;
     private final JTable table;
     private final TableRowSorter<InvoicesTableModel> parentSorter;
-    public editListener(TableRowSorter<InvoicesTableModel> parentSorter,InvoicesTableModel model, JTable table) {
-        this.model=model;
+    public editListener(TableRowSorter<InvoicesTableModel> parentSorter, JTable table) {
         this.table=table;
-        this.parentSorter=parentSorter;
+        this.model= (InvoicesTableModel) table.getModel();
+        this.parentSorter= parentSorter;
+
     }
 
     @Override

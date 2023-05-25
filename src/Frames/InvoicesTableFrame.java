@@ -29,11 +29,11 @@ public class InvoicesTableFrame extends JFrame {
         JPanel filterPanel=new JPanel(new BorderLayout(10,10));
         JPanel filterTypeSelectionPanel= new JPanel();
         filterTypeSelectionPanel.setLayout(new BoxLayout(filterTypeSelectionPanel,BoxLayout.X_AXIS));
-        JTabbedPane tabbedPane = new JTabbedPane();
+//        JTabbedPane tabbedPane = new JTabbedPane();
         topPanel.setBorder(BorderFactory.createEmptyBorder(15,10, 5, 10));
 
-        tabbedPane.addTab("Regex Filter",filterPanel);
-        tabbedPane.addTab("Date Filter",datePanel);
+//        tabbedPane.addTab("Regex Filter",filterPanel);
+//        tabbedPane.addTab("Date Filter",datePanel);
 
 
         mainModel=new InvoicesTableModel();
@@ -53,7 +53,9 @@ public class InvoicesTableFrame extends JFrame {
 
         final JLabel totalLabel = new JLabel();
         final JLabel filterTypeSelectionLabel= new JLabel("Filter by:");
-        final JButton restoreFiltersBtn = new JButton("RESTORE");
+        final JButton restoreFiltersBtn = new JButton("RESTORE FILTERS \uD83D\uDD04");
+//        JButton printButton =new JButton("Print");
+
         final ButtonGroup filterTypeSelectionGroup= new ButtonGroup();
         final JRadioButton filterByRegexBtn = new JRadioButton("Text Search");
         final JRadioButton filterByDateBtn = new JRadioButton("Date");
@@ -65,6 +67,8 @@ public class InvoicesTableFrame extends JFrame {
         filterTypeSelectionPanel.add(filterTypeSelectionLabel);
         filterTypeSelectionPanel.add(filterByRegexBtn);
         filterTypeSelectionPanel.add(filterByDateBtn);
+        filterTypeSelectionPanel.add(restoreFiltersBtn,BorderLayout.EAST);
+
 
         DocumentListener regexFilter = new DocumentListener() {
             @Override
@@ -101,11 +105,15 @@ public class InvoicesTableFrame extends JFrame {
         restoreFiltersBtn.addActionListener(e -> {
             sorter.setRowFilter(null);
             filterText.setText(null);
+            datePanel.setVisible(false);
+            filterPanel.setVisible(false);
+            filterTypeSelectionGroup.clearSelection();
         });
 
         filterByRegexBtn.addActionListener(e -> {
             datePanel.setVisible(false);
             filterPanel.setVisible(true);
+            filterText.requestFocus();
         });
 
         filterByDateBtn.addActionListener(e -> {
@@ -113,16 +121,27 @@ public class InvoicesTableFrame extends JFrame {
             datePanel.setVisible(true);
         });
 
+//        printButton.addActionListener((ActionListener) e -> {
+//            try {
+//                if (! mainTable.print()) {
+//                    System.err.println("User cancelled printing");
+//                }
+//            } catch (PrinterException e2) {
+//                System.err.format("Cannot print %s%n", e2.getMessage());
+//            }
+//        });
+
 
         mainPopupMenu.add(popupDelete);
         mainPopupMenu.add(popupEdit);
         //aggiungo tramite la classe Frames.popupMenu la selezione automatica dell'elemento della tabella quando è premuto il tasto destro
         popupMenuSettings.setupPopupMenu(mainTable, mainPopupMenu);
+        popupMenuSettings.setupDoubleClickToEdit(mainTable);
 
         tablePanel.add(new JScrollPane(mainTable));
-        tablePanel.add(restoreFiltersBtn,BorderLayout.PAGE_END);
 
-        JLabel filterLabel = new JLabel(" Filter:");
+
+        JLabel filterLabel = new JLabel("Search:");
         filterPanel.add(filterLabel, BorderLayout.WEST);
         filterPanel.add(filterText, BorderLayout.CENTER);
 
@@ -149,7 +168,7 @@ public class InvoicesTableFrame extends JFrame {
         addButton.addActionListener(new addListener(mainModel,tablePanel));
         deleteButton.addActionListener(new deleteListener(sorter,mainModel, mainTable));
         popupDelete.addActionListener(new deleteListener(sorter,mainModel, mainTable));
-        popupEdit.addActionListener(new editListener(sorter,mainModel, mainTable));
+        popupEdit.addActionListener(new editListener(sorter, mainTable));
         filterText.getDocument().addDocumentListener(regexFilter);
 
         pack();
