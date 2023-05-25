@@ -39,7 +39,10 @@ public class InvoicesTableFrame extends JFrame {
         mainModel=new InvoicesTableModel();
         JTable mainTable = new JTable(mainModel);
 
-
+        //TODO celle rosse e verdi in base al segno
+        //TODO simbolo valuta
+        //TODO decimali su ogni numero
+        //TODO parse valori in inserimento e modifica per non uscire dal pannello
         final TableRowSorter<InvoicesTableModel> sorter = new TableRowSorter<>(mainModel);
         mainTable.setRowSorter(sorter);
 
