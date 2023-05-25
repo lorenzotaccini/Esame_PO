@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="modifiche alla classe datePAnel, prova di tabbedPane(disabled), il radiobutton ora permette di scegliere tra casella di ricerca e data">
+    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="modifiche all'interfaccia, others">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Panels/datePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/datePanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

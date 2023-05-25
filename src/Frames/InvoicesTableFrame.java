@@ -66,15 +66,6 @@ public class InvoicesTableFrame extends JFrame {
         filterTypeSelectionPanel.add(filterByRegexBtn);
         filterTypeSelectionPanel.add(filterByDateBtn);
 
-
-//        //filtro sole date
-//        List<RowFilter<Object,Object>> dateFilterIntervalArray = new ArrayList<RowFilter<Object,Object>>(2);
-//        dateFilterIntervalArray.add( RowFilter.dateFilter(RowFilter.ComparisonType.AFTER, startDate) );
-//        dateFilterIntervalArray.add( RowFilter.dateFilter(RowFilter.ComparisonType.BEFORE, endDate) );
-//        RowFilter<Object, Object> dateIntervalRowFilter = RowFilter.andFilter(dateFilterIntervalArray); //andfilter tra data inizio e data fine
-//
-
-
         DocumentListener regexFilter = new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
