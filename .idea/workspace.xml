@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="modifiche all'interfaccia, others">
+    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="aggiunte frecce di scorrimento al datePanel, test del print della Jtable (successful, code commented in InvoicesTableFrame),&#10;AGGIUNTO DOPPIO CLICK PER MODIFICA INVOICE IN CLASSE POPUPMENUSETTINGS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Frames/DateLabelFormatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatePickerGUI/DateLabelFormatter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Frames/popupMenuSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frames/popupMenuSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Listeners/editListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/editListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Panels/datePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/datePanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +50,7 @@
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/lollo/IdeaProjects/Esame_PO/lib/flatlaf-3.1.1.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lollo/IdeaProjects/progetto manu&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;/Users/lorenzo/IdeaProjects/Esame_PO/src/Main.java&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
@@ -220,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684952503675</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="aggiunte frecce di scorrimento al datePanel, test del print della Jtable (successful, code commented in InvoicesTableFrame),&#10;AGGIUNTO DOPPIO CLICK PER MODIFICA INVOICE IN CLASSE POPUPMENUSETTINGS">
+      <created>1685040891472</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1685040891472</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -264,7 +267,9 @@
     <MESSAGE value="modifiche al datepicker, others" />
     <MESSAGE value="aggiunta classe datePanel, settata dimensione minima dell'applicazione" />
     <MESSAGE value="modifiche alla classe datePAnel, prova di tabbedPane(disabled), il radiobutton ora permette di scegliere tra casella di ricerca e data" />
-    <option name="LAST_COMMIT_MESSAGE" value="modifiche alla classe datePAnel, prova di tabbedPane(disabled), il radiobutton ora permette di scegliere tra casella di ricerca e data" />
+    <MESSAGE value="aggiunte frecce di scorrimento al datePanel, test del print della Jtable (succesful, code commented in InvoicesTableFrame),&#10;AGGIUNTO DOPPIO CLICK PER MODIFICA INVOICE IN CLASSE POPUPMENUSETTINGS" />
+    <MESSAGE value="aggiunte frecce di scorrimento al datePanel, test del print della Jtable (successful, code commented in InvoicesTableFrame),&#10;AGGIUNTO DOPPIO CLICK PER MODIFICA INVOICE IN CLASSE POPUPMENUSETTINGS" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggiunte frecce di scorrimento al datePanel, test del print della Jtable (successful, code commented in InvoicesTableFrame),&#10;AGGIUNTO DOPPIO CLICK PER MODIFICA INVOICE IN CLASSE POPUPMENUSETTINGS" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

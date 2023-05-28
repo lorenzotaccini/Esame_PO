@@ -20,12 +20,16 @@ public class InvoicesTableFrame extends JFrame {
     public InvoicesTableFrame() {
         setTitle("Gestione Bilancio Taccini");
 
+        mainModel=new InvoicesTableModel();
+        JTable mainTable = new JTable(mainModel);
+        final TableRowSorter<InvoicesTableModel> sorter = new TableRowSorter<>(mainModel);
+        mainTable.setRowSorter(sorter);
 
         JPanel mainPanel=new JPanel(new BorderLayout(10,10));
         JPanel topPanel=new JPanel(new BorderLayout(10,10));
         JPanel tablePanel=new JPanel(new BorderLayout(10,10));
         JPanel bottomPanel=new JPanel();
-        datePanel datePanel=new datePanel();
+        datePanel datePanel=new datePanel(sorter);
         JPanel filterPanel=new JPanel(new BorderLayout(10,10));
         JPanel filterTypeSelectionPanel= new JPanel();
         filterTypeSelectionPanel.setLayout(new BoxLayout(filterTypeSelectionPanel,BoxLayout.X_AXIS));
@@ -36,12 +40,7 @@ public class InvoicesTableFrame extends JFrame {
 //        tabbedPane.addTab("Date Filter",datePanel);
 
 
-        mainModel=new InvoicesTableModel();
-        JTable mainTable = new JTable(mainModel);
 
-
-        final TableRowSorter<InvoicesTableModel> sorter = new TableRowSorter<>(mainModel);
-        mainTable.setRowSorter(sorter);
 
         JPopupMenu mainPopupMenu = new JPopupMenu();
 
@@ -53,7 +52,7 @@ public class InvoicesTableFrame extends JFrame {
 
         final JLabel totalLabel = new JLabel();
         final JLabel filterTypeSelectionLabel= new JLabel("Filter by:");
-        final JButton restoreFiltersBtn = new JButton("RESTORE FILTERS \uD83D\uDD04");
+        final JButton resetFiltersBtn = new JButton("RESET FILTERS \uD83D\uDD04");
 //        JButton printButton =new JButton("Print");
 
         final ButtonGroup filterTypeSelectionGroup= new ButtonGroup();
@@ -67,7 +66,7 @@ public class InvoicesTableFrame extends JFrame {
         filterTypeSelectionPanel.add(filterTypeSelectionLabel);
         filterTypeSelectionPanel.add(filterByRegexBtn);
         filterTypeSelectionPanel.add(filterByDateBtn);
-        filterTypeSelectionPanel.add(restoreFiltersBtn,BorderLayout.EAST);
+        filterTypeSelectionPanel.add(resetFiltersBtn,BorderLayout.EAST);
 
 
         DocumentListener regexFilter = new DocumentListener() {
@@ -90,8 +89,6 @@ public class InvoicesTableFrame extends JFrame {
                 }
             }
 
-
-
             @Override
             public void removeUpdate(DocumentEvent e) {
                 insertUpdate(e);
@@ -102,7 +99,7 @@ public class InvoicesTableFrame extends JFrame {
             }
         };
 
-        restoreFiltersBtn.addActionListener(e -> {
+        resetFiltersBtn.addActionListener(e -> {
             sorter.setRowFilter(null);
             filterText.setText(null);
             datePanel.setVisible(false);
@@ -141,8 +138,8 @@ public class InvoicesTableFrame extends JFrame {
         tablePanel.add(new JScrollPane(mainTable));
 
 
-        JLabel filterLabel = new JLabel("Search:");
-        filterPanel.add(filterLabel, BorderLayout.WEST);
+
+        filterPanel.add(new JLabel("Search:"), BorderLayout.WEST);
         filterPanel.add(filterText, BorderLayout.CENTER);
 
         topPanel.add(filterTypeSelectionPanel,BorderLayout.NORTH);
