@@ -40,6 +40,7 @@ public class InvoicesTableModel extends AbstractTableModel {
     public void addInvoice(Invoice t) {
         invoiceSet.add(t);
         total=total+t.getAmount();
+        System.out.println("added "+t.toString());
         fireTableDataChanged();
     }
 

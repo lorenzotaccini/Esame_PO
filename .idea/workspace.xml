@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="aggiunte frecce di scorrimento al datePanel, test del print della Jtable (successful, code commented in InvoicesTableFrame),&#10;AGGIUNTO DOPPIO CLICK PER MODIFICA INVOICE IN CLASSE POPUPMENUSETTINGS">
+    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="avanzamento in classe datePanel per il filtro della data (still not working)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Panels/datePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/datePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TableModel/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TableModel/Invoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TableModel/InvoicesTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TableModel/InvoicesTableModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +29,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -223,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685040891472</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="avanzamento in classe datePanel per il filtro della data (still not working)">
+      <created>1685295730491</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1685295730491</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -269,7 +276,8 @@
     <MESSAGE value="modifiche alla classe datePAnel, prova di tabbedPane(disabled), il radiobutton ora permette di scegliere tra casella di ricerca e data" />
     <MESSAGE value="aggiunte frecce di scorrimento al datePanel, test del print della Jtable (succesful, code commented in InvoicesTableFrame),&#10;AGGIUNTO DOPPIO CLICK PER MODIFICA INVOICE IN CLASSE POPUPMENUSETTINGS" />
     <MESSAGE value="aggiunte frecce di scorrimento al datePanel, test del print della Jtable (successful, code commented in InvoicesTableFrame),&#10;AGGIUNTO DOPPIO CLICK PER MODIFICA INVOICE IN CLASSE POPUPMENUSETTINGS" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggiunte frecce di scorrimento al datePanel, test del print della Jtable (successful, code commented in InvoicesTableFrame),&#10;AGGIUNTO DOPPIO CLICK PER MODIFICA INVOICE IN CLASSE POPUPMENUSETTINGS" />
+    <MESSAGE value="avanzamento in classe datePanel per il filtro della data (still not working)" />
+    <option name="LAST_COMMIT_MESSAGE" value="avanzamento in classe datePanel per il filtro della data (still not working)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

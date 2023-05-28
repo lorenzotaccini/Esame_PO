@@ -46,6 +46,6 @@ public class Invoice {
 
     @Override
     public String toString(){
-        return "data: "+formattedDate+"\namount: "+amount+"\ndescription: "+desc;
+        return "data: "+date+"\namount: "+amount+"\ndescription: "+desc;
     }
 }

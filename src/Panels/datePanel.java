@@ -126,10 +126,11 @@ public class datePanel extends JPanel implements ActionListener {
                 }
             }
         }
+        System.out.println(Date.from(customEndDate.getDate().atStartOfDay(ZoneId.systemDefault()).toInstant()));
         java.util.List<RowFilter<Object, Object>> dateFilterIntervalArray = new ArrayList<>(2);
-        dateFilterIntervalArray.add(RowFilter.dateFilter(RowFilter.ComparisonType.AFTER, Date.from(customStartDate.getDate().atStartOfDay(ZoneId.systemDefault()).toInstant())));
-        dateFilterIntervalArray.add(RowFilter.dateFilter(RowFilter.ComparisonType.BEFORE, Date.from(customEndDate.getDate().atStartOfDay(ZoneId.systemDefault()).toInstant())));
+        dateFilterIntervalArray.add(RowFilter.dateFilter(RowFilter.ComparisonType.AFTER, Date.from(customStartDate.getDate().atStartOfDay(ZoneId.systemDefault()).toInstant()),0));
+        dateFilterIntervalArray.add(RowFilter.dateFilter(RowFilter.ComparisonType.BEFORE, Date.from(customEndDate.getDate().atStartOfDay(ZoneId.systemDefault()).toInstant()),0));
         RowFilter<Object, Object> dateIntervalRowFilter = RowFilter.andFilter(dateFilterIntervalArray); //andfilter tra data inizio e data fine
-        parentSorter.setRowFilter(dateIntervalRowFilter);
+        parentSorter.setRowFilter(dateIntervalRowFilter); //TODO sistemare formato date (zioporco)
     }
 }
