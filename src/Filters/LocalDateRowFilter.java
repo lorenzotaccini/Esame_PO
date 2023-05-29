@@ -17,6 +17,7 @@ public class LocalDateRowFilter extends RowFilter<Object,Object> {
     @Override
     public boolean include(Entry entry) {
         LocalDate current=(LocalDate)entry.getValue(0);
+        //System.out.println(current+ " is after "+ startLocalDate.minusDays(1)+" and before "+endLocalDate.plusDays(1)+"?");
         return current.isAfter(startLocalDate.minusDays(1)) && current.isBefore(endLocalDate.plusDays(1));
     }
 }

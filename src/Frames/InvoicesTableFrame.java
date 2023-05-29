@@ -7,11 +7,8 @@ import Panels.statusPanel;
 import TableModel.InvoicesTableModel;
 
 import javax.swing.*;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
-import java.util.regex.PatternSyntaxException;
 
 
 public class InvoicesTableFrame extends JFrame {
@@ -29,12 +26,13 @@ public class InvoicesTableFrame extends JFrame {
         JPanel mainPanel=new JPanel(new BorderLayout(10,10));
         JPanel topPanel=new JPanel(new BorderLayout(10,10));
         JPanel tablePanel=new JPanel(new BorderLayout(10,10));
+
         JPanel bottomPanel=new JPanel();
         datePanel datePanel=new datePanel(sorter);
         JPanel filterPanel=new JPanel(new BorderLayout(10,10));
         JPanel filterTypeSelectionPanel= new JPanel();
         filterTypeSelectionPanel.setLayout(new BoxLayout(filterTypeSelectionPanel,BoxLayout.X_AXIS));
-//        JTabbedPane tabbedPane = new JTabbedPane();
+//        JTabbedPane tabbedPane = new JTabbedPane(); TODO TABBED PANE INSTEAD OF JRADIOBUTTON
         topPanel.setBorder(BorderFactory.createEmptyBorder(15,10, 5, 10));
 
 //        tabbedPane.addTab("Regex Filter",filterPanel);
