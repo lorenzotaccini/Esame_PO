@@ -1,5 +1,6 @@
 package Frames;
 
+import Filters.searchFilter;
 import Listeners.*;
 import Panels.datePanel;
 import Panels.statusPanel;
@@ -69,36 +70,6 @@ public class InvoicesTableFrame extends JFrame {
         filterTypeSelectionPanel.add(resetFiltersBtn,BorderLayout.EAST);
 
 
-        DocumentListener regexFilter = new DocumentListener() {
-            @Override
-            public void insertUpdate(DocumentEvent e) {
-                String searchedText = filterText.getText();
-                if(searchedText.length() == 0) {
-                    //searchbox vuota, filtro solo per date interval
-                    sorter.setRowFilter(null);
-                } else {
-                    try {
-                        /*
-                          il RowFilter può essere impostato per controllare le regex solo su specifici campi del
-                          table model, è sufficiente passargli gli indici delle colonne su cui deve operare.
-                         */
-                        sorter.setRowFilter(RowFilter.regexFilter(searchedText));
-                    } catch(PatternSyntaxException pse) {
-                        System.out.println("Bad regex pattern");
-                    }
-                }
-            }
-
-            @Override
-            public void removeUpdate(DocumentEvent e) {
-                insertUpdate(e);
-            }
-            @Override
-            public void changedUpdate(DocumentEvent e) {
-                insertUpdate(e);
-            }
-        };
-
         resetFiltersBtn.addActionListener(e -> {
             sorter.setRowFilter(null);
             filterText.setText(null);
@@ -131,6 +102,7 @@ public class InvoicesTableFrame extends JFrame {
 
         mainPopupMenu.add(popupDelete);
         mainPopupMenu.add(popupEdit);
+
         //aggiungo tramite la classe Frames.popupMenu la selezione automatica dell'elemento della tabella quando è premuto il tasto destro
         popupMenuSettings.setupPopupMenu(mainTable, mainPopupMenu);
         popupMenuSettings.setupDoubleClickToEdit(mainTable);
@@ -166,7 +138,7 @@ public class InvoicesTableFrame extends JFrame {
         deleteButton.addActionListener(new deleteListener(sorter,mainModel, mainTable));
         popupDelete.addActionListener(new deleteListener(sorter,mainModel, mainTable));
         popupEdit.addActionListener(new editListener(sorter, mainTable));
-        filterText.getDocument().addDocumentListener(regexFilter);
+        filterText.getDocument().addDocumentListener(new searchFilter(sorter,filterText));
 
         pack();
         setMinimumSize(this.getSize());

@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="avanzamento in classe datePanel per il filtro della data (still not working)">
+      <change afterPath="$PROJECT_DIR$/src/Filters/LocalDateRowFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Filters/searchFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Listeners/editListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/editListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Panels/datePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/datePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TableModel/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TableModel/Invoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TableModel/InvoicesTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TableModel/InvoicesTableModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

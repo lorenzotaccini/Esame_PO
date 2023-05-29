@@ -29,6 +29,7 @@ public class editListener implements ActionListener {
             index = table.getSelectedRow();
         }
         else{
+            System.out.println();
             index=table.getSelectedRow();
             mappedindex= parentSorter.convertRowIndexToModel(index);
             index=mappedindex;

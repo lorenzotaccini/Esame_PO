@@ -1,7 +1,10 @@
 package Panels;
 
 import DatePickerGUI.MyDatePicker;
+import Filters.LocalDateRowFilter;
 import TableModel.InvoicesTableModel;
+import com.github.lgooddatepicker.optionalusertools.DateChangeListener;
+import com.github.lgooddatepicker.zinternaltools.DateChangeEvent;
 
 import javax.swing.*;
 import javax.swing.table.TableRowSorter;
@@ -13,7 +16,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class datePanel extends JPanel implements ActionListener {
+public class datePanel extends JPanel implements ActionListener, DateChangeListener {
     private final JComboBox <String> periodComboBox;
     private final MyDatePicker customStartDate;
     private final MyDatePicker customEndDate;
@@ -53,6 +56,8 @@ public class datePanel extends JPanel implements ActionListener {
         periodComboBox.addActionListener(this);
         backBtn.addActionListener(this);
         forwardBtn.addActionListener(this);
+        customEndDate.addDateChangeListener(this);
+        customStartDate.addDateChangeListener(this);
 
         JPanel periodPanel,fromPanel,toPanel;
         periodPanel=new JPanel(new BorderLayout());
@@ -127,10 +132,12 @@ public class datePanel extends JPanel implements ActionListener {
             }
         }
         System.out.println(Date.from(customEndDate.getDate().atStartOfDay(ZoneId.systemDefault()).toInstant()));
-        java.util.List<RowFilter<Object, Object>> dateFilterIntervalArray = new ArrayList<>(2);
-        dateFilterIntervalArray.add(RowFilter.dateFilter(RowFilter.ComparisonType.AFTER, Date.from(customStartDate.getDate().atStartOfDay(ZoneId.systemDefault()).toInstant()),0));
-        dateFilterIntervalArray.add(RowFilter.dateFilter(RowFilter.ComparisonType.BEFORE, Date.from(customEndDate.getDate().atStartOfDay(ZoneId.systemDefault()).toInstant()),0));
-        RowFilter<Object, Object> dateIntervalRowFilter = RowFilter.andFilter(dateFilterIntervalArray); //andfilter tra data inizio e data fine
-        parentSorter.setRowFilter(dateIntervalRowFilter); //TODO sistemare formato date (zioporco)
+
+        parentSorter.setRowFilter(new LocalDateRowFilter(customStartDate.getDate(),customEndDate.getDate()));
+    }
+
+    @Override
+    public void dateChanged(DateChangeEvent dateChangeEvent) {
+        parentSorter.setRowFilter(new LocalDateRowFilter(customStartDate.getDate(),customEndDate.getDate()));
     }
 }
