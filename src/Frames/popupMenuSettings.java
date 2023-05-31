@@ -31,6 +31,14 @@ public class popupMenuSettings {
                     }
                 }
             }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+                if(e.isPopupTrigger()){
+                    mouseReleased(e);
+                }
+            }
         });
     }
     @SuppressWarnings("unchecked")

@@ -28,7 +28,7 @@ public class InvoicesTableFrame extends JFrame {
         JPanel tablePanel=new JPanel(new BorderLayout(10,10));
 
         JPanel bottomPanel=new JPanel();
-        datePanel datePanel=new datePanel(sorter);
+        datePanel mainDatePanel=new datePanel(sorter);
         JPanel filterPanel=new JPanel(new BorderLayout(10,10));
         JPanel filterTypeSelectionPanel= new JPanel();
         filterTypeSelectionPanel.setLayout(new BoxLayout(filterTypeSelectionPanel,BoxLayout.X_AXIS));
@@ -37,9 +37,6 @@ public class InvoicesTableFrame extends JFrame {
 
 //        tabbedPane.addTab("Regex Filter",filterPanel);
 //        tabbedPane.addTab("Date Filter",datePanel);
-
-
-
 
         JPopupMenu mainPopupMenu = new JPopupMenu();
 
@@ -69,22 +66,23 @@ public class InvoicesTableFrame extends JFrame {
 
 
         resetFiltersBtn.addActionListener(e -> {
+            mainDatePanel.resetFilter();
             sorter.setRowFilter(null);
             filterText.setText(null);
-            datePanel.setVisible(false);
+            mainDatePanel.setVisible(false);
             filterPanel.setVisible(false);
             filterTypeSelectionGroup.clearSelection();
         });
 
         filterByRegexBtn.addActionListener(e -> {
-            datePanel.setVisible(false);
+            mainDatePanel.setVisible(false);
             filterPanel.setVisible(true);
             filterText.requestFocus();
         });
 
         filterByDateBtn.addActionListener(e -> {
             filterPanel.setVisible(false);
-            datePanel.setVisible(true);
+            mainDatePanel.setVisible(true);
         });
 
 //        printButton.addActionListener((ActionListener) e -> {
@@ -114,7 +112,7 @@ public class InvoicesTableFrame extends JFrame {
 
         topPanel.add(filterTypeSelectionPanel,BorderLayout.NORTH);
         topPanel.add(filterPanel,BorderLayout.SOUTH);
-        topPanel.add(datePanel);
+        topPanel.add(mainDatePanel);
 //        topPanel.add(tabbedPane);
 
         bottomPanel.add(addButton,BorderLayout.NORTH);
@@ -122,7 +120,7 @@ public class InvoicesTableFrame extends JFrame {
         bottomPanel.add(new statusPanel(this).add(totalLabel),BorderLayout.SOUTH);
 
         filterPanel.setVisible(false);
-        datePanel.setVisible(false);
+        mainDatePanel.setVisible(false);
 
         mainPanel.add(topPanel,BorderLayout.NORTH);
         mainPanel.add(tablePanel,BorderLayout.CENTER);

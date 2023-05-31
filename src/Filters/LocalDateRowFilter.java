@@ -4,15 +4,23 @@ import javax.swing.*;
 import java.time.LocalDate;
 
 public class LocalDateRowFilter extends RowFilter<Object,Object> {
-    private final LocalDate startLocalDate;
-    private final LocalDate endLocalDate;
+    private LocalDate startLocalDate;
+    private LocalDate endLocalDate;
 
-
-    public LocalDateRowFilter(LocalDate startLocalDate,LocalDate endLocalDate) {
-        super();
-        this.startLocalDate=startLocalDate;
-        this.endLocalDate=endLocalDate;
+    public void setStartLocalDate(LocalDate startdate){
+        this.startLocalDate=startdate;
     }
+
+    public void setEndLocalDate(LocalDate enddate){
+        this.endLocalDate=enddate;
+    }
+
+    public LocalDateRowFilter() {
+        super();
+    }
+
+
+
 
     @Override
     public boolean include(Entry entry) {
