@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="ulteriori modifiche a datePanel (buggy)">
+    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="Il datePanel (e relativo filtro) ora sono funzionanti.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Filters/LocalDateRowFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Filters/LocalDateRowFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Panels/datePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/datePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Frames/popupMenuSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frames/popupMenuSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Listeners/editListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/editListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685354993125</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Il datePanel (e relativo filtro) ora sono funzionanti.">
+      <created>1685630710415</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1685630710415</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -300,7 +307,8 @@
     <MESSAGE value="avanzamento in classe datePanel per il filtro della data (still not working)" />
     <MESSAGE value="dateFilter quasi completato, create le classi datefilter e searchfilter( moved from mainFrame)" />
     <MESSAGE value="ulteriori modifiche a datePanel (buggy)" />
-    <option name="LAST_COMMIT_MESSAGE" value="ulteriori modifiche a datePanel (buggy)" />
+    <MESSAGE value="Il datePanel (e relativo filtro) ora sono funzionanti." />
+    <option name="LAST_COMMIT_MESSAGE" value="Il datePanel (e relativo filtro) ora sono funzionanti." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

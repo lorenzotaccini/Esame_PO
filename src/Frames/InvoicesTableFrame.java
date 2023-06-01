@@ -101,7 +101,7 @@ public class InvoicesTableFrame extends JFrame {
 
         //aggiungo tramite la classe Frames.popupMenu la selezione automatica dell'elemento della tabella quando è premuto il tasto destro
         popupMenuSettings.setupPopupMenu(mainTable, mainPopupMenu);
-        popupMenuSettings.setupDoubleClickToEdit(mainTable);
+        popupMenuSettings.setupDoubleClickToEdit(mainTable,sorter);
 
         tablePanel.add(new JScrollPane(mainTable));
 
@@ -144,3 +144,5 @@ public class InvoicesTableFrame extends JFrame {
 
     }
 }
+
+

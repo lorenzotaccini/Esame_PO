@@ -45,7 +45,7 @@ public class editListener implements ActionListener {
         final JComponent[] inputsComponent = new JComponent[] {
                 new JLabel("Date:"),
                 addDatePicker,
-                new JLabel("Amount"),
+                new JLabel("Amount:"),
                 amountField,
                 new JLabel("Brief description:"),
                 descriptionField

@@ -41,9 +41,8 @@ public class popupMenuSettings {
             }
         });
     }
-    @SuppressWarnings("unchecked")
-    public static void setupDoubleClickToEdit(JTable table) {
-        editListener editL= new editListener((TableRowSorter<InvoicesTableModel>) table.getRowSorter(),table);
+    public static void setupDoubleClickToEdit(JTable table,TableRowSorter<InvoicesTableModel> parentSorter) {
+        editListener editL= new editListener(parentSorter,table);
         table.addMouseListener(new MouseAdapter() {
 
             @Override
