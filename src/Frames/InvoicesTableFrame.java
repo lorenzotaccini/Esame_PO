@@ -26,8 +26,8 @@ public class InvoicesTableFrame extends JFrame {
         JPanel mainPanel=new JPanel(new BorderLayout(10,10));
         JPanel topPanel=new JPanel(new BorderLayout(10,10));
         JPanel tablePanel=new JPanel(new BorderLayout(10,10));
-
         JPanel bottomPanel=new JPanel();
+
         datePanel mainDatePanel=new datePanel(sorter);
         JPanel filterPanel=new JPanel(new BorderLayout(10,10));
         JPanel filterTypeSelectionPanel= new JPanel();
@@ -66,7 +66,7 @@ public class InvoicesTableFrame extends JFrame {
 
 
         resetFiltersBtn.addActionListener(e -> {
-            mainDatePanel.resetFilter();
+            mainDatePanel.resetPanel();
             sorter.setRowFilter(null);
             filterText.setText(null);
             mainDatePanel.setVisible(false);
