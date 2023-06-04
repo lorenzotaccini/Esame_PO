@@ -109,7 +109,9 @@ public class datePanel extends JPanel implements ActionListener, DateChangeListe
             backBtn.setEnabled(true);
             forwardBtn.setEnabled(true);
             if(periodComboBox.getSelectedIndex()==-1){
-                System.out.println("ciao");
+                customEndDate.setEnabled(false);
+                backBtn.setEnabled(false);
+                forwardBtn.setEnabled(false);
             }
             else {
                 switch (periodComboBox.getItemAt(periodComboBox.getSelectedIndex())) {
@@ -167,8 +169,18 @@ public class datePanel extends JPanel implements ActionListener, DateChangeListe
 
     @Override
     public void dateChanged(DateChangeEvent dateChangeEvent) {
+        if(customEndDate.getDate().isBefore(customStartDate.getDate())){
+            customEndDate.setBorder(BorderFactory.createBevelBorder(1,Color.RED,Color.RED));
+            customStartDate.setBorder(BorderFactory.createBevelBorder(1,Color.RED,Color.RED));
+        }
+        else{
+            customEndDate.setBorder(null);
+            customStartDate.setBorder(null);
+        }
         backBtn.setEnabled(true);
         forwardBtn.setEnabled(true);
+
+        //se è impostata la selezione custom, le date non cambiano automaticamente in base al periodo
         if(!periodComboBox.getItemAt(periodComboBox.getSelectedIndex()).equals("Custom...")){
             customStartDate.setDate(customEndDate.getDate().minusDays(periodDuration));
         }

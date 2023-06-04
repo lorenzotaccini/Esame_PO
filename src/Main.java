@@ -7,7 +7,6 @@ import javax.swing.plaf.ColorUIResource;
 import java.awt.*;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalUnit;
 
 
 public class Main {
@@ -49,20 +48,20 @@ public class Main {
         frame.mainModel.addInvoice(new Invoice("miao",10, LocalDate.now()));
         frame.mainModel.addInvoice(new Invoice("bau",13,LocalDate.now()));
         frame.mainModel.addInvoice(new Invoice("prova",10.67,LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("miao",10,LocalDate.now()));
+        frame.mainModel.addInvoice(new Invoice("miao",17.89,LocalDate.now()));
         frame.mainModel.addInvoice(new Invoice("bau",13,LocalDate.ofYearDay(2013,201)));
         frame.mainModel.addInvoice(new Invoice("prova",10.67,LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("miao",10,LocalDate.now()));
+        frame.mainModel.addInvoice(new Invoice("miao",-10,LocalDate.now()));
         frame.mainModel.addInvoice(new Invoice("bau",13,LocalDate.now()));
         frame.mainModel.addInvoice(new Invoice("prova",10.67,LocalDate.now()));
         frame.mainModel.addInvoice(new Invoice("miao",10,LocalDate.now()));
         frame.mainModel.addInvoice(new Invoice("bau",13,LocalDate.now().minus(89, ChronoUnit.DAYS)));
-        frame.mainModel.addInvoice(new Invoice("prova",10.67,LocalDate.now()));
+        frame.mainModel.addInvoice(new Invoice("prova",-10.67,LocalDate.now()));
         frame.mainModel.addInvoice(new Invoice("miao",10, LocalDate.now()));
         frame.mainModel.addInvoice(new Invoice("bau",13,LocalDate.now().minus(589, ChronoUnit.DAYS)));
         frame.mainModel.addInvoice(new Invoice("prova",10.67,LocalDate.now()));
         frame.mainModel.addInvoice(new Invoice("miao",10,LocalDate.now().minus(75, ChronoUnit.WEEKS)));
-        frame.mainModel.addInvoice(new Invoice("bau",13,LocalDate.ofYearDay(2001,256)));
+        frame.mainModel.addInvoice(new Invoice("bau",-13,LocalDate.ofYearDay(2001,256)));
         frame.mainModel.addInvoice(new Invoice("prova",10.67,LocalDate.now()));
         frame.mainModel.addInvoice(new Invoice("miao",10,LocalDate.now()));
         frame.mainModel.addInvoice(new Invoice("bau",13,LocalDate.now()));

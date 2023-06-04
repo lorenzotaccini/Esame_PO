@@ -9,9 +9,13 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.time.LocalDate;
 
-
+/**
+ * Frame principale dell'applicazione
+ */
 public class InvoicesTableFrame extends JFrame {
     public InvoicesTableModel mainModel; //TODO metodo private quando togli dati di esempio dal main
 
@@ -84,6 +88,7 @@ public class InvoicesTableFrame extends JFrame {
 
         filterByRegexBtn.addActionListener(e -> {
             mainDatePanel.resetPanel();
+            sorter.setRowFilter(null);
             mainDatePanel.setVisible(false);
             filterPanel.setVisible(true);
             filterText.requestFocus();
@@ -91,6 +96,7 @@ public class InvoicesTableFrame extends JFrame {
 
         filterByDateBtn.addActionListener(e -> {
             mainDatePanel.resetPanel();
+            sorter.setRowFilter(null);
             filterPanel.setVisible(false);
             mainDatePanel.setVisible(true);
         });
@@ -146,9 +152,32 @@ public class InvoicesTableFrame extends JFrame {
         popupEdit.addActionListener(new editListener(sorter, mainTable));
         filterText.getDocument().addDocumentListener(new searchFilter(sorter,filterText));
 
+        //setting dell'icona da usare nella barra delle applicazioni e nella statusbar
+        setIconImage(Toolkit.getDefaultToolkit().getImage("resources/TaskBarIcon.png"));
+
+        //dimensioni finestra settate in modo da evitare collisioni tra oggetti e blocco dimensioni minime
         pack();
         setMinimumSize(this.getSize());
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        //aggiunta della conferma per l'uscita dell'applicazione
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        addWindowListener(new WindowAdapter() {
+
+            @Override
+            public void windowClosing(WindowEvent we)
+            {
+                String[] ObjButtons = {"Exit","Cancel"};
+                int PromptResult = JOptionPane.showOptionDialog(mainTable,
+                        "Are you sure you want to exit?\nAll non-saved data will be lost.", "Closing application",
+                        JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null,
+                        ObjButtons,ObjButtons[0]);
+                if(PromptResult==0)
+                {
+                    System.exit(0);
+                }
+            }
+        });
+
         setLocationRelativeTo(null);
         setVisible(true);
 

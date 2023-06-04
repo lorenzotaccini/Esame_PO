@@ -3,18 +3,28 @@ package Filters;
 import javax.swing.*;
 import java.time.LocalDate;
 
+/**
+ * classe per il filtraggio di date tramite RowSorter utilizzando il formato data "LocalDate" (nuovo standard, la classe
+ * RowFilter utilizza invece di default l'ormai obsoleto tipo "Date", che non comprende informazioni sulla TimeZone
+ */
 public class LocalDateRowFilter extends RowFilter<Object,Object> {
     private LocalDate startLocalDate;
     private LocalDate endLocalDate;
 
+    /**
+     * set della data di inizio
+     * @param startdate
+     */
     public void setStartLocalDate(LocalDate startdate){
         this.startLocalDate=startdate;
-        System.out.println("start date is "+startLocalDate.toString());
     }
 
+    /**
+     * set della data di fine
+     * @param enddate
+     */
     public void setEndLocalDate(LocalDate enddate){
         this.endLocalDate=enddate;
-        System.out.println("end date is "+endLocalDate.toString());
     }
 
     public LocalDateRowFilter() {

@@ -39,18 +39,12 @@ public class deleteListener implements ActionListener {
         }
         //scorro gli elementi dall'ultimo per evitare il cambio di indice nel tablemodel
         for (int actualIndex = vSel.length - 1; actualIndex >= 0; actualIndex--) {
-            try {
                 if (parentSorter.getRowFilter() == null) {
                     model.deleteInvoice(model.getInvoiceAtRow(vSel[actualIndex]));
                 }
                 else{
                     model.deleteInvoice(model.getInvoiceAtRow(mappedVector[vSel[actualIndex]]));
                 }
-            }
-            //Indexoutofboundexception quando cancello l'ultimo elemento presente nell'arraylist (unsolved)
-            catch (IndexOutOfBoundsException iob) {
-                System.out.println("\nTable is now empty\n");
-            }
         }
     }
 }

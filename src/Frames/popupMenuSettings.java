@@ -10,8 +10,9 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 /**
- * La classe aggiunge il popupmenu alla tabella quando è premuto il tasto destro su un elemento.
- * Viene selezionata la riga su cui è stato effettuato il click
+ * La classe propone metodi per azionare l'apertura del popupmenu su una JTable quando è premuto il tasto destro su un elemento,
+ * e la funzione di doppio click per modificare un elemento.
+ * Viene selezionata la riga su cui è stato effettuato il click.
  */
 public class popupMenuSettings {
     public static void setupPopupMenu(JTable table,final JPopupMenu popupMenu) {

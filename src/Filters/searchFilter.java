@@ -8,6 +8,10 @@ import javax.swing.event.DocumentListener;
 import javax.swing.table.TableRowSorter;
 import java.util.regex.PatternSyntaxException;
 
+/**
+ * classe che implementa DocumentListener e crea un RowFilter dedicato alla ricerca di elementi basata sul testo tramite regex
+ * pattern. Il testo ottenuto dal JtextField passato come argomento è processato dal RowFilter.regexfilter e applicato sul tableRowSorter
+ */
 public class searchFilter implements DocumentListener {
     private final JTextField pattern;
     private final TableRowSorter<InvoicesTableModel> parentSorter;

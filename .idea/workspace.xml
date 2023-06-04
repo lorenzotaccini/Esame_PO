@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="Il datePanel (e relativo filtro) ora sono funzionanti.">
+    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="risolto problema al datePanel che causava crash">
+      <change afterPath="$PROJECT_DIR$/resources/TaskBarIcon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Filters/LocalDateRowFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Filters/LocalDateRowFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Filters/searchFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Filters/searchFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Listeners/totalListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/totalListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Frames/popupMenuSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frames/popupMenuSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Listeners/deleteListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/deleteListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Panels/datePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/datePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Panels/statusPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TableModel/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TableModel/Invoice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TableModel/InvoicesTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TableModel/InvoicesTableModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,6 +75,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\lollo\IdeaProjects\Esame_PO\src" />
       <recent name="C:\Users\lollo\IdeaProjects\Esame_PO\src\JDatePicker" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lollo\IdeaProjects\Esame_PO\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Frames" />
@@ -268,7 +274,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685633152506</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="risolto problema al datePanel che causava crash">
+      <created>1685876859177</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1685876859177</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -318,7 +331,8 @@
     <MESSAGE value="dateFilter quasi completato, create le classi datefilter e searchfilter( moved from mainFrame)" />
     <MESSAGE value="ulteriori modifiche a datePanel (buggy)" />
     <MESSAGE value="Il datePanel (e relativo filtro) ora sono funzionanti." />
-    <option name="LAST_COMMIT_MESSAGE" value="Il datePanel (e relativo filtro) ora sono funzionanti." />
+    <MESSAGE value="risolto problema al datePanel che causava crash" />
+    <option name="LAST_COMMIT_MESSAGE" value="risolto problema al datePanel che causava crash" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

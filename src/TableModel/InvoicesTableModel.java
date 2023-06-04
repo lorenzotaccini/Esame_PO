@@ -126,9 +126,13 @@ public class InvoicesTableModel extends AbstractTableModel {
 
 
     /** Metodo che restituisce la classe del dato contenuto in una certa colonna
-     * @return Classe del dato in colonna columnIndex */
+     * @return Classe del dato in colonna columnIndex, null se invoiceSet è vuota
+     */
     @Override
     public Class<?> getColumnClass(int columnIndex) {
+        if(getRowCount()==0){
+            return Object.class;
+        }
         //si guarda alla prima riga
         return getValueAt(0, columnIndex).getClass();
     }
