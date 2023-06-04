@@ -1,6 +1,8 @@
 package TableModel;
 
 import javax.swing.table.AbstractTableModel;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -16,7 +18,7 @@ public class InvoicesTableModel extends AbstractTableModel {
      */
     private final ArrayList<Invoice> invoiceSet;
     private double total=0;
-    String[] columnNames = {"Date", "Amount", "Description"};
+    String[] columnNames = {"Date", "Amount", "Description","+/-"};
 
     public InvoicesTableModel() {
         super();
@@ -44,7 +46,7 @@ public class InvoicesTableModel extends AbstractTableModel {
         fireTableDataChanged();
     }
 
-    /** Si utilizza un oggetto di classe Iterator per scorrere il vettore arrayList e rimuovere l'oggetto*/
+    /** Si utilizza un oggetto di classe Iterator per scorrere il vettore arrayList e rimuovere l'oggetto */
     public void deleteInvoice(Invoice delItem){
         Iterator<Invoice> itr = invoiceSet.iterator();
         while(itr.hasNext()){
@@ -66,17 +68,33 @@ public class InvoicesTableModel extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return 3;
+        return 4;
     }
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        return switch (columnIndex) {
-            case 0 -> invoiceSet.get(rowIndex).getDate();
-            case 1 -> invoiceSet.get(rowIndex).getAmount();
-            case 2 -> invoiceSet.get(rowIndex).getDesc();
-            default -> null;
-        };
+        switch (columnIndex) {
+            case 0 -> {
+                return invoiceSet.get(rowIndex).getDate();
+            }
+            case 1 -> {
+                return invoiceSet.get(rowIndex).getAmount();
+            }
+            case 2 -> {
+                return invoiceSet.get(rowIndex).getDesc();
+            }
+            case 3 -> {
+                if(invoiceSet.get(rowIndex).getAmount()>=0){
+                    return "\uD83E\uDC75";
+                }
+                else{
+                    return "\uD83E\uDC76";
+                }
+            }
+            default -> {
+                return null;
+            }
+        }
     }
     @Override
     public void setValueAt(Object aValue, int rowIndex, int columnIndex)

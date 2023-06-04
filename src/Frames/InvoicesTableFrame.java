@@ -3,12 +3,13 @@ package Frames;
 import Filters.searchFilter;
 import Listeners.*;
 import Panels.datePanel;
-import Panels.statusPanel;
 import TableModel.InvoicesTableModel;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
+import java.time.LocalDate;
 
 
 public class InvoicesTableFrame extends JFrame {
@@ -20,6 +21,13 @@ public class InvoicesTableFrame extends JFrame {
 
         mainModel=new InvoicesTableModel();
         JTable mainTable = new JTable(mainModel);
+        mainTable.getColumnModel().getColumn(3).setMaxWidth(25);
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment( JLabel.CENTER );
+        mainTable.setDefaultRenderer(String.class, centerRenderer);
+        mainTable.setDefaultRenderer(Double.class, centerRenderer);
+        mainTable.setDefaultRenderer(LocalDate.class, centerRenderer);
+
         final TableRowSorter<InvoicesTableModel> sorter = new TableRowSorter<>(mainModel);
         mainTable.setRowSorter(sorter);
 
@@ -75,12 +83,14 @@ public class InvoicesTableFrame extends JFrame {
         });
 
         filterByRegexBtn.addActionListener(e -> {
+            mainDatePanel.resetPanel();
             mainDatePanel.setVisible(false);
             filterPanel.setVisible(true);
             filterText.requestFocus();
         });
 
         filterByDateBtn.addActionListener(e -> {
+            mainDatePanel.resetPanel();
             filterPanel.setVisible(false);
             mainDatePanel.setVisible(true);
         });
@@ -117,7 +127,7 @@ public class InvoicesTableFrame extends JFrame {
 
         bottomPanel.add(addButton,BorderLayout.NORTH);
         bottomPanel.add(deleteButton,BorderLayout.CENTER);
-        bottomPanel.add(new statusPanel(this).add(totalLabel),BorderLayout.SOUTH);
+        bottomPanel.add(new JPanel().add(totalLabel),BorderLayout.SOUTH);
 
         filterPanel.setVisible(false);
         mainDatePanel.setVisible(false);
@@ -144,5 +154,3 @@ public class InvoicesTableFrame extends JFrame {
 
     }
 }
-
-

@@ -21,6 +21,8 @@ public class datePanel extends JPanel implements ActionListener, DateChangeListe
     private final JPanel arrowsPanel;
     private final JLabel fromLabel;
     private final JLabel toLabel;
+    private final JButton backBtn;
+    private final JButton forwardBtn;
 
     private final TableRowSorter<InvoicesTableModel> parentSorter;
     private final LocalDateRowFilter dateFilter;
@@ -32,8 +34,8 @@ public class datePanel extends JPanel implements ActionListener, DateChangeListe
         dateFilter=new LocalDateRowFilter();
 
         setLayout(new BorderLayout());
-        JButton backBtn =new JButton(" ◀ ");
-        JButton forwardBtn = new JButton(" ▶ ");
+        backBtn =new JButton(" ◀ ");
+        forwardBtn = new JButton(" ▶ ");
         JPanel selectionPanel = new JPanel();
 
         JLabel periodLabel= new JLabel("Period:");
@@ -50,12 +52,9 @@ public class datePanel extends JPanel implements ActionListener, DateChangeListe
         customStartDate = new MyDatePicker();
         customEndDate = new MyDatePicker();
 
-        //creazione combobox e
         periodComboBox= new JComboBox<>(new  String[] {"Day", "Week", "Month", "Year", "Custom..."});
-        this.resetPanel();
         periodComboBox.addActionListener(this);
-
-
+        resetPanel();
 
         backBtn.addActionListener(this);
         forwardBtn.addActionListener(this);
@@ -80,19 +79,21 @@ public class datePanel extends JPanel implements ActionListener, DateChangeListe
 
         add(selectionPanel, BorderLayout.NORTH);
         add(arrowsPanel, BorderLayout.SOUTH);
-        customStartDate.setEnabled(false);
 
     }
 
     /**
      * Reset del pannello alle sue impostazioni di base.
-     * Il periodo di default del filtro è la settimana (7 giorni) a partire dalla data corrente
      */
     public void resetPanel(){
-        periodComboBox.setSelectedIndex(1); //elemento di default: settimana
-        periodDuration=7;
+        periodDuration=0;
         customEndDate.setDate(LocalDate.now());
         customStartDate.setDate(customEndDate.getDate().minusDays(periodDuration));
+        customStartDate.setEnabled(false);
+        customEndDate.setEnabled(false);
+        backBtn.setEnabled(false);
+        forwardBtn.setEnabled(false);
+        periodComboBox.setSelectedIndex(-1);
     }
 
     @Override
@@ -105,29 +106,36 @@ public class datePanel extends JPanel implements ActionListener, DateChangeListe
             arrowsPanel.setVisible(true);
             fromLabel.setText("From:");
             toLabel.setVisible(true);
-            switch (periodComboBox.getItemAt(periodComboBox.getSelectedIndex())) {
-                case "Day" -> {
-                    periodDuration = 1;
-                    customStartDate.setDate(customEndDate.getDate());
-                    fromLabel.setText("        Day:       ");
-                    toLabel.setVisible(false);
-                    customStartDate.setVisible(false);
-                }
-                case "Week" -> {
-                    periodDuration = 7;
-                    customStartDate.setDate(customEndDate.getDate().minusDays(periodDuration));
-                }
-                case "Month" -> {
-                    periodDuration = 30;
-                    customStartDate.setDate(customEndDate.getDate().minusDays(periodDuration));
-                }
-                case "Year" -> {
-                    periodDuration = 365;
-                    customStartDate.setDate(customEndDate.getDate().minusDays(periodDuration));
-                }
-                case "Custom..." -> {
-                    customStartDate.setEnabled(true);
-                    arrowsPanel.setVisible(false);
+            backBtn.setEnabled(true);
+            forwardBtn.setEnabled(true);
+            if(periodComboBox.getSelectedIndex()==-1){
+                System.out.println("ciao");
+            }
+            else {
+                switch (periodComboBox.getItemAt(periodComboBox.getSelectedIndex())) {
+                    case "Day" -> {
+                        periodDuration = 1;
+                        customStartDate.setDate(customEndDate.getDate());
+                        fromLabel.setText("        Day:       ");
+                        toLabel.setVisible(false);
+                        customStartDate.setVisible(false);
+                    }
+                    case "Week" -> {
+                        periodDuration = 7;
+                        customStartDate.setDate(customEndDate.getDate().minusDays(periodDuration));
+                    }
+                    case "Month" -> {
+                        periodDuration = 30;
+                        customStartDate.setDate(customEndDate.getDate().minusDays(periodDuration));
+                    }
+                    case "Year" -> {
+                        periodDuration = 365;
+                        customStartDate.setDate(customEndDate.getDate().minusDays(periodDuration));
+                    }
+                    case "Custom..." -> {
+                        customStartDate.setEnabled(true);
+                        arrowsPanel.setVisible(false);
+                    }
                 }
             }
         }
@@ -146,18 +154,21 @@ public class datePanel extends JPanel implements ActionListener, DateChangeListe
         }
 
         //se è selezionato il periodo "Day" le due date vengono settate combacianti
-        if(periodComboBox.getItemAt(periodComboBox.getSelectedIndex()).equals("Day")){
-            dateFilter.setStartLocalDate(customEndDate.getDate());
+        if(periodComboBox.getSelectedIndex()!=-1) {
+            if (periodComboBox.getItemAt(periodComboBox.getSelectedIndex()).equals("Day")) {
+                dateFilter.setStartLocalDate(customEndDate.getDate());
+            } else {
+                dateFilter.setStartLocalDate(customStartDate.getDate());
+            }
+            dateFilter.setEndLocalDate(customEndDate.getDate());
+            parentSorter.setRowFilter(dateFilter);
         }
-        else{
-            dateFilter.setStartLocalDate(customStartDate.getDate());
-        }
-        dateFilter.setEndLocalDate(customEndDate.getDate());
-        parentSorter.setRowFilter(dateFilter);
     }
 
     @Override
     public void dateChanged(DateChangeEvent dateChangeEvent) {
+        backBtn.setEnabled(true);
+        forwardBtn.setEnabled(true);
         if(!periodComboBox.getItemAt(periodComboBox.getSelectedIndex()).equals("Custom...")){
             customStartDate.setDate(customEndDate.getDate().minusDays(periodDuration));
         }

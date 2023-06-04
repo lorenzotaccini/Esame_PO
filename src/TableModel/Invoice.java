@@ -5,7 +5,6 @@ import java.time.format.DateTimeFormatter;
 
 public class Invoice {
     private String desc;
-    /** il tipo di dato BigDecimal è adatto all'utilizzo in ambito monetario*/
     private double amount;
     private LocalDate date;
     private DateTimeFormatter formattedDate;
