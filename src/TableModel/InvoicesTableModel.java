@@ -1,8 +1,6 @@
 package TableModel;
 
 import javax.swing.table.AbstractTableModel;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -16,7 +14,7 @@ public class InvoicesTableModel extends AbstractTableModel {
     /**
      * ArrayList di generics di tipo invoice
      */
-    private final ArrayList<Invoice> invoiceSet;
+    private ArrayList<Invoice> invoiceSet;
     private double total=0;
     String[] columnNames = {"Date", "Amount", "Description","+/-"};
 
@@ -29,10 +27,6 @@ public class InvoicesTableModel extends AbstractTableModel {
         return total;
     }
 
-    public void setTotal(double total) {
-        this.total = total;
-    }
-
     @Override
     public String getColumnName(int column) {
         return columnNames[column];
@@ -42,7 +36,7 @@ public class InvoicesTableModel extends AbstractTableModel {
     public void addInvoice(Invoice t) {
         invoiceSet.add(t);
         total=total+t.getAmount();
-        System.out.println("added "+t.toString());
+        System.out.println("added "+ t);
         fireTableDataChanged();
     }
 
@@ -96,6 +90,21 @@ public class InvoicesTableModel extends AbstractTableModel {
             }
         }
     }
+
+    public ArrayList<Invoice> getInvoiceSet() {
+        return invoiceSet;
+    }
+
+    public void setInvoiceSet(ArrayList<Invoice> newSet){
+        this.invoiceSet=newSet;
+        Iterator<Invoice> itr = invoiceSet.iterator();
+        total=0;
+        while(itr.hasNext()){
+            Invoice actual= itr.next();
+            total+=actual.getAmount();
+        }
+    }
+
     @Override
     public void setValueAt(Object aValue, int rowIndex, int columnIndex)
     {

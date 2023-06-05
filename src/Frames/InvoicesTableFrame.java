@@ -167,7 +167,7 @@ public class InvoicesTableFrame extends JFrame {
             public void windowClosing(WindowEvent we)
             {
                 String[] ObjButtons = {"Exit","Cancel"};
-                int PromptResult = JOptionPane.showOptionDialog(mainTable,
+                int PromptResult = JOptionPane.showOptionDialog(tablePanel,
                         "Are you sure you want to exit?\nAll non-saved data will be lost.", "Closing application",
                         JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null,
                         ObjButtons,ObjButtons[0]);

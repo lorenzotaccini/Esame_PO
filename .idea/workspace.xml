@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="risolto problema al datePanel che causava crash">
-      <change afterPath="$PROJECT_DIR$/resources/TaskBarIcon.png" afterDir="false" />
+    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="Aggiunta icona dell'applicazione.&#10;Aggiunto popup di conferma prima della chiusura.&#10;Rimosso blocco try/catch che preveniva un errore quando il modello era vuoto (modifica alla classe getcolumn class)">
+      <change afterPath="$PROJECT_DIR$/src/SaveLoadExport/AbstractSaverLoaderExporter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SaveLoadExport/binarySaverLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Filters/LocalDateRowFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Filters/LocalDateRowFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Filters/searchFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Filters/searchFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Frames/popupMenuSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frames/popupMenuSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Listeners/deleteListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/deleteListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Panels/datePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/datePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TableModel/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TableModel/Invoice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TableModel/InvoicesTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TableModel/InvoicesTableModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,12 +36,13 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/SaveLoadExport/binarySaverLoader.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2OjQqKgtr3wdp04uJZ4WQy4yrgc" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -281,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685876859177</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Aggiunta icona dell'applicazione.&#10;Aggiunto popup di conferma prima della chiusura.&#10;Rimosso blocco try/catch che preveniva un errore quando il modello era vuoto (modifica alla classe getcolumn class)">
+      <created>1685902411700</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1685902411700</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -332,7 +337,8 @@
     <MESSAGE value="ulteriori modifiche a datePanel (buggy)" />
     <MESSAGE value="Il datePanel (e relativo filtro) ora sono funzionanti." />
     <MESSAGE value="risolto problema al datePanel che causava crash" />
-    <option name="LAST_COMMIT_MESSAGE" value="risolto problema al datePanel che causava crash" />
+    <MESSAGE value="Aggiunta icona dell'applicazione.&#10;Aggiunto popup di conferma prima della chiusura.&#10;Rimosso blocco try/catch che preveniva un errore quando il modello era vuoto (modifica alla classe getcolumn class)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta icona dell'applicazione.&#10;Aggiunto popup di conferma prima della chiusura.&#10;Rimosso blocco try/catch che preveniva un errore quando il modello era vuoto (modifica alla classe getcolumn class)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
