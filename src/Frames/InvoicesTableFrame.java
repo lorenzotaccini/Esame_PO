@@ -4,6 +4,10 @@ import Filters.searchFilter;
 import Listeners.*;
 import Panels.datePanel;
 import TableModel.InvoicesTableModel;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -11,6 +15,9 @@ import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.time.LocalDate;
 
 /**
@@ -20,7 +27,7 @@ public class InvoicesTableFrame extends JFrame {
     public InvoicesTableModel mainModel; //TODO metodo private quando togli dati di esempio dal main
 
 
-    public InvoicesTableFrame() {
+    public InvoicesTableFrame() throws IOException {
         setTitle("Gestione Bilancio Taccini");
 
         mainModel=new InvoicesTableModel();
