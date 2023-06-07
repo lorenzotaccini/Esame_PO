@@ -4,14 +4,63 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="Aggiunta icona dell'applicazione.&#10;Aggiunto popup di conferma prima della chiusura.&#10;Rimosso blocco try/catch che preveniva un errore quando il modello era vuoto (modifica alla classe getcolumn class)">
-      <change afterPath="$PROJECT_DIR$/src/SaveLoadExport/AbstractSaverLoaderExporter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SaveLoadExport/binarySaverLoader.java" afterDir="false" />
+    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="Aggiunte alcune classi per salvataggio e caricamento (begin)">
+      <change afterPath="$PROJECT_DIR$/.idea/intellij-javadocs-4.0.1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/NOTICE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/auxiliary/batik-anim-1.14.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/auxiliary/batik-awt-util-1.14.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/auxiliary/batik-bridge-1.14.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/auxiliary/batik-codec-1.14.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/auxiliary/batik-constants-1.14.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/auxiliary/batik-css-1.14.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/auxiliary/batik-dom-1.14.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/auxiliary/batik-ext-1.14.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/auxiliary/batik-gvt-1.14.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/auxiliary/batik-i18n-1.14.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/auxiliary/batik-parser-1.14.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/auxiliary/batik-script-1.14.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/auxiliary/batik-shared-resources-1.14.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/auxiliary/batik-svg-dom-1.14.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/auxiliary/batik-svggen-1.14.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/auxiliary/batik-svgrasterizer-1.14.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/auxiliary/batik-transcoder-1.14.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/auxiliary/batik-util-1.14.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/auxiliary/batik-xml-1.14.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/auxiliary/bcpkix-jdk15on-1.70.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/auxiliary/bcprov-jdk15on-1.70.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/auxiliary/bcutil-jdk15on-1.70.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/auxiliary/fontbox-2.0.26.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/auxiliary/graphics2d-0.40.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/auxiliary/pdfbox-2.0.26.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/auxiliary/xml-apis-1.4.01.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/auxiliary/xml-apis-ext-1.3.04.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/auxiliary/xmlgraphics-commons-2.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/auxiliary/xmlsec-3.0.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/lib/SparseBitSet-1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/lib/commons-codec-1.15.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/lib/commons-collections4-4.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/lib/commons-io-2.11.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/lib/commons-math3-3.6.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/lib/log4j-api-2.18.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/ooxml-lib/commons-compress-1.21.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/ooxml-lib/commons-logging-1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/ooxml-lib/curvesapi-1.07.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/ooxml-lib/jakarta.activation-2.0.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/ooxml-lib/jakarta.xml.bind-api-3.0.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/ooxml-lib/slf4j-api-1.7.36.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/ooxml-lib/xmlbeans-5.1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/poi-5.2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/poi-examples-5.2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/poi-excelant-5.2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/poi-javadoc-5.2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/poi-ooxml-5.2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/poi-ooxml-full-5.2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/poi-ooxml-lite-5.2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poi-bin-5.2.3-20220909/poi-bin-5.2.3/poi-scratchpad-5.2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Filters/SimpleExcelWriterExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TableModel/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TableModel/Invoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TableModel/InvoicesTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TableModel/InvoicesTableModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Esame_PO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Esame_PO.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,23 +101,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/lollo/IdeaProjects/progetto manu&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/lorenzo/IdeaProjects/Esame_PO/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/lollo/IdeaProjects/Esame_PO/poi-bin-5.2.3-20220909/poi-bin-5.2.3/poi-scratchpad-5.2.3.jar",
+    "onboarding.tips.debug.path": "/Users/lorenzo/IdeaProjects/Esame_PO/src/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\lollo\IdeaProjects\Esame_PO\src" />
@@ -81,7 +130,7 @@
       <recent name="Frames" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Esame_PO" />
@@ -89,9 +138,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SimpleExcelWriterExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Filters.SimpleExcelWriterExample" />
+      <module name="Esame_PO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Filters.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.SimpleExcelWriterExample" />
       </list>
     </recent_temporary>
   </component>
@@ -286,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685902411700</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Aggiunte alcune classi per salvataggio e caricamento (begin)">
+      <created>1685985956455</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1685985956455</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -338,7 +408,8 @@
     <MESSAGE value="Il datePanel (e relativo filtro) ora sono funzionanti." />
     <MESSAGE value="risolto problema al datePanel che causava crash" />
     <MESSAGE value="Aggiunta icona dell'applicazione.&#10;Aggiunto popup di conferma prima della chiusura.&#10;Rimosso blocco try/catch che preveniva un errore quando il modello era vuoto (modifica alla classe getcolumn class)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta icona dell'applicazione.&#10;Aggiunto popup di conferma prima della chiusura.&#10;Rimosso blocco try/catch che preveniva un errore quando il modello era vuoto (modifica alla classe getcolumn class)" />
+    <MESSAGE value="Aggiunte alcune classi per salvataggio e caricamento (begin)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunte alcune classi per salvataggio e caricamento (begin)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
