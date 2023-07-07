@@ -3,11 +3,9 @@ package Frames;
 import Filters.searchFilter;
 import Listeners.*;
 import Panels.datePanel;
+import SaveLoadExport.SaverLoaderExporter;
+import SaveLoadExport.excelExport;
 import TableModel.InvoicesTableModel;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -15,8 +13,6 @@ import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.LocalDate;
 
@@ -27,7 +23,7 @@ public class InvoicesTableFrame extends JFrame {
     public InvoicesTableModel mainModel; //TODO metodo private quando togli dati di esempio dal main
 
 
-    public InvoicesTableFrame() throws IOException {
+    public InvoicesTableFrame() {
         setTitle("Gestione Bilancio Taccini");
 
         mainModel=new InvoicesTableModel();
@@ -62,6 +58,8 @@ public class InvoicesTableFrame extends JFrame {
         final JTextField filterText = new JTextField("");
         final JButton addButton = new JButton("ADD");
         final JButton deleteButton = new JButton("DELETE");
+        final JButton exportButton = new JButton("EXPORT EXCEL");
+        final JButton saveButton = new JButton("Save");
         final JMenuItem popupDelete = new JMenuItem("Delete");
         final JMenuItem popupEdit = new JMenuItem("Edit Row");
 
@@ -83,6 +81,16 @@ public class InvoicesTableFrame extends JFrame {
         filterTypeSelectionPanel.add(filterByDateBtn);
         filterTypeSelectionPanel.add(resetFiltersBtn,BorderLayout.EAST);
 
+        saveButton.addActionListener(new SaverLoaderExporter(mainModel));
+
+        excelExport exporter= new excelExport(mainModel);
+        exportButton.addActionListener(e -> {
+            try {
+                exporter.export();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
 
         resetFiltersBtn.addActionListener(e -> {
             mainDatePanel.resetPanel();
@@ -140,6 +148,9 @@ public class InvoicesTableFrame extends JFrame {
 
         bottomPanel.add(addButton,BorderLayout.NORTH);
         bottomPanel.add(deleteButton,BorderLayout.CENTER);
+        bottomPanel.add(exportButton,BorderLayout.SOUTH);
+        bottomPanel.add(saveButton,BorderLayout.EAST);
+
         bottomPanel.add(new JPanel().add(totalLabel),BorderLayout.SOUTH);
 
         filterPanel.setVisible(false);

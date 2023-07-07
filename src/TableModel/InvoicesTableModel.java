@@ -1,6 +1,10 @@
 package TableModel;
 
+import SaveLoadExport.AbstractSaverLoaderExporter;
+
 import javax.swing.table.AbstractTableModel;
+import java.io.File;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -103,6 +107,7 @@ public class InvoicesTableModel extends AbstractTableModel {
             Invoice actual= itr.next();
             total+=actual.getAmount();
         }
+        fireTableDataChanged();
     }
 
     @Override
@@ -144,6 +149,12 @@ public class InvoicesTableModel extends AbstractTableModel {
         }
         //si guarda alla prima riga
         return getValueAt(0, columnIndex).getClass();
+    }
+
+    public void loadFromFile(AbstractSaverLoaderExporter saver, File file) throws IOException {
+        System.out.println("Loading table content from file: "+file.getPath()+"\n");
+        setInvoiceSet(saver.loadData(file));
+        System.out.println("Loaded successfully.\n");
     }
 
 }

@@ -1,10 +1,7 @@
 import Frames.InvoicesTableFrame;
 import TableModel.Invoice;
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.slf4j.LoggerFactory;
 
 import javax.swing.*;
 import javax.swing.plaf.ColorUIResource;
@@ -17,7 +14,6 @@ import java.time.temporal.ChronoUnit;
 public class Main {
     public static void initUI(){
         try {
-
             //FlatLaf.setGlobalExtraDefaults(Collections.singletonMap("@accentColor", "#521fa3"));
             UIManager.setLookAndFeel( new FlatMacLightLaf() );
             UIManager.put("Table.showVerticalLines",true);
