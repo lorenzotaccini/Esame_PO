@@ -5,11 +5,10 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import javax.swing.*;
-import java.io.FileNotFoundException;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -21,6 +20,21 @@ public class excelExport {
     }
 
     public void export() throws IOException {
+
+        JFileChooser fileChooser = new JFileChooser();
+        FileNameExtensionFilter xlsx = new FileNameExtensionFilter("Excel Spreadsheet File (*.xlsx)", "xlsx");
+        String extension = ".xlsx";
+        fileChooser.addChoosableFileFilter(xlsx);
+        fileChooser.setAcceptAllFileFilterUsed(false);
+        fileChooser.setCurrentDirectory(new File("./Excel_exports"));
+        int userSelection = JOptionPane.CANCEL_OPTION;
+        userSelection = fileChooser.showSaveDialog(null);
+        File file = fileChooser.getSelectedFile();
+        String filterDescr = fileChooser.getFileFilter().getDescription();
+        String filePath = file.getAbsolutePath();
+        if(!filePath.endsWith(extension)) {
+            file = new File(filePath + extension);
+        }
 
         Workbook wb = new XSSFWorkbook(); //Excel workbook
         Sheet sheet = wb.createSheet("Invoices"); //WorkSheet
@@ -41,7 +55,7 @@ public class excelExport {
         }
 
 
-        wb.write(new FileOutputStream("resources\\prova.xlsx"));//Save the file
+        wb.write(new FileOutputStream(file));//Save the file
         wb.close();
 
     }

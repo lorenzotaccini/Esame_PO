@@ -11,8 +11,10 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.awt.print.PrinterException;
 import java.io.IOException;
 import java.time.LocalDate;
 
@@ -61,7 +63,6 @@ public class InvoicesTableFrame extends JFrame {
         final JLabel totalLabel = new JLabel();
         final JLabel filterTypeSelectionLabel= new JLabel("Filter by:");
         final JButton resetFiltersBtn = new JButton("RESET FILTERS \uD83D\uDD04");
-//        JButton printButton =new JButton("Print");
 
         final ButtonGroup filterTypeSelectionGroup= new ButtonGroup();
         final JRadioButton filterByRegexBtn = new JRadioButton("Text Search");
@@ -70,10 +71,11 @@ public class InvoicesTableFrame extends JFrame {
         filterByRegexBtn.setBorder(BorderFactory.createEmptyBorder(0,20, 0, 10));
 
         final JMenuBar menuBar= new JMenuBar();
+        final JMenu printButton =new JMenu("Print");
         final JMenu fileMenu= new JMenu("File");
         final JMenu saveExportMenu= new JMenu("Save/Export data");
-        final JMenuItem saveMenuItem= new JMenuItem("Save...");
-        final JMenuItem loadMenuItem= new JMenuItem("Load from file...");
+        final JMenuItem saveMenuItem= new JMenuItem("Save");
+        final JMenuItem loadMenuItem= new JMenuItem("Load from file");
         final JMenuItem excelExportItem= new JMenuItem("Export in Excel");
 
 
@@ -82,6 +84,7 @@ public class InvoicesTableFrame extends JFrame {
         saveExportMenu.add(excelExportItem);
         fileMenu.add(saveExportMenu);
         fileMenu.add(loadMenuItem);
+
         menuBar.add(fileMenu);
         this.setJMenuBar(menuBar);
 
@@ -94,8 +97,8 @@ public class InvoicesTableFrame extends JFrame {
         filterTypeSelectionPanel.add(filterByDateBtn);
         filterTypeSelectionPanel.add(resetFiltersBtn,BorderLayout.EAST);
 
-        saveMenuItem.addActionListener(new SaverLoaderExporter(mainModel));
-        loadMenuItem.addActionListener(new SaverLoaderExporter(mainModel));
+        saveMenuItem.addActionListener(new SaverLoaderExporter(mainModel,false));
+        loadMenuItem.addActionListener(new SaverLoaderExporter(mainModel,false));
 
         excelExport exporter= new excelExport(mainModel);
         excelExportItem.addActionListener(e -> {
@@ -130,15 +133,15 @@ public class InvoicesTableFrame extends JFrame {
             mainDatePanel.setVisible(true);
         });
 
-//        printButton.addActionListener((ActionListener) e -> {
-//            try {
-//                if (! mainTable.print()) {
-//                    System.err.println("User cancelled printing");
-//                }
-//            } catch (PrinterException e2) {
-//                System.err.format("Cannot print %s%n", e2.getMessage());
-//            }
-//        });
+        printButton.addActionListener(e -> {
+            try {
+                if (! mainTable.print()) {
+                    System.err.println("User cancelled printing");
+                }
+            } catch (PrinterException e2) {
+                System.err.format("Cannot print %s%n", e2.getMessage());
+            }
+        });
 
 
         mainPopupMenu.add(popupDelete);
@@ -196,12 +199,15 @@ public class InvoicesTableFrame extends JFrame {
             @Override
             public void windowClosing(WindowEvent we)
             {
-                String[] ObjButtons = {"Exit","Cancel"};
+                JButton confirmSaveButton= new JButton("Save");
+                confirmSaveButton.addActionListener(new SaverLoaderExporter(mainModel,true));
+                Object[] ObjButtons = {confirmSaveButton,"Exit","Cancel"};
                 int PromptResult = JOptionPane.showOptionDialog(tablePanel,
-                        "Are you sure you want to exit?\nAll non-saved data will be lost.", "Closing application",
+                        "Save before exit?\nAll non-saved data will be lost.", "Closing application",
                         JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null,
                         ObjButtons,ObjButtons[0]);
-                if(PromptResult==0)
+
+                if(PromptResult==1) //tasto exit
                 {
                     System.exit(0);
                 }
