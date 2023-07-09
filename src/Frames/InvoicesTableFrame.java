@@ -47,19 +47,14 @@ public class InvoicesTableFrame extends JFrame {
         JPanel filterPanel=new JPanel(new BorderLayout(10,10));
         JPanel filterTypeSelectionPanel= new JPanel();
         filterTypeSelectionPanel.setLayout(new BoxLayout(filterTypeSelectionPanel,BoxLayout.X_AXIS));
-//        JTabbedPane tabbedPane = new JTabbedPane(); TODO TABBED PANE INSTEAD OF JRADIOBUTTON
         topPanel.setBorder(BorderFactory.createEmptyBorder(15,10, 5, 10));
-
-//        tabbedPane.addTab("Regex Filter",filterPanel);
-//        tabbedPane.addTab("Date Filter",datePanel);
 
         JPopupMenu mainPopupMenu = new JPopupMenu();
 
         final JTextField filterText = new JTextField("");
         final JButton addButton = new JButton("ADD");
         final JButton deleteButton = new JButton("DELETE");
-        final JButton exportButton = new JButton("EXPORT EXCEL");
-        final JButton saveButton = new JButton("Save");
+
         final JMenuItem popupDelete = new JMenuItem("Delete");
         final JMenuItem popupEdit = new JMenuItem("Edit Row");
 
@@ -74,6 +69,24 @@ public class InvoicesTableFrame extends JFrame {
         filterByDateBtn.setBorder(BorderFactory.createEmptyBorder(0,10, 0, 10));
         filterByRegexBtn.setBorder(BorderFactory.createEmptyBorder(0,20, 0, 10));
 
+        final JMenuBar menuBar= new JMenuBar();
+        final JMenu fileMenu= new JMenu("File");
+        final JMenu saveExportMenu= new JMenu("Save/Export data");
+        final JMenuItem saveMenuItem= new JMenuItem("Save...");
+        final JMenuItem loadMenuItem= new JMenuItem("Load from file...");
+        final JMenuItem excelExportItem= new JMenuItem("Export in Excel");
+
+
+
+        saveExportMenu.add(saveMenuItem);
+        saveExportMenu.add(excelExportItem);
+        fileMenu.add(saveExportMenu);
+        fileMenu.add(loadMenuItem);
+        menuBar.add(fileMenu);
+        this.setJMenuBar(menuBar);
+
+
+
         filterTypeSelectionGroup.add(filterByRegexBtn);
         filterTypeSelectionGroup.add(filterByDateBtn);
         filterTypeSelectionPanel.add(filterTypeSelectionLabel);
@@ -81,10 +94,11 @@ public class InvoicesTableFrame extends JFrame {
         filterTypeSelectionPanel.add(filterByDateBtn);
         filterTypeSelectionPanel.add(resetFiltersBtn,BorderLayout.EAST);
 
-        saveButton.addActionListener(new SaverLoaderExporter(mainModel));
+        saveMenuItem.addActionListener(new SaverLoaderExporter(mainModel));
+        loadMenuItem.addActionListener(new SaverLoaderExporter(mainModel));
 
         excelExport exporter= new excelExport(mainModel);
-        exportButton.addActionListener(e -> {
+        excelExportItem.addActionListener(e -> {
             try {
                 exporter.export();
             } catch (IOException ex) {
@@ -148,8 +162,6 @@ public class InvoicesTableFrame extends JFrame {
 
         bottomPanel.add(addButton,BorderLayout.NORTH);
         bottomPanel.add(deleteButton,BorderLayout.CENTER);
-        bottomPanel.add(exportButton,BorderLayout.SOUTH);
-        bottomPanel.add(saveButton,BorderLayout.EAST);
 
         bottomPanel.add(new JPanel().add(totalLabel),BorderLayout.SOUTH);
 

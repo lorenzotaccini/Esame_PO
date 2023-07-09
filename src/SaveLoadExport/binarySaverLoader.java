@@ -13,7 +13,7 @@ public class binarySaverLoader extends AbstractSaverLoaderExporter{
         try {
             fos = new FileOutputStream(file.getAbsolutePath());
         } catch(FileNotFoundException e){
-            //something
+            e.printStackTrace();
         }
         ObjectOutputStream os;
         try {
@@ -22,24 +22,23 @@ public class binarySaverLoader extends AbstractSaverLoaderExporter{
             os.flush();
             os.close();
         }
-        catch (IOException e){ System.exit(2);
+        catch (IOException e){
+            e.printStackTrace();
         }
     }
 
     @Override
     public ArrayList<Invoice> loadData(File file) throws IOException {
         FileInputStream fis = new FileInputStream(file);
-        ObjectInputStream ois=null;
-        try(fis){
-            ois= new ObjectInputStream(fis);
+        ObjectInputStream ois = null;
+        try (fis) {
+            ois = new ObjectInputStream(fis);
+            return (ArrayList<Invoice>) (ois.readObject());
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
-        ArrayList<Invoice> outputInvoiceSet;
-        try{
-            outputInvoiceSet= (ArrayList<Invoice>) (ois.readObject());
-
-        } catch (ClassNotFoundException e){
-            return null;
-        }
-        return outputInvoiceSet;
+        return null;
     }
 }
+
+

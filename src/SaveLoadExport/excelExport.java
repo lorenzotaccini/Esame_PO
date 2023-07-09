@@ -42,7 +42,7 @@ public class excelExport {
 
 
         wb.write(new FileOutputStream("resources\\prova.xlsx"));//Save the file
-
+        wb.close();
 
     }
 }

@@ -1,9 +1,10 @@
 package TableModel;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class Invoice {
+public class Invoice implements Serializable {
     private String desc;
     private double amount;
     private LocalDate date;

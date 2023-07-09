@@ -4,17 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="AGGIUNTE API APACHE POI PER LA CREAZIONE DI TABELLE EXCEL">
-      <change afterPath="$PROJECT_DIR$/lib/log4j-core-2.20.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SaveLoadExport/SaverLoaderExporter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/saveListener.java" afterDir="false" />
+    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="excel funzionante. Inizio implementazione metodi di load save export">
+      <change afterPath="$PROJECT_DIR$/src/SaveLoadExport/csvSaverLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SaveLoadExport/textSaverLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/prova excel.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/prova.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/resources/prova.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SaveLoadExport/SaverLoaderExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SaveLoadExport/SaverLoaderExporter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SaveLoadExport/binarySaverLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SaveLoadExport/binarySaverLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SaveLoadExport/excelExport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SaveLoadExport/excelExport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TableModel/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TableModel/Invoice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TableModel/InvoicesTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TableModel/InvoicesTableModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -314,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686146438735</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="excel funzionante. Inizio implementazione metodi di load save export">
+      <created>1688754518600</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1688754518601</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -342,7 +348,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="le celle desc e amount sono ora editabili.&#10;Cambiato tipo di dato di amount da BigDecimal a doubel" />
     <MESSAGE value="aggiunto deleteListener (untested)" />
     <MESSAGE value="ora è possibile eliminare le righe selezionate tramite mouse (tested)" />
     <MESSAGE value="implementata con successo la libreria esterna JDatePicker :)" />
@@ -367,7 +372,8 @@
     <MESSAGE value="Aggiunte alcune classi per salvataggio e caricamento (begin)" />
     <MESSAGE value="minor changes" />
     <MESSAGE value="AGGIUNTE API APACHE POI PER LA CREAZIONE DI TABELLE EXCEL" />
-    <option name="LAST_COMMIT_MESSAGE" value="AGGIUNTE API APACHE POI PER LA CREAZIONE DI TABELLE EXCEL" />
+    <MESSAGE value="excel funzionante. Inizio implementazione metodi di load save export" />
+    <option name="LAST_COMMIT_MESSAGE" value="excel funzionante. Inizio implementazione metodi di load save export" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

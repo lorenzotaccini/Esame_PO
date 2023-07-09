@@ -20,14 +20,13 @@ public class SaverLoaderExporter implements ActionListener {
     }
 
     private int checkFileExistence(File file){
+
         String path = file.getAbsolutePath().replace(file.getName(),"");
         File listfile = new File(path);
-        if(listfile.exists())
         for(String filename: Objects.requireNonNull(listfile.list())){
             if (filename.equals(file.getName())){
                 return JOptionPane.showConfirmDialog(null, filename+" already exists, do you want to overwrite it?","Overwrite",JOptionPane.YES_NO_OPTION,JOptionPane.PLAIN_MESSAGE);
             }
-
         }
         return -2;
     }
@@ -51,11 +50,11 @@ public class SaverLoaderExporter implements ActionListener {
         int userSelection = JOptionPane.CANCEL_OPTION;
 
         switch (e.getActionCommand()){
-            case "Save" -> {
+            case "Save..." -> {
                 fileChooser.setFileFilter(binary);
                 userSelection = fileChooser.showSaveDialog(null);
             }
-            case "Open..." -> {
+            case "Load from file" -> {
                 fileChooser.setFileFilter(null);
                 userSelection = fileChooser.showOpenDialog(null);
             }
@@ -69,20 +68,20 @@ public class SaverLoaderExporter implements ActionListener {
             String filterDescr = fileChooser.getFileFilter().getDescription();
             String filePath = file.getAbsolutePath();
             switch(e.getActionCommand()){
-                case "Save" -> {
+                case "Save..." -> {
 
                     if(filterDescr.equals("Binary File (*.bin)") || filePath.endsWith("bin")){
                         saver = new binarySaverLoader();
                         extension = ".bin";
                     }
-//                    else if (filterDescr.equals("CSV File (*.csv)") || filePath.endsWith("csv")){
-//                        saver = new CsvSaveLoader();
-//                        extension = ".csv";
-//                    }
-//                    else if (filterDescr.equals("Text File (*.txt)") || filePath.endsWith("txt")){
-//                        saver = new TabulatedSave();
-//                        extension = ".txt";
-//                    }
+                    else if (filterDescr.equals("CSV File (*.csv)") || filePath.endsWith("csv")){
+                        saver = new csvSaverLoader();
+                        extension = ".csv";
+                    }
+                    else if (filterDescr.equals("Text File (*.txt)") || filePath.endsWith("txt")){
+                        saver = new textSaverLoader();
+                        extension = ".txt";
+                    }
                     else
                         saver = new binarySaverLoader();
 
@@ -106,7 +105,7 @@ public class SaverLoaderExporter implements ActionListener {
                 }
 
 
-                case "Open..."->{
+                case "Load from file..."->{
 
                 }
             }

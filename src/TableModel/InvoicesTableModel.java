@@ -5,6 +5,7 @@ import SaveLoadExport.AbstractSaverLoaderExporter;
 import javax.swing.table.AbstractTableModel;
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -14,7 +15,7 @@ import java.util.Iterator;
  * Si utilizza una ArrayList come struttura dati per il salvataggio e la gestione delle voci di bilancio.
  * (Oggetto Vector ormai deprecato)
  */
-public class InvoicesTableModel extends AbstractTableModel {
+public class InvoicesTableModel extends AbstractTableModel implements Serializable {
     /**
      * ArrayList di generics di tipo invoice
      */
@@ -153,7 +154,7 @@ public class InvoicesTableModel extends AbstractTableModel {
 
     public void loadFromFile(AbstractSaverLoaderExporter saver, File file) throws IOException {
         System.out.println("Loading table content from file: "+file.getPath()+"\n");
-        setInvoiceSet(saver.loadData(file));
+        this.setInvoiceSet(saver.loadData(file));
         System.out.println("Loaded successfully.\n");
     }
 
