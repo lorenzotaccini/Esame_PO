@@ -11,6 +11,11 @@ import java.awt.event.ActionListener;
 import java.time.DateTimeException;
 import java.time.LocalDate;
 
+/**
+ * La classe implementa ActionListener e tramite il metodo di default actionPerformed modifica un elemento già esistente nel
+ * modello
+ * di tipo {@link InvoicesTableModel}
+ */
 public class editListener implements ActionListener {
     private final InvoicesTableModel model;
     private final JTable table;

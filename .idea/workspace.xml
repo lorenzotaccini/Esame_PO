@@ -1,14 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Esame_PO:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="progressi in save load export, bug in caricamento da txt">
+    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="END">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Esame_PO_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/log4j_core_2_20_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Excel_exports/ao.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Saves/empty.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Saves/w.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Esame_PO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Esame_PO.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/aaa.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/prova.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatePickerGUI/DateLabelFormatter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Filters/LocalDateRowFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Filters/LocalDateRowFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Filters/searchFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Filters/searchFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Frames/popupMenuSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frames/popupMenuSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Listeners/addListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/addListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Listeners/deleteListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/deleteListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Listeners/editListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/editListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Listeners/sorterListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/sorterListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Listeners/totalListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/totalListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Panels/datePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels/datePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SaveLoadExport/AbstractSaverLoaderExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SaveLoadExport/AbstractSaverLoaderExporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SaveLoadExport/SaverLoaderExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SaveLoadExport/SaverLoaderExporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SaveLoadExport/binarySaverLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SaveLoadExport/binarySaverLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SaveLoadExport/csvSaverLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SaveLoadExport/csvSaverLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SaveLoadExport/excelExport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SaveLoadExport/excelExport.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SaveLoadExport/textSaverLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SaveLoadExport/textSaverLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TableModel/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TableModel/Invoice.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +59,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" root0="FORCE_HIGHLIGHTING" />
@@ -50,23 +79,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/lollo/IdeaProjects/Esame_PO/lib/log4j-core-2.20.0.jar&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/lorenzo/IdeaProjects/Esame_PO/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/lollo/IdeaProjects/Esame_PO/lib/log4j-core-2.20.0.jar",
+    "onboarding.tips.debug.path": "/Users/lorenzo/IdeaProjects/Esame_PO/src/Main.java",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\lollo\IdeaProjects\Esame_PO\src" />
@@ -330,7 +359,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688922908101</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="END">
+      <option name="closed" value="true" />
+      <created>1688985790119</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1688985790119</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -358,7 +395,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="implementata con successo la libreria esterna JDatePicker :)" />
     <MESSAGE value="prima implementazione della finestra di dialogo per l'aggiunta di invoices (work in progress)" />
     <MESSAGE value="implementazione di temi LaF per java swing" />
     <MESSAGE value="completata implementazione del pannello per aggiungere invoices" />
@@ -383,7 +419,8 @@
     <MESSAGE value="excel funzionante. Inizio implementazione metodi di load save export" />
     <MESSAGE value="progressi in save load export" />
     <MESSAGE value="progressi in save load export, bug in caricamento da txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="progressi in save load export, bug in caricamento da txt" />
+    <MESSAGE value="END" />
+    <option name="LAST_COMMIT_MESSAGE" value="END" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

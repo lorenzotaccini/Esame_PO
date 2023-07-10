@@ -10,6 +10,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.DateTimeException;
 
+/**
+ * La classe implementa ActionListener e tramite il metodo di default actionPerformed aggiunge un elemento al modello
+ * di tipo {@link InvoicesTableModel}
+ */
 public class addListener implements ActionListener {
     private final InvoicesTableModel model;
     private final JPanel tablePanel;
@@ -22,6 +26,7 @@ public class addListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
         MyDatePicker addDatePicker= new MyDatePicker();
         JTextField amountField = new JTextField();
         JTextArea descriptionField= new JTextArea(5,20);

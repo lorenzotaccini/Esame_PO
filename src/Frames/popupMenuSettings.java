@@ -15,6 +15,11 @@ import java.awt.event.MouseEvent;
  * Viene selezionata la riga su cui è stato effettuato il click.
  */
 public class popupMenuSettings {
+    /**
+     * Aggiunge il menu di popup in caso di click destro su un elemento della tabella
+     * @param table tabella su cui applicare il click destro
+     * @param popupMenu il menu che verrà mostrato
+     */
     public static void setupPopupMenu(JTable table,final JPopupMenu popupMenu) {
         table.addMouseListener(new MouseAdapter() {
 
@@ -42,7 +47,14 @@ public class popupMenuSettings {
             }
         });
     }
+
+    /**
+     * Aggiunge la funzionalità di doppio click su un elemento della tabella per aprire il pannello di modifica.
+     * @param table la JTable su cui applicare la funzionalità
+     * @param parentSorter il sorter della classe chiamante necessario per implementare un {@link editListener} internamente alla funzione
+     */
     public static void setupDoubleClickToEdit(JTable table,TableRowSorter<InvoicesTableModel> parentSorter) {
+
         editListener editL= new editListener(parentSorter,table);
         table.addMouseListener(new MouseAdapter() {
 

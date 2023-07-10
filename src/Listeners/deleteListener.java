@@ -8,6 +8,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Arrays;
 
+/**
+ * La classe implementa ActionListener e tramite il metodo di default actionPerformed elimina un elemento dal modello
+ * di tipo {@link InvoicesTableModel}
+ */
 public class deleteListener implements ActionListener {
     private final InvoicesTableModel model;
     private final JTable mainTable;

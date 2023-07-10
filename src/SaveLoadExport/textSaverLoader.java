@@ -11,9 +11,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * Classe che permette il salvataggio/caricamento su/da file di tipo CSV (.csv)
+ */
 public class textSaverLoader extends AbstractSaverLoaderExporter{
     @Override
-    public void saveData(InvoicesTableModel model, File file) throws IOException {
+    public void saveData(InvoicesTableModel model, File file) {
         try{
             FileWriter csvWriter= new FileWriter(file);
             for (Invoice actualInvoice : model.getInvoiceSet()) {

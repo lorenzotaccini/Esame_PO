@@ -10,7 +10,8 @@ import java.util.regex.PatternSyntaxException;
 
 /**
  * classe che implementa DocumentListener e crea un RowFilter dedicato alla ricerca di elementi basata sul testo tramite regex
- * pattern. Il testo ottenuto dal JtextField passato come argomento è processato dal RowFilter.regexfilter e applicato sul tableRowSorter
+ * pattern. Il testo ottenuto dal JTextField passato come argomento è processato dal RowFilter.regexFilter e applicato sul tableRowSorter.
+ * Sono implementati solo i metodi richiesti dalla classe DocumentListener
  */
 public class searchFilter implements DocumentListener {
     private final JTextField pattern;

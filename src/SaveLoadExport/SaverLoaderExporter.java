@@ -11,17 +11,33 @@ import java.io.IOException;
 import java.io.StreamCorruptedException;
 import java.util.Objects;
 
+/**
+ * Classe che estende {@link ActionListener} per la gestione di salvataggi caricamenti ed esportazioni,
+ * con funzioni specifiche, apertura di pannelli {@link JFileChooser} e controlli per i file già esistenti.
+ */
 public class SaverLoaderExporter implements ActionListener {
 
     private final InvoicesTableModel model;
     private final boolean close;
     private String lastPath;
 
+    /**
+     * Instantiates a new Saver loader exporter.
+     *
+     * @param model il modello da cui prelevare i dati/su cui scrivere
+     * @param close valore booleano: se true, il programma viene chiuso dopo un salvataggio
+     */
     public SaverLoaderExporter(InvoicesTableModel model,boolean close) {
         this.model = model;
         this.close=close;
     }
 
+    /**
+     * Funzione che controlla se il file su cui si vuole salvare esiste già nella directory corrente, e in caso affermativo
+     * chiede conferma per fare l'overwrite.
+     * @param file file di cui verificare l'esistenza
+     * @return stato del controllo, -2 se il file non esiste ancora
+     */
     private int checkFileExistence(File file){
 
         String path = file.getAbsolutePath().replace(file.getName(),"");
@@ -37,6 +53,7 @@ public class SaverLoaderExporter implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         System.out.println("inizio salvataggio/caricamento");
+
         AbstractSaverLoaderExporter saver;
         JFileChooser fileChooser = new JFileChooser(lastPath);
         fileChooser.setCurrentDirectory(new File("./Saves"));
@@ -48,7 +65,7 @@ public class SaverLoaderExporter implements ActionListener {
         fileChooser.addChoosableFileFilter(csv);
         fileChooser.addChoosableFileFilter(text);
         fileChooser.setDialogTitle(e.getActionCommand()+" File");
-        fileChooser.setAcceptAllFileFilterUsed(false);
+        fileChooser.setAcceptAllFileFilterUsed(false); //non viene mostrata l'opzione "all files"
 
         // set Default option for export or simply save
 
@@ -138,6 +155,7 @@ public class SaverLoaderExporter implements ActionListener {
                     }
 
         }
+
         System.out.println("fine salvataggio/caricamento");
         if(close && e.getActionCommand().equals("Save")){ //chiudi dopo salvataggio
             System.exit(0);

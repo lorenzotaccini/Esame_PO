@@ -2,13 +2,11 @@ package TableModel;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class Invoice implements Serializable {
     private String desc;
     private double amount;
     private LocalDate date;
-    private DateTimeFormatter formattedDate;
 
     public Invoice(String desc, double amount, LocalDate date) {
         this.desc = desc;
@@ -38,10 +36,6 @@ public class Invoice implements Serializable {
 
     public void setDate(LocalDate date) {
         this.date = date;
-    }
-
-    public DateTimeFormatter getFormattedDate() {
-        return formattedDate;
     }
 
     @Override

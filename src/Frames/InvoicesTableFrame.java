@@ -11,7 +11,6 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
-import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.print.PrinterException;
@@ -19,10 +18,10 @@ import java.io.IOException;
 import java.time.LocalDate;
 
 /**
- * Frame principale dell'applicazione
+ * Frame principale dell'applicazione. Costruisce l'ambiente grafico principale, contiene JTable e modello per quest'ultima
  */
 public class InvoicesTableFrame extends JFrame {
-    public InvoicesTableModel mainModel; //TODO metodo private quando togli dati di esempio dal main
+    private final InvoicesTableModel mainModel;
 
 
     public InvoicesTableFrame() {
@@ -77,6 +76,8 @@ public class InvoicesTableFrame extends JFrame {
         final JMenuItem saveMenuItem= new JMenuItem("Save");
         final JMenuItem loadMenuItem= new JMenuItem("Load from file");
         final JMenuItem excelExportItem= new JMenuItem("Export in Excel");
+        final JMenu helpMenu= new JMenu("Help");
+        final JMenuItem aboutMenuItem= new JMenuItem("About...");
 
 
 
@@ -86,8 +87,10 @@ public class InvoicesTableFrame extends JFrame {
         fileMenu.add(loadMenuItem);
         fileMenu.addSeparator();
         fileMenu.add(printMenu);
+        helpMenu.add(aboutMenuItem);
 
         menuBar.add(fileMenu);
+        menuBar.add(helpMenu);
         this.setJMenuBar(menuBar);
 
 
@@ -101,6 +104,12 @@ public class InvoicesTableFrame extends JFrame {
 
         saveMenuItem.addActionListener(new SaverLoaderExporter(mainModel,false));
         loadMenuItem.addActionListener(new SaverLoaderExporter(mainModel,false));
+
+        aboutMenuItem.addActionListener(e -> JOptionPane.showMessageDialog(tablePanel,
+                "Gestione Bilancio Taccini\n\n Version 1.0\n AA. 2022/2023\n Author: Lorenzo Taccini",
+                "About this project...",
+                JOptionPane.PLAIN_MESSAGE
+        ));
 
         excelExport exporter= new excelExport(mainModel);
         excelExportItem.addActionListener(e -> {
@@ -205,9 +214,13 @@ public class InvoicesTableFrame extends JFrame {
                 confirmSaveButton.addActionListener(new SaverLoaderExporter(mainModel,true));
                 Object[] ObjButtons = {confirmSaveButton,"Exit","Cancel"};
                 int PromptResult = JOptionPane.showOptionDialog(tablePanel,
-                        "Save before exit?\nAll non-saved data will be lost.", "Closing application",
-                        JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null,
-                        ObjButtons,ObjButtons[0]);
+                        "Save before exit?\nAll non-saved data will be lost.",
+                        "Closing application",
+                        JOptionPane.DEFAULT_OPTION,
+                        JOptionPane.QUESTION_MESSAGE,
+                        null,
+                        ObjButtons,ObjButtons[0]
+                );
 
                 if(PromptResult==1) //tasto exit
                 {
@@ -217,7 +230,6 @@ public class InvoicesTableFrame extends JFrame {
         });
 
         setLocationRelativeTo(null);
-        setVisible(true);
 
     }
 }

@@ -9,7 +9,8 @@ import javax.swing.event.RowSorterListener;
 
 /**
  * classe che implementa RowSorterListener e prende in input una JLabel per modificare il valore del totale
- * quando si attivano filtri
+ * quando si attivano filtri di tipo {@link RowSorter}.
+ * La classe estende {@link RowSorterListener}
  */
 public class sorterListener implements RowSorterListener {
     private final JLabel totalLabel;

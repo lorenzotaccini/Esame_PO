@@ -1,20 +1,15 @@
 import Frames.InvoicesTableFrame;
-import TableModel.Invoice;
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
-import org.slf4j.LoggerFactory;
 
 import javax.swing.*;
 import javax.swing.plaf.ColorUIResource;
 import java.awt.*;
-import java.io.IOException;
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 
 
 public class Main {
     public static void initUI(){
         try {
-            //FlatLaf.setGlobalExtraDefaults(Collections.singletonMap("@accentColor", "#521fa3"));
+
             UIManager.setLookAndFeel( new FlatMacLightLaf() );
             UIManager.put("Table.showVerticalLines",true);
             UIManager.put("Table.showHorizontalLines",true);
@@ -37,77 +32,14 @@ public class Main {
     /**
      * @author Lorenzo Taccini
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         //applicazione di look and feel personalizzati basati su FlatLaF
         initUI();
 
-
         //generazione frame principale
         InvoicesTableFrame frame = new InvoicesTableFrame();
-
-        //aggiunta dati di test
-        frame.mainModel.addInvoice(new Invoice("miao", 10, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("bau", 13, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("prova", 10.67, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("miao", 17.89, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("bau", 13, LocalDate.ofYearDay(2013, 201)));
-        frame.mainModel.addInvoice(new Invoice("prova", 10.67, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("miao", -10, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("bau", 13, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("prova", 10.67, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("miao", 10, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("bau", 13, LocalDate.now().minus(89, ChronoUnit.DAYS)));
-        frame.mainModel.addInvoice(new Invoice("prova", -10.67, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("miao", 10, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("bau", 13, LocalDate.now().minus(589, ChronoUnit.DAYS)));
-        frame.mainModel.addInvoice(new Invoice("prova", 10.67, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("miao", 10, LocalDate.now().minus(75, ChronoUnit.WEEKS)));
-        frame.mainModel.addInvoice(new Invoice("bau", -13, LocalDate.ofYearDay(2001, 256)));
-        frame.mainModel.addInvoice(new Invoice("prova", 10.67, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("miao", 10, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("bau", 13, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("miao", 10, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("bau", 13, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("prova", 10.67, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("miao", 17.89, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("bau", 13, LocalDate.ofYearDay(2013, 201)));
-        frame.mainModel.addInvoice(new Invoice("prova", 10.67, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("miao", -10, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("bau", 13, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("prova", 10.67, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("miao", 10, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("bau", 13, LocalDate.now().minus(89, ChronoUnit.DAYS)));
-        frame.mainModel.addInvoice(new Invoice("prova", -10.67, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("miao", 10, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("bau", 13, LocalDate.now().minus(589, ChronoUnit.DAYS)));
-        frame.mainModel.addInvoice(new Invoice("prova", 10.67, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("miao", 10, LocalDate.now().minus(75, ChronoUnit.WEEKS)));
-        frame.mainModel.addInvoice(new Invoice("bau", -13, LocalDate.ofYearDay(2001, 256)));
-        frame.mainModel.addInvoice(new Invoice("prova", 10.67, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("miao", 10, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("bau", 13, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("miao", 10, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("bau", 13, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("prova", 10.67, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("miao", 17.89, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("bau", 13, LocalDate.ofYearDay(2013, 201)));
-        frame.mainModel.addInvoice(new Invoice("prova", 10.67, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("miao", -10, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("bau", 13, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("prova", 10.67, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("miao", 10, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("bau", 13, LocalDate.now().minus(89, ChronoUnit.DAYS)));
-        frame.mainModel.addInvoice(new Invoice("prova", -10.67, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("miao", 10, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("bau", 13, LocalDate.now().minus(589, ChronoUnit.DAYS)));
-        frame.mainModel.addInvoice(new Invoice("prova", 10.67, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("miao", 10, LocalDate.now().minus(75, ChronoUnit.WEEKS)));
-        frame.mainModel.addInvoice(new Invoice("bau", -13, LocalDate.ofYearDay(2001, 256)));
-        frame.mainModel.addInvoice(new Invoice("prova", 10.67, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("miao", 10, LocalDate.now()));
-        frame.mainModel.addInvoice(new Invoice("bau", 13, LocalDate.now()));
-
+        frame.setVisible(true);
 
     }
 }

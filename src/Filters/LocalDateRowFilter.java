@@ -13,7 +13,6 @@ public class LocalDateRowFilter extends RowFilter<Object,Object> {
 
     /**
      * set della data di inizio
-     * @param startdate
      */
     public void setStartLocalDate(LocalDate startdate){
         this.startLocalDate=startdate;
@@ -21,7 +20,6 @@ public class LocalDateRowFilter extends RowFilter<Object,Object> {
 
     /**
      * set della data di fine
-     * @param enddate
      */
     public void setEndLocalDate(LocalDate enddate){
         this.endLocalDate=enddate;
@@ -37,7 +35,7 @@ public class LocalDateRowFilter extends RowFilter<Object,Object> {
     @Override
     public boolean include(Entry entry) {
         LocalDate current=(LocalDate)entry.getValue(0);
-        //System.out.println(current+ " is after "+ startLocalDate.minusDays(1)+" and before "+endLocalDate.plusDays(1)+"?");
+
         if(startLocalDate.isEqual(endLocalDate)){
             return current.isEqual(startLocalDate);
         }

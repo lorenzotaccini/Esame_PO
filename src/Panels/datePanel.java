@@ -27,6 +27,9 @@ public class datePanel extends JPanel implements ActionListener, DateChangeListe
     private final TableRowSorter<InvoicesTableModel> parentSorter;
     private final LocalDateRowFilter dateFilter;
 
+    /**
+     * @param parentSorter sorter del modello principale che viene modificato quando richiesto per il filtraggio tramite data
+     */
     public datePanel(TableRowSorter<InvoicesTableModel> parentSorter) {
         super();
 
