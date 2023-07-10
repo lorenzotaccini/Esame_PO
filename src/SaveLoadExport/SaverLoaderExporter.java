@@ -13,7 +13,7 @@ import java.util.Objects;
 
 public class SaverLoaderExporter implements ActionListener {
 
-    private InvoicesTableModel model;
+    private final InvoicesTableModel model;
     private final boolean close;
     private String lastPath;
 
@@ -39,6 +39,7 @@ public class SaverLoaderExporter implements ActionListener {
         System.out.println("inizio salvataggio/caricamento");
         AbstractSaverLoaderExporter saver;
         JFileChooser fileChooser = new JFileChooser(lastPath);
+        fileChooser.setCurrentDirectory(new File("./Saves"));
 
         FileNameExtensionFilter binary = new FileNameExtensionFilter("Binary File (*.bin)", "bin");
         FileNameExtensionFilter csv = new FileNameExtensionFilter("CSV File (*.csv)", "csv");
@@ -123,6 +124,7 @@ public class SaverLoaderExporter implements ActionListener {
                                         saver = new textSaverLoader();
                                     else
                                         saver = new binarySaverLoader();
+
                                     this.model.loadFromFile(saver,file);
                                     lastPath = filePath.replace(file.getName(),"");
                                 } catch (StreamCorruptedException ex){

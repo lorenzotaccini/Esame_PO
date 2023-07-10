@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="progressi in save load export">
-      <change afterPath="$PROJECT_DIR$/Excel_exports/prova1.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Excel_exports/rr.xlsx" afterDir="false" />
+    <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="progressi in save load export, bug in caricamento da txt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SaveLoadExport/SaverLoaderExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SaveLoadExport/SaverLoaderExporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SaveLoadExport/excelExport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SaveLoadExport/excelExport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SaveLoadExport/csvSaverLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SaveLoadExport/csvSaverLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SaveLoadExport/textSaverLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SaveLoadExport/textSaverLoader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -324,7 +322,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688916109616</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="progressi in save load export, bug in caricamento da txt">
+      <option name="closed" value="true" />
+      <created>1688922908100</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1688922908101</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -352,7 +358,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ora è possibile eliminare le righe selezionate tramite mouse (tested)" />
     <MESSAGE value="implementata con successo la libreria esterna JDatePicker :)" />
     <MESSAGE value="prima implementazione della finestra di dialogo per l'aggiunta di invoices (work in progress)" />
     <MESSAGE value="implementazione di temi LaF per java swing" />
@@ -377,7 +382,8 @@
     <MESSAGE value="AGGIUNTE API APACHE POI PER LA CREAZIONE DI TABELLE EXCEL" />
     <MESSAGE value="excel funzionante. Inizio implementazione metodi di load save export" />
     <MESSAGE value="progressi in save load export" />
-    <option name="LAST_COMMIT_MESSAGE" value="progressi in save load export" />
+    <MESSAGE value="progressi in save load export, bug in caricamento da txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="progressi in save load export, bug in caricamento da txt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

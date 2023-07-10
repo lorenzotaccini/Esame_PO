@@ -8,6 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class textSaverLoader extends AbstractSaverLoaderExporter{
@@ -28,13 +29,15 @@ public class textSaverLoader extends AbstractSaverLoaderExporter{
     public ArrayList<Invoice> loadData(File file) throws IOException {
         ArrayList<Invoice> l= new ArrayList<>();
         Scanner csvReader= new Scanner(file);
-
+        String[] line;
         //finchè trovo righe nel file, le leggo, faccio lo split e inserisco in l nuovi oggetti Invoice
         while(csvReader.hasNextLine()){
+            line = csvReader.nextLine().split("\t");
+            System.out.println(Arrays.toString(line));
             l.add(new Invoice(
-                            csvReader.nextLine().split("\t")[2],
-                            Double.parseDouble(csvReader.nextLine().split("\t")[1]),
-                            LocalDate.parse(csvReader.nextLine().split("\t")[0])
+                            line[2],
+                            Double.parseDouble(line[1]),
+                            LocalDate.parse(line[0])
                     )
             );
         }

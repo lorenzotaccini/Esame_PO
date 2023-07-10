@@ -71,7 +71,7 @@ public class InvoicesTableFrame extends JFrame {
         filterByRegexBtn.setBorder(BorderFactory.createEmptyBorder(0,20, 0, 10));
 
         final JMenuBar menuBar= new JMenuBar();
-        final JMenu printButton =new JMenu("Print");
+        final JMenuItem printMenu =new JMenuItem("Print");
         final JMenu fileMenu= new JMenu("File");
         final JMenu saveExportMenu= new JMenu("Save/Export data");
         final JMenuItem saveMenuItem= new JMenuItem("Save");
@@ -84,6 +84,8 @@ public class InvoicesTableFrame extends JFrame {
         saveExportMenu.add(excelExportItem);
         fileMenu.add(saveExportMenu);
         fileMenu.add(loadMenuItem);
+        fileMenu.addSeparator();
+        fileMenu.add(printMenu);
 
         menuBar.add(fileMenu);
         this.setJMenuBar(menuBar);
@@ -133,7 +135,7 @@ public class InvoicesTableFrame extends JFrame {
             mainDatePanel.setVisible(true);
         });
 
-        printButton.addActionListener(e -> {
+        printMenu.addActionListener(e -> {
             try {
                 if (! mainTable.print()) {
                     System.err.println("User cancelled printing");
