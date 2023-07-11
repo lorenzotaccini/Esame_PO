@@ -27,9 +27,12 @@ public class InvoicesTableFrame extends JFrame {
     public InvoicesTableFrame() {
         setTitle("Gestione Bilancio Taccini");
 
+
+        //CREAZIONE ELEMENTI
         mainModel=new InvoicesTableModel();
         JTable mainTable = new JTable(mainModel);
         mainTable.getColumnModel().getColumn(3).setMaxWidth(25);
+        mainTable.getTableHeader().setEnabled(false); //disabilito l'header della jtable per prevenire il sorting
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment( JLabel.CENTER );
         mainTable.setDefaultRenderer(String.class, centerRenderer);
@@ -80,7 +83,7 @@ public class InvoicesTableFrame extends JFrame {
         final JMenuItem aboutMenuItem= new JMenuItem("About...");
 
 
-
+        //MENUBAR
         saveExportMenu.add(saveMenuItem);
         saveExportMenu.add(excelExportItem);
         fileMenu.add(saveExportMenu);
@@ -93,15 +96,13 @@ public class InvoicesTableFrame extends JFrame {
         menuBar.add(helpMenu);
         this.setJMenuBar(menuBar);
 
-
-
+        //gruppo di radio button per mutua esclusione
         filterTypeSelectionGroup.add(filterByRegexBtn);
         filterTypeSelectionGroup.add(filterByDateBtn);
-        filterTypeSelectionPanel.add(filterTypeSelectionLabel);
-        filterTypeSelectionPanel.add(filterByRegexBtn);
-        filterTypeSelectionPanel.add(filterByDateBtn);
-        filterTypeSelectionPanel.add(resetFiltersBtn,BorderLayout.EAST);
 
+
+
+        //AGGIUNTA DEI LISTENERS
         saveMenuItem.addActionListener(new SaverLoaderExporter(mainModel,false));
         loadMenuItem.addActionListener(new SaverLoaderExporter(mainModel,false));
 
@@ -154,7 +155,15 @@ public class InvoicesTableFrame extends JFrame {
             }
         });
 
+        sorter.addRowSorterListener(new sorterListener(totalLabel));
+        mainModel.addTableModelListener(new totalListener(totalLabel,mainModel));
+        addButton.addActionListener(new addListener(mainModel,tablePanel));
+        deleteButton.addActionListener(new deleteListener(sorter,mainModel, mainTable));
+        popupDelete.addActionListener(new deleteListener(sorter,mainModel, mainTable));
+        popupEdit.addActionListener(new editListener(sorter, mainTable));
+        filterText.getDocument().addDocumentListener(new searchFilter(sorter,filterText));
 
+        //AGGIUNTA DOPPIO CLICK E CLICK DESTRO SU TABELLA
         mainPopupMenu.add(popupDelete);
         mainPopupMenu.add(popupEdit);
 
@@ -162,22 +171,29 @@ public class InvoicesTableFrame extends JFrame {
         popupMenuSettings.setupPopupMenu(mainTable, mainPopupMenu);
         popupMenuSettings.setupDoubleClickToEdit(mainTable,sorter);
 
-        tablePanel.add(new JScrollPane(mainTable));
+        //AGGIUNTA COMPONENTI AI PANNELLI
 
+        //Jscrollpane per far scorrere la tabella
+        tablePanel.add(new JScrollPane(mainTable));
 
 
         filterPanel.add(new JLabel("Search:"), BorderLayout.WEST);
         filterPanel.add(filterText, BorderLayout.CENTER);
 
+        filterTypeSelectionPanel.add(filterTypeSelectionLabel);
+        filterTypeSelectionPanel.add(filterByRegexBtn);
+        filterTypeSelectionPanel.add(filterByDateBtn);
+        filterTypeSelectionPanel.add(resetFiltersBtn,BorderLayout.EAST);
+
+
         topPanel.add(filterTypeSelectionPanel,BorderLayout.NORTH);
         topPanel.add(filterPanel,BorderLayout.SOUTH);
         topPanel.add(mainDatePanel);
-//        topPanel.add(tabbedPane);
 
-        bottomPanel.add(addButton,BorderLayout.NORTH);
+        bottomPanel.add(addButton,BorderLayout.WEST);
         bottomPanel.add(deleteButton,BorderLayout.CENTER);
+        bottomPanel.add(totalLabel,BorderLayout.EAST);
 
-        bottomPanel.add(new JPanel().add(totalLabel),BorderLayout.SOUTH);
 
         filterPanel.setVisible(false);
         mainDatePanel.setVisible(false);
@@ -187,14 +203,6 @@ public class InvoicesTableFrame extends JFrame {
         mainPanel.add(bottomPanel,BorderLayout.SOUTH);
         add(mainPanel);
 
-
-        sorter.addRowSorterListener(new sorterListener(totalLabel));
-        mainModel.addTableModelListener(new totalListener(totalLabel,mainModel));
-        addButton.addActionListener(new addListener(mainModel,tablePanel));
-        deleteButton.addActionListener(new deleteListener(sorter,mainModel, mainTable));
-        popupDelete.addActionListener(new deleteListener(sorter,mainModel, mainTable));
-        popupEdit.addActionListener(new editListener(sorter, mainTable));
-        filterText.getDocument().addDocumentListener(new searchFilter(sorter,filterText));
 
         //setting dell'icona da usare nella barra delle applicazioni e nella statusbar
         setIconImage(Toolkit.getDefaultToolkit().getImage("resources/TaskBarIcon.png"));

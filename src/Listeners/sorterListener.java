@@ -5,6 +5,7 @@ import TableModel.InvoicesTableModel;
 import javax.swing.*;
 import javax.swing.event.RowSorterEvent;
 import javax.swing.event.RowSorterListener;
+import java.text.DecimalFormat;
 
 
 /**
@@ -14,11 +15,11 @@ import javax.swing.event.RowSorterListener;
  */
 public class sorterListener implements RowSorterListener {
     private final JLabel totalLabel;
-
+    private static DecimalFormat decimalFormatter;
 
     public sorterListener(JLabel totalLabel) {
         this.totalLabel=totalLabel;
-
+        decimalFormatter = new DecimalFormat("#.##");
     }
 
     @Override
@@ -33,7 +34,7 @@ public class sorterListener implements RowSorterListener {
         else{
             for(int i=0; i<e.getSource().getViewRowCount(); i++){
                 total +=(Double)model.getValueAt(e.getSource().convertRowIndexToModel(i),1);
-                totalLabel.setText(" Total income: "+ total);
+                totalLabel.setText(" Total income: "+ decimalFormatter.format(total));
             }
         }
 

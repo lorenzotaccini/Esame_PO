@@ -25,7 +25,7 @@ public class totalListener implements TableModelListener {
     public totalListener(JLabel totalLabel, InvoicesTableModel model) {
         this.totalLabel = totalLabel;
         this.model = model;
-        decimalFormatter = new DecimalFormat("#.00");
+        decimalFormatter = new DecimalFormat("#.##");
     }
 
     @Override

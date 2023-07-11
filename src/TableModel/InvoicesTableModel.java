@@ -45,7 +45,9 @@ public class InvoicesTableModel extends AbstractTableModel implements Serializab
         fireTableDataChanged();
     }
 
-    /** Si utilizza un oggetto di classe Iterator per scorrere il vettore arrayList e rimuovere l'oggetto */
+    /** Si utilizza un oggetto di classe Iterator per scorrere il vettore arrayList e rimuovere l'oggetto.
+     * @param delItem elemento di tipo {@link Invoice} che si intende rimuovere
+     */
     public void deleteInvoice(Invoice delItem){
         Iterator<Invoice> itr = invoiceSet.iterator();
         while(itr.hasNext()){
@@ -96,6 +98,10 @@ public class InvoicesTableModel extends AbstractTableModel implements Serializab
         }
     }
 
+    /**
+     *
+     * @return oggetto {@link ArrayList<Invoice>} che contiene tutti i dati del modello
+     */
     public ArrayList<Invoice> getInvoiceSet() {
         return invoiceSet;
     }
@@ -126,6 +132,11 @@ public class InvoicesTableModel extends AbstractTableModel implements Serializab
         fireTableDataChanged();
     }
 
+    /**
+     * Metodo che ritorna l'oggetto Invoice richiesto all'indice passato in input.
+     * @param index indice dell'oggetto che si vuole ottenere
+     * @return Invoice richiesta
+     */
     public Invoice getInvoiceAtRow(int index){
         return invoiceSet.get(index);
     }
@@ -152,6 +163,11 @@ public class InvoicesTableModel extends AbstractTableModel implements Serializab
         return getValueAt(0, columnIndex).getClass();
     }
 
+    /**
+     * Il metodo permette di popolare il modello ottenendo dati da file di vario tipo.
+     * @param saver oggetto che si occupa del caricamento di dati da file tramite funzioni interne.
+     * @param file file da cui caricare i dati.
+     */
     public void loadFromFile(AbstractSaverLoaderExporter saver, File file) throws IOException {
         System.out.println("Loading table content from file: "+file.getPath()+"\n");
         this.setInvoiceSet(saver.loadData(file));

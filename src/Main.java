@@ -7,6 +7,10 @@ import java.awt.*;
 
 
 public class Main {
+    /**
+     * Metodo che carica un tema personalizzato di swing (FlatLaf) e ne setta alcuni parametri
+     * tramite {@link UIManager}
+     */
     public static void initUI(){
         try {
 
@@ -31,6 +35,7 @@ public class Main {
 
     /**
      * @author Lorenzo Taccini
+     * Funzione main del progetto "gestione di bilancio", esame di Programmazione ad Oggetti, AA 2022/2023
      */
     public static void main(String[] args) {
 

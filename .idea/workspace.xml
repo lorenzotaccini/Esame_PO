@@ -10,33 +10,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="END">
-      <change afterPath="$PROJECT_DIR$/Compiled/DatePickerGUI/MyDatePicker.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compiled/Filters/LocalDateRowFilter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compiled/Filters/searchFilter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compiled/Frames/InvoicesTableFrame$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compiled/Frames/InvoicesTableFrame.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compiled/Frames/popupMenuSettings$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compiled/Frames/popupMenuSettings$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compiled/Frames/popupMenuSettings.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compiled/Listeners/addListener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compiled/Listeners/deleteListener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compiled/Listeners/editListener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compiled/Listeners/sorterListener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compiled/Listeners/totalListener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compiled/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compiled/Panels/datePanel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compiled/SaveLoadExport/AbstractSaverLoaderExporter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compiled/SaveLoadExport/SaverLoaderExporter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compiled/SaveLoadExport/binarySaverLoader.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compiled/SaveLoadExport/csvSaverLoader.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compiled/SaveLoadExport/excelExport.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compiled/SaveLoadExport/textSaverLoader.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compiled/TableModel/Invoice.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compiled/TableModel/InvoicesTableModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Excel_exports/ffff.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Saves/prova.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiled/DatePickerGUI/MyDatePicker.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/DatePickerGUI/MyDatePicker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiled/Filters/LocalDateRowFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/Filters/LocalDateRowFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiled/Filters/searchFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/Filters/searchFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiled/Frames/InvoicesTableFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/Frames/InvoicesTableFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiled/Frames/InvoicesTableFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/Frames/InvoicesTableFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiled/Frames/popupMenuSettings$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/Frames/popupMenuSettings$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiled/Frames/popupMenuSettings$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/Frames/popupMenuSettings$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiled/Frames/popupMenuSettings.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/Frames/popupMenuSettings.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiled/Listeners/addListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/Listeners/addListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiled/Listeners/deleteListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/Listeners/deleteListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiled/Listeners/editListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/Listeners/editListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiled/Listeners/sorterListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/Listeners/sorterListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiled/Listeners/totalListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/Listeners/totalListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiled/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiled/Panels/datePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/Panels/datePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiled/SaveLoadExport/AbstractSaverLoaderExporter.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/SaveLoadExport/AbstractSaverLoaderExporter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiled/SaveLoadExport/SaverLoaderExporter.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/SaveLoadExport/SaverLoaderExporter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiled/SaveLoadExport/binarySaverLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/SaveLoadExport/binarySaverLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiled/SaveLoadExport/csvSaverLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/SaveLoadExport/csvSaverLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiled/SaveLoadExport/excelExport.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/SaveLoadExport/excelExport.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiled/SaveLoadExport/textSaverLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/SaveLoadExport/textSaverLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiled/TableModel/Invoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/TableModel/Invoice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiled/TableModel/InvoicesTableModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/TableModel/InvoicesTableModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saves/w.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Saves/w.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/run.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/saveListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Listeners/sorterListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/sorterListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Listeners/totalListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/totalListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TableModel/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TableModel/Invoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TableModel/InvoicesTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TableModel/InvoicesTableModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +63,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" root0="FORCE_HIGHLIGHTING" />
@@ -88,7 +95,7 @@
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/lollo/IdeaProjects/Esame_PO/lib/log4j-core-2.20.0.jar&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;/Users/lorenzo/IdeaProjects/Esame_PO/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
