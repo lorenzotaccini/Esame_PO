@@ -9,6 +9,8 @@ java -cp "lib/*:lib/poi-bin-5.2.3/*:lib/poi-bin-5.2.3/auxiliary/*:lib/poi-bin-5.
 
 #WINDOWS:
 
+javadoc -d ./Javadoc -cp "lib/*;lib/poi-bin-5.2.3/*;lib/poi-bin-5.2.3/auxiliary/*;lib/poi-bin-5.2.3/lib/*;lib/poi-bin-5.2.3/ooxml-lib/*" .\src\DatePickerGUI\* .\src\Filters\* .\src\Frames\* .\src\Listeners\* .\src\Panels\* .\src\SaveLoadExport\* .\src\TableModel\* .\src\Main.java
+
 javac -proc:none -cp "lib/*;lib/poi-bin-5.2.3/*;lib/poi-bin-5.2.3/auxiliary/*;lib/poi-bin-5.2.3/lib/*;lib/poi-bin-5.2.3/ooxml-lib/*" -sourcepath .\src -d .\Compiled src\Main.java
 
 java -cp "lib/*;lib/poi-bin-5.2.3/*;lib/poi-bin-5.2.3/auxiliary/*;lib/poi-bin-5.2.3/lib/*;lib/poi-bin-5.2.3/ooxml-lib/*;Compiled/" Main

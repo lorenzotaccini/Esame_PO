@@ -10,39 +10,76 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b7e0278-53ad-4e29-bf9a-6ef3c7727189" name="Changes" comment="END">
-      <change afterPath="$PROJECT_DIR$/Excel_exports/ffff.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Saves/prova.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/DatePickerGUI/MyDatePicker.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/DatePickerGUI/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/DatePickerGUI/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/Filters/LocalDateRowFilter.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/Filters/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/Filters/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/Filters/searchFilter.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/Frames/InvoicesTableFrame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/Frames/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/Frames/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/Frames/popupMenuSettings.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/Listeners/addListener.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/Listeners/deleteListener.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/Listeners/editListener.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/Listeners/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/Listeners/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/Listeners/sorterListener.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/Listeners/totalListener.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/Main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/Panels/datePanel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/Panels/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/Panels/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/SaveLoadExport/AbstractSaverLoaderExporter.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/SaveLoadExport/SaverLoaderExporter.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/SaveLoadExport/binarySaverLoader.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/SaveLoadExport/csvSaverLoader.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/SaveLoadExport/excelExport.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/SaveLoadExport/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/SaveLoadExport/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/SaveLoadExport/textSaverLoader.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/TableModel/Invoice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/TableModel/InvoicesTableModel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/TableModel/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/TableModel/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/allclasses-index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/allpackages-index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/copy.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/element-list" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/help-doc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/index-all.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/legal/COPYRIGHT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/legal/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/legal/jquery.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/legal/jqueryUI.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/member-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/module-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/overview-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/overview-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/package-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/resources/glass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/resources/x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/script-dir/jquery-3.6.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/script-dir/jquery-ui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/script-dir/jquery-ui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/search-page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/serialized-form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/stylesheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/tag-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javadoc/type-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiled/DatePickerGUI/MyDatePicker.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/DatePickerGUI/MyDatePicker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiled/Filters/LocalDateRowFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/Filters/LocalDateRowFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiled/Filters/searchFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/Filters/searchFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiled/Frames/InvoicesTableFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/Frames/InvoicesTableFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiled/Frames/InvoicesTableFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/Frames/InvoicesTableFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiled/Frames/popupMenuSettings$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/Frames/popupMenuSettings$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiled/Frames/popupMenuSettings$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/Frames/popupMenuSettings$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiled/Frames/popupMenuSettings.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/Frames/popupMenuSettings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiled/Listeners/addListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/Listeners/addListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiled/Listeners/deleteListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/Listeners/deleteListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiled/Listeners/editListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/Listeners/editListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiled/Listeners/sorterListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/Listeners/sorterListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiled/Listeners/totalListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/Listeners/totalListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiled/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiled/Panels/datePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/Panels/datePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiled/SaveLoadExport/AbstractSaverLoaderExporter.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/SaveLoadExport/AbstractSaverLoaderExporter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiled/SaveLoadExport/SaverLoaderExporter.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/SaveLoadExport/SaverLoaderExporter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiled/SaveLoadExport/binarySaverLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/SaveLoadExport/binarySaverLoader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiled/SaveLoadExport/csvSaverLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/SaveLoadExport/csvSaverLoader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiled/SaveLoadExport/excelExport.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/SaveLoadExport/excelExport.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiled/SaveLoadExport/textSaverLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/SaveLoadExport/textSaverLoader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiled/TableModel/Invoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/TableModel/Invoice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiled/TableModel/InvoicesTableModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled/TableModel/InvoicesTableModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/w.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Saves/w.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frames/InvoicesTableFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Listeners/sorterListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/sorterListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Listeners/totalListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/totalListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TableModel/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TableModel/Invoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TableModel/InvoicesTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TableModel/InvoicesTableModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/empty.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/w.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.txt" beforeDir="false" afterPath="$PROJECT_DIR$/run.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -372,8 +409,18 @@
       <option name="project" value="LOCAL" />
       <updated>1688985790119</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="END">
+      <created>1689089269029</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1689089269029</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
